@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills — Kelvin Mutwiri</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Center the copyright */
+    .site-footer .copyright {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted, #888);
+    }
+  </style>
+</head>
+<body>
+  <!-- ================= Header / Navigation ================= -->
+  <header class="site-header" data-reveal>
+    <div class="container nav-grid">
+      <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="blog.html">Blog</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="contact-cta">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark/Light Toggle -->
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+        <!-- Menu Button for Mobile -->
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Mobile Navigation ================= -->
+  <div id="mobileNav" class="mobile-nav">
+    <button id="closeMobileNav" class="close-nav">×</button>
+    <nav class="mobile-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="blog.html">Blog</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ================= Main Content ================= -->
+  <main>
+    <section class="skills-section" data-reveal>
+      <div class="container">
+        <h1>Core Skills</h1>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, React</p>
+          </div>
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <p>Python, Django, REST APIs</p>
+          </div>
+          <div class="skill-card">
+            <h3>DevOps & Networking</h3>
+            <p>Linux, Nginx, Docker, Network Design</p>
+          </div>
+          <div class="skill-card">
+            <h3>Design</h3>
+            <p>UI/UX, Figma, Prototyping</p>
+          </div>
+        </div>
+
+        <!-- Longread Section -->
+        <section class="longread" data-reveal>
+          <h2>Why these skills?</h2>
+          <p>
+            Each skill helps me deliver complete solutions — from building responsive frontends, implementing robust backends, managing infrastructure, to designing intuitive user experiences. Real projects combine these skills to create meaningful products.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer" data-reveal>
+    <div class="container footer-grid">
+      <div>
+        <strong>Kelvin Mutwiri</strong>
+        <p>Full‑Stack Developer & Designer — building delightful web experiences.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+                 <ul class="socials">
+            <a href="kelvinkiambi35@gmai.com">Email</a>
+            <a href="www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
+            <a href="https://github.com/kelvin482">GitHub</a>
+            <a href="#">Twitter</a>
+            <a href="+254 074631030">Phone</a>
+          </u>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ================= Scripts ================= -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      themeToggle.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+    });
+
+    // Set current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

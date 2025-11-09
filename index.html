@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelvin Mutwiri — Full-Stack Developer & Designer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="assets/css/index.css">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0b1020">
+</head>
+<body>
+  <!-- ================= Header / Navigation ================= -->
+  <header class="site-header" data-reveal>
+    <div class="container nav-grid">
+      <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html">Blog</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="contact-cta">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Mobile Navigation ================= -->
+  <div id="mobileNav" class="mobile-nav">
+    <button id="closeMobileNav" class="close-nav">×</button>
+    <nav class="mobile-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="blog.html">Blog</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ================= Main Content ================= -->
+  <main>
+    <!-- ===== Hero Section ===== -->
+    <section id="hero" class="hero" data-reveal>
+      <div class="container hero-grid">
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <h1>AM Kelvin Mutwiri</h1>
+          <p class="lead">Full-Stack Developer · UI/UX Designer · System & Network Admin · AI Enthusiast</p>
+          <p class="bio">
+            I build fast, beautiful web experiences and reliable networked systems —
+            blending clean code with thoughtful design to ship products people enjoy.
+            Currently exploring AI-driven interfaces and network automation.
+          </p>
+
+          <!-- Call-to-Actions -->
+          <div class="hero-cta">
+            <a class="btn primary" href="projects.html">See Projects</a>
+            <a class="btn ghost" href="assets/resume.pdf" download>Download Resume</a>
+          </div>
+
+          <!-- Social Links -->
+          <ul class="socials">
+            <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/kelvin482" target="_blank">GitHub</a></li>
+            <li><a href="https://twitter.com/kelvin_kiambi" target="_blank">Twitter</a></li>
+            <li><a href="https://wa.me/25474631030" target="_blank">WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <!-- Hero Card / Avatar -->
+        <div class="hero-card" aria-hidden="false">
+          <img src="assets/images/kelvin.jpg" alt="Kelvin Mutwiri" class="profile-img">
+          <div class="card-stats">
+            <div><strong>2+</strong><span>Years Experience</span></div>
+            <div><strong>10+</strong><span>Projects</span></div>
+            <div><strong>Networking</strong><span>Systems & Infra</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== What I Do / Features ===== -->
+    <section class="intro" data-reveal>
+      <div class="container">
+        <h2>What I do</h2>
+        <div class="features">
+          <div class="feature">
+            <h3>Web Development</h3>
+            <p>Modern, responsive interfaces using HTML, CSS, JS and React. Backend APIs with Python & Django.</p>
+          </div>
+          <div class="feature">
+            <h3>UI / UX Design</h3>
+            <p>Design systems, high-fidelity prototypes, and pixel-perfect handoffs that developers love.</p>
+          </div>
+          <div class="feature">
+            <h3>Systems & Networking</h3>
+            <p>Secure, reliable network setups and system administration for production environments.</p>
+          </div>
+          <div class="feature">
+            <h3>AI & Automation</h3>
+            <p>Exploring AI for developer productivity, chat assistants, and automation scripts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects Preview ===== -->
+    <section class="projects-preview" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Highlighted Projects</h2>
+          <a href="projects.html">View all projects →</a>
+        </div>
+        <div class="project-grid" id="projectGrid">
+          <!-- Project cards will be dynamically added via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Call to Action ===== -->
+    <section class="cta" data-reveal>
+      <div class="container">
+        <h2>Ready to build something together?</h2>
+        <p>I'm available for freelancing and collaboration. Let's connect and make your idea real.</p>
+        <a class="btn primary" href="contact.html">Contact Me</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer" data-reveal>
+    <div class="container footer-grid">
+      <div>
+        <strong>Kelvin Mutwiri</strong>
+        <p>Full-Stack Developer & Designer — building delightful web experiences.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="socials">
+          <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/kelvin482" target="_blank">GitHub</a></li>
+          <li><a href="https://twitter.com/kelvin_kiambi" target="_blank">Twitter</a></li>
+          <li><a href="https://wa.me/25474631030" target="_blank">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+    <div class="copyright" style="text-align:center; margin-top:1rem; font-size:0.9rem; color:#888;">
+      © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ================= Scripts ================= -->
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

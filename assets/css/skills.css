@@ -1,0 +1,206 @@
+/* ---------------------- */
+/*      Theme Variables    */
+/* ---------------------- */
+
+/* Light theme */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --header-bg: #fff;
+  --footer-bg: #111;
+  --footer-text: #ccc;
+  --accent-color: #0070f3;
+  --card-bg: #fff;
+  --card-text: #555;
+}
+
+/* Dark theme */
+body.dark-mode {
+  --bg-color: #111;
+  --text-color: #f9f9f9;
+  --header-bg: #1a1a1a;
+  --footer-bg: #000;
+  --footer-text: #ccc;
+  --accent-color: #4fc3f7;
+  --card-bg: #1f1f1f;
+  --card-text: #ddd;
+}
+
+/* ---------------------- */
+/*        Body & Fonts     */
+/* ---------------------- */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------------- */
+/*        Header          */
+/* ---------------------- */
+.site-header {
+  background-color: var(--header-bg);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.brand .accent {
+  color: var(--accent-color);
+}
+
+/* Navigation Links */
+.nav a {
+  text-decoration: none;
+  margin-left: 1.5rem;
+  color: var(--card-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a.active,
+.nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Header buttons (theme toggle, menu) */
+.nav-actions button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  color: var(--card-text);
+  transition: color 0.3s ease;
+}
+
+/* ---------------------- */
+/*       Main Section      */
+/* ---------------------- */
+.skills-section {
+  padding: 4rem 0;
+}
+
+.skills-section h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  color: var(--card-text);
+  font-size: 0.95rem;
+}
+
+/* Hover Effect on Skills */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* ---------------------- */
+/*      Longread Section   */
+/* ---------------------- */
+.longread h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.longread p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--card-text);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ---------------------- */
+/*         Footer          */
+/* ---------------------- */
+.site-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 2rem 0;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.site-footer h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------------------- */
+/*       Responsive        */
+/* ---------------------- */
+@media screen and (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .nav-actions {
+    display: flex;
+  }
+
+  .skills-grid {
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Kelvin Mutwiri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Center copyright text */
+    .site-footer .copyright {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted, #888);
+    }
+  </style>
+</head>
+<body>
+  <!-- ================= Header / Navigation ================= -->
+  <header class="site-header" data-reveal>
+    <div class="container nav-grid">
+      <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html">Blog</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="contact-cta">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle3" class="icon-btn" aria-label="Toggle theme">🌙</button>
+        <button id="menuBtn3" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Mobile Navigation ================= -->
+  <div id="mobileNav" class="mobile-nav">
+    <button id="closeMobileNav" class="close-nav">×</button>
+    <nav class="mobile-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="blog.html">Blog</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ================= Main Content ================= -->
+  <main>
+    <section class="projects-list" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h1>Projects</h1>
+          <div class="filters">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="web">Web</button>
+            <button class="chip" data-filter="ai">AI</button>
+            <button class="chip" data-filter="network">Network</button>
+          </div>
+        </div>
+
+        <div class="project-grid" id="projectsList">
+          <!-- Project cards dynamically generated via JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer" data-reveal>
+    <div class="container footer-grid">
+      <div>
+        <strong>Kelvin Mutwiri</strong>
+        <p>Full‑Stack Developer & Designer — building delightful web experiences.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+                 <ul class="socials">
+            <a href="kelvinkiambi35@gmai.com">Email</a>
+            <a href="www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
+            <a href="https://github.com/kelvin482">GitHub</a>
+            <a href="#">Twitter</a>
+            <a href="+254 074631030">Phone</a>
+                 </u>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ================= Scripts ================= -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Automatically insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

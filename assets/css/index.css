@@ -1,0 +1,117 @@
+/* ================= What I Do Section Styling ================= */
+.intro {
+  position: relative;
+  padding: 4rem 0;
+  color: #fff;
+  background-color: #0b1020;
+}
+
+.intro h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Grid layout for features */
+.intro .features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual feature card */
+.intro .feature {
+  position: relative;
+  border-radius: 1rem;
+  min-height: 250px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #111;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+/* Smooth hover lift */
+.intro .feature:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Text elements */
+.intro .feature h3,
+.intro .feature p {
+  position: relative;
+  z-index: 3;
+  transition: opacity 0.3s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+/* Hover highlight */
+.intro .feature:hover h3 {
+  color: #ffd700;
+}
+
+/* Background image overlay setup */
+.intro .feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1;
+}
+
+/* Overlay for readability */
+.intro .feature::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* When hovered or active, show image and hide text */
+.intro .feature.active::before,
+.intro .feature:hover::before {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.intro .feature.active::after,
+.intro .feature:hover::after {
+  opacity: 1;
+}
+
+.intro .feature.active h3,
+.intro .feature.active p,
+.intro .feature:hover h3,
+.intro .feature:hover p {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Assign background images */
+.feature-web::before {
+  background-image: url('../images/web2.jpg');
+}
+
+.feature-ui::before {
+  background-image: url('../images/ui.jpg');
+}
+
+.feature-network::before {
+  background-image: url('../images/network.jpg');
+}
+
+.feature-ai::before {
+  background-image: url('../images/ux.jpg');
+}
