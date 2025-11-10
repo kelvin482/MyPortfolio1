@@ -220,38 +220,24 @@ html, body {
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
-.avatar-placeholder,
-.profile-img {
-  width: 100%;
-  height: 220px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  background: linear-gradient(135deg, rgba(25,209,200,0.08), rgba(11,132,255,0.03));
-  color: var(--text);
-  object-fit: cover;
-}
-
+/* ✅ UPDATED IMAGE CONTAINER */
 .hero-image-wrapper {
   width: 100%;
-  flex-grow: 1;
+  height: 260px;
   overflow: hidden;
+  border-radius: 14px;
 }
 
 .profile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  border-radius: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: inherit;
+  transition: transform 0.4s ease;
 }
 
 .profile-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transform: scale(1.06);
 }
 
 /* Stats in Hero Card */
@@ -300,6 +286,7 @@ html, body {
   align-items: center;
 }
 
+/* Project Cards Grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -307,21 +294,26 @@ html, body {
   margin-top: 1rem;
 }
 
+/* ✅ UPDATED PROJECT CARD & IMAGE HANDLING */
 .project-card {
   background: var(--panel);
+  border-radius: 14px;
+  overflow: hidden;
   padding: 1rem;
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card img {
   width: 100%;
-  border-radius: 12px;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
 }
 
-.project-card img:hover {
-  transform: scale(1.05);
+.project-card:hover img {
+  transform: scale(1.06);
 }
 
 /* ================== Call to Action ================== */
@@ -530,5 +522,13 @@ label {
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  /* ✅ Responsive image scaling */
+  .project-card img {
+    height: 160px;
+  }
+  .hero-image-wrapper {
+    height: 200px;
   }
 }

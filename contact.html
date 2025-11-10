@@ -4,50 +4,63 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Kelvin Mutwiri</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header" data-reveal>
     <div class="container nav-grid">
+
       <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
+
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="blog.html">Blog</a>
         <a href="services.html">Services</a>
         <a href="contact.html" class="active contact-cta">Contact</a>
+         <a href="about.html" class="active">About</a>
       </nav>
+
       <div class="nav-actions">
         <button id="themeToggle7" class="icon-btn" aria-label="Toggle theme">🌙</button>
         <button id="menuBtn7" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
       </div>
+
     </div>
   </header>
+
 
   <!-- ================= Main ================= -->
   <main>
     <section class="contact-section" data-reveal>
       <div class="container contact-grid">
+
         <!-- Contact Info -->
         <div class="contact-left card">
           <h1>Get in touch</h1>
           <p class="lead">Have a project or just want to say hi? Send a message and I'll get back to you.</p>
 
           <div class="contact-info">
-            <p><strong>Email</strong><br>your.email@example.com</p>
-            <p><strong>LinkedIn</strong><br>linkedin.com/in/yourprofile</p>
-            <p><strong>GitHub</strong><br>github.com/yourusername</p>
-            <p><strong>Phone</strong><br>+254 7xx xxx xxx</p>
+            <p><strong>Email</strong><br><a href="mailto:kelvinkiambi35@gmail.com">kelvinkiambi35@gmail.com</a></p>
+            <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">linkedin.com/in/kelvin-kiambi</a></p>
+            <p><strong>GitHub</strong><br><a href="https://github.com/kelvin482" target="_blank">github.com/kelvin482</a></p>
+            <p><strong>Phone</strong><br><a href="tel:+254746310313">+254 746 310 313</a></p>
           </div>
         </div>
 
+
         <!-- Contact Form -->
         <div class="contact-right card">
-          <form id="contactForm" action="https://formspree.io/f/yourFormId" method="POST">
+
+          <!-- Replace YOUR_FORM_ID_HERE -->
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+
             <label for="name">Your name</label>
             <input id="name" name="name" type="text" required>
 
@@ -65,27 +78,30 @@
             <p id="formStatus" class="form-status" aria-live="polite"></p>
           </form>
         </div>
+
       </div>
     </section>
   </main>
 
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer" data-reveal>
     <div class="container footer-grid">
+
       <div>
         <strong>Kelvin Mutwiri</strong>
-        <p>Full‑Stack Developer & Designer</p>
+        <p>Full-Stack Developer & Designer</p>
       </div>
 
       <div>
         <h4>Contact</h4>
-                  <ul class="socials">
-            <a href="kelvinkiambi35@gmai.com">Email</a>
-            <a href="www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
-            <a href="https://github.com/kelvin482">GitHub</a>
-            <a href="#">Twitter</a>
-            <a href="+254 074631030">Phone</a>
-                  </u>
+        <ul class="socials">
+          <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/kelvin482" target="_blank">GitHub</a></li>
+          <li><a href="#" target="_blank">Twitter</a></li>
+          <li><a href="tel:+25493610003">Phone</a></li>
+        </ul>
       </div>
 
       <div>
@@ -94,6 +110,7 @@
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
       </div>
+
     </div>
 
     <div class="footer-bottom">
@@ -101,6 +118,8 @@
     </div>
   </footer>
 
+
   <script src="assets/js/script.js"></script>
+
 </body>
 </html>

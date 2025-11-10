@@ -1,0 +1,102 @@
+/* ================= Blog Page Styling ================= */
+.blog-list {
+  padding: 4rem 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.blog-list h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+.blog-list p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.post.card {
+  background: var(--panel);
+  border-radius: var(--radius, 14px);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.post h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  color: var(--accent);
+}
+
+.post .meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.post p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.read-more {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Smooth Scroll for In-page Links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+  .posts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .posts {
+    grid-template-columns: 1fr;
+  }
+  .blog-list h1 {
+    font-size: 2rem;
+  }
+}

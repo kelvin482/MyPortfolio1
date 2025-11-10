@@ -81,3 +81,60 @@
   }
   qsa('.nav a').forEach(a=>{ try{ if(location.pathname.endsWith(a.getAttribute('href'))) a.classList.add('active'); }catch(e){} });
 })();
+
+
+
+
+/* ================= Contact Form Logic ================= */
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const saveDraftBtn = document.getElementById("saveDraft");
+
+/* Restore Draft if Exists */
+window.addEventListener("load", () => {
+  const savedData = JSON.parse(localStorage.getItem("contactDraft"));
+  if (savedData) {
+    document.getElementById("name").value = savedData.name || "";
+    document.getElementById("email").value = savedData.email || "";
+    document.getElementById("message").value = savedData.message || "";
+  }
+});
+
+/* Save Draft */
+saveDraftBtn.addEventListener("click", () => {
+  const draftData = {
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    message: document.getElementById("message").value.trim()
+  };
+  localStorage.setItem("contactDraft", JSON.stringify(draftData));
+  formStatus.textContent = "Draft saved ✅";
+  formStatus.style.color = "var(--accent)";
+});
+
+/* Form Submission */
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  formStatus.textContent = "Sending message...";
+  formStatus.style.color = "var(--text-muted)";
+
+  try {
+    const formData = new FormData(contactForm);
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: formData
+    });
+
+    if (response.ok) {
+      formStatus.textContent = "Message sent successfully ✅";
+      formStatus.style.color = "var(--accent)";
+      contactForm.reset();
+      localStorage.removeItem("contactDraft");
+    } else {
+      throw new Error("Network response error");
+    }
+  } catch (err) {
+    formStatus.textContent = "Something went wrong. Try again ❌";
+    formStatus.style.color = "red";
+  }
+});

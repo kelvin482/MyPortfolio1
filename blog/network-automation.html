@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automating Network Tasks — Kelvin Mutwiri</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f1217;
+      color: #e0e0e0;
+    }
+    header.site-header {
+      background: #161b22;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #00bfff;
+      text-decoration: none;
+    }
+    nav.nav a {
+      margin-left: 1.5rem;
+      color: #cbd5e0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav.nav a.active {
+      color: #00bfff;
+    }
+    main.container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    main h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: #00bfff;
+      margin-bottom: 0.5rem;
+    }
+    .meta {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+    main img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0 2rem 0;
+      box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);
+    }
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      color: #00e0ff;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      color: #d0d7de;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    ul li::before {
+      content: "➤";
+      color: #00bfff;
+      margin-right: 0.5rem;
+    }
+    footer.site-footer {
+      background: #161b22;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <a class="brand" href="../index.html">Kelvin<span class="accent">.</span></a>
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../skills.html">Skills</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../services.html">Services</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- ================= Main ================= -->
+  <main class="container">
+    <h1>Automating Network Tasks with Scripts</h1>
+    <p class="meta">Nov 2024 · 8 min read</p>
+    <img src="../assets/images/network.jpg" alt="Network Automation">
+
+    <p>Managing networks manually can be tedious, error-prone, and time-consuming. Automation allows network engineers to streamline repetitive tasks and focus on strategic improvements. This guide walks you through key automation strategies using scripts.</p>
+
+    <h2>1. Configuration Automation</h2>
+    <p>Deploy configuration changes consistently across multiple devices using Python, Bash, or PowerShell scripts. Automation reduces downtime and ensures network reliability.</p>
+
+    <h2>2. Monitoring & Alerts</h2>
+    <p>Automated monitoring scripts track device health, bandwidth usage, and connectivity. Instant alerts notify administrators when issues arise, allowing for rapid troubleshooting.</p>
+    <ul>
+      <li>Monitor server and switch performance</li>
+      <li>Detect outages in real time</li>
+      <li>Receive email or Slack alerts automatically</li>
+    </ul>
+
+    <h2>3. Backup & Recovery</h2>
+    <p>Regular automated backups of device configurations and logs ensure quick recovery from failures or misconfigurations. Scheduling these scripts reduces risk and improves continuity.</p>
+
+    <h2>4. Network Performance Analysis</h2>
+    <p>Analyze traffic patterns and bottlenecks using scripts. Automatically collecting metrics helps engineers optimize performance and plan capacity upgrades effectively.</p>
+
+    <h2>5. Security & Compliance</h2>
+    <p>Automate firewall rule checks, access policies, and compliance reports. Maintain high-security standards while reducing manual oversight.</p>
+
+    <p>By integrating automation scripts into your workflow, network teams can save time, reduce errors, and focus on innovation rather than repetitive tasks.</p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    &copy; 2025 Kelvin Mutwiri. All rights reserved.
+  </footer>
+</body>
+</html>

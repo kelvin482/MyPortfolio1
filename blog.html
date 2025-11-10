@@ -4,8 +4,101 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog — Kelvin Mutwiri</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* ================= Blog Section ================= */
+    .blog-list {
+      padding: 4rem 0;
+    }
+
+    .blog-list h1 {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-list p {
+      text-align: center;
+      color: #ccc;
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .post.card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .post.card img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .post.card h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post.card .meta {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+
+    .post.card p {
+      font-size: 0.95rem;
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    .post.card .read-more {
+      display: inline-block;
+      margin-top: 0.8rem;
+      text-decoration: none;
+      color: #00bfff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .post.card .read-more:hover {
+      color: #00e0ff;
+    }
+
+    /* Hover Effect on Card */
+    .post.card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .posts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- ================= Header ================= -->
@@ -14,12 +107,12 @@
       <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="blog.html" class="active">Blog</a>
         <a href="services.html">Services</a>
         <a href="contact.html" class="contact-cta">Contact</a>
+        <a href="about.html">About</a>
       </nav>
       <div class="nav-actions">
         <button id="themeToggle5" class="icon-btn" aria-label="Toggle theme">🌙</button>
@@ -33,23 +126,52 @@
     <section class="blog-list" data-reveal>
       <div class="container">
         <h1>Insights & Articles</h1>
-        <p>Long-form articles about UI/UX patterns, network reliability, and using AI to speed up development.</p>
+        <p>Explore detailed articles on AI, cybersecurity, networking innovations, and productivity — discover how technology is shaping the future and empowering professionals worldwide.</p>
 
         <div class="posts">
           <!-- Post 1 -->
           <article class="post card">
-            <h2>Designing for Performance — 5 practical tips</h2>
+            <h2>Designing for Performance — 5 Practical Tips</h2>
             <p class="meta">Jan 2025 · 10 min read</p>
-            <p>Performance is part of UX. Discuss critical rendering path, image optimization, and lazy loading techniques to improve web app performance.</p>
-            <a href="#" class="read-more btn ghost">Read more →</a>
+            <img src="assets/images/ui.jpg" alt="Web Performance Optimization">
+            <p>Performance is key to user experience. Learn practical strategies such as optimizing critical rendering paths, lazy-loading resources, and using caching/CDNs for lightning-fast web apps.</p>
+            <a href="blog/performance-tips.html" class="read-more btn ghost">Read more →</a>
           </article>
 
           <!-- Post 2 -->
           <article class="post card">
-            <h2>Automating network tasks with scripts</h2>
+            <h2>Automating Network Tasks with Scripts</h2>
             <p class="meta">Nov 2024 · 8 min read</p>
-            <p>Examples of scripts that saved hours of manual work, with code snippets and automation strategies for network management.</p>
-            <a href="#" class="read-more btn ghost">Read more →</a>
+            <img src="assets/images/networkin.jpg" alt="Network Automation">
+            <p>Manual network management can be tedious. Learn how Python, Bash, and PowerShell scripts automate tasks like configuration, monitoring, and troubleshooting.</p>
+            <a href="blog/network-automation.html" class="read-more btn ghost">Read more →</a>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="post card">
+            <h2>AI in Cybersecurity — Protecting the Future</h2>
+            <p class="meta">Oct 2024 · 12 min read</p>
+            <img src="assets/images/ai2.jpg" alt="AI Cybersecurity">
+            <p>Artificial intelligence is transforming cybersecurity. From anomaly detection to threat prediction, AI identifies malicious activity faster than traditional methods.</p>
+            <a href="blog/ai-cybersecurity.html" class="read-more btn ghost">Read more →</a>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="post card">
+            <h2>The Networking Revolution — Emerging Trends</h2>
+            <p class="meta">Sep 2024 · 9 min read</p>
+            <img src="assets/images/network2.jpg" alt="Networking Revolution">
+            <p>Networking is entering a new era with 5G/6G, AI-powered traffic management, and zero-trust security models. Explore future-proof strategies for enterprises.</p>
+            <a href="blog/network-revolution.html" class="read-more btn ghost">Read more →</a>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="post card">
+            <h2>AI Productivity Tools — Boost Your Workflow</h2>
+            <p class="meta">Aug 2024 · 7 min read</p>
+            <img src="assets/images/ai3.jpg.jpg" alt="AI Productivity Tools">
+            <p>Explore top AI tools for coding, content creation, task automation, and project management to increase productivity and focus on creative problem-solving.</p>
+            <a href="blog/ai-productivity.html" class="read-more btn ghost">Read more →</a>
           </article>
         </div>
       </div>
@@ -66,13 +188,13 @@
 
       <div>
         <h4>Contact</h4>
-            <ul class="socials">
-            <a href="kelvinkiambi35@gmai.com">Email</a>
-            <a href="www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
-            <a href="https://github.com/kelvin482">GitHub</a>
-            <a href="#">Twitter</a>
-            <a href="+254 074631030">Phone</a>
-          </u>
+        <ul class="socials">
+          <a href="mailto:kelvinkiambi35@gmai.com">Email</a>
+          <a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
+          <a href="https://github.com/kelvin482">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="tel:+25493610003">Phone</a>
+        </ul>
       </div>
 
       <div>

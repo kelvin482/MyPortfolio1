@@ -14,6 +14,9 @@
   <!-- Page-specific CSS -->
   <link rel="stylesheet" href="assets/css/index.css">
 
+  <!-- Project section CSS (from projects page) -->
+  <link rel="stylesheet" href="assets/css/project.css">
+
   <!-- Theme Color -->
   <meta name="theme-color" content="#0b1020">
 </head>
@@ -24,12 +27,12 @@
       <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
       <nav class="nav">
         <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="blog.html">Blog</a>
         <a href="services.html">Services</a>
         <a href="contact.html" class="contact-cta">Contact</a>
+        <a href="about.html">About</a>
       </nav>
       <div class="nav-actions">
         <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
@@ -43,12 +46,12 @@
     <button id="closeMobileNav" class="close-nav">×</button>
     <nav class="mobile-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="skills.html">Skills</a>
       <a href="blog.html">Blog</a>
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
+      <a href="about.html" class="active">About</a>
     </nav>
   </div>
 
@@ -57,7 +60,6 @@
     <!-- ===== Hero Section ===== -->
     <section id="hero" class="hero" data-reveal>
       <div class="container hero-grid">
-        <!-- Hero Text -->
         <div class="hero-text">
           <h1>AM Kelvin Mutwiri</h1>
           <p class="lead">Full-Stack Developer · UI/UX Designer · System & Network Admin · AI Enthusiast</p>
@@ -67,23 +69,20 @@
             Currently exploring AI-driven interfaces and network automation.
           </p>
 
-          <!-- Call-to-Actions -->
           <div class="hero-cta">
             <a class="btn primary" href="projects.html">See Projects</a>
             <a class="btn ghost" href="assets/resume.pdf" download>Download Resume</a>
           </div>
 
-          <!-- Social Links -->
           <ul class="socials">
             <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
             <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">LinkedIn</a></li>
             <li><a href="https://github.com/kelvin482" target="_blank">GitHub</a></li>
             <li><a href="https://twitter.com/kelvin_kiambi" target="_blank">Twitter</a></li>
-            <li><a href="https://wa.me/25474631030" target="_blank">WhatsApp</a></li>
+            <li><a href="https://wa.me/+254746310313" target="_blank">WhatsApp</a></li>
           </ul>
         </div>
 
-        <!-- Hero Card / Avatar -->
         <div class="hero-card" aria-hidden="false">
           <img src="assets/images/kelvin.jpg" alt="Kelvin Mutwiri" class="profile-img">
           <div class="card-stats">
@@ -102,25 +101,25 @@
         <div class="features">
           <div class="feature">
             <h3>Web Development</h3>
-            <p>Modern, responsive interfaces using HTML, CSS, JS and React. Backend APIs with Python & Django.</p>
+            <p>Modern, responsive interfaces using HTML, CSS, JS and React. Backend APIs with Python & Django. ✅</p>
           </div>
           <div class="feature">
             <h3>UI / UX Design</h3>
-            <p>Design systems, high-fidelity prototypes, and pixel-perfect handoffs that developers love.</p>
+            <p>Design systems, high-fidelity prototypes, and pixel-perfect handoffs that developers love. ✅</p>
           </div>
           <div class="feature">
             <h3>Systems & Networking</h3>
-            <p>Secure, reliable network setups and system administration for production environments.</p>
+            <p>Secure, reliable network setups and system administration for production environments. ✅</p>
           </div>
           <div class="feature">
             <h3>AI & Automation</h3>
-            <p>Exploring AI for developer productivity, chat assistants, and automation scripts.</p>
+            <p>Exploring AI for developer productivity, chat assistants, and automation scripts. ✅</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Projects Preview ===== -->
+    <!-- ===== Projects Preview (Home Page) ===== -->
     <section class="projects-preview" data-reveal>
       <div class="container">
         <div class="section-header">
@@ -157,7 +156,7 @@
           <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">LinkedIn</a></li>
           <li><a href="https://github.com/kelvin482" target="_blank">GitHub</a></li>
           <li><a href="https://twitter.com/kelvin_kiambi" target="_blank">Twitter</a></li>
-          <li><a href="https://wa.me/25474631030" target="_blank">WhatsApp</a></li>
+          <li><a href="https://wa.me/+25493610003" target="_blank">WhatsApp</a></li>
         </ul>
       </div>
       <div>
@@ -175,6 +174,14 @@
   <!-- ================= Scripts ================= -->
   <script src="assets/js/script.js"></script>
   <script src="assets/js/index.js"></script>
+
+  <!-- Projects data + render function -->
+  <script src="assets/js/projects-data.js"></script>
+  <script>
+    // Render projects in the home page dynamically
+    renderProjects("projectGrid", "all");
+  </script>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
