@@ -10,27 +10,110 @@
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/blog.css">
 
   <style>
+    /* ================= Theme Variables ================= */
+    :root {
+      --bg: #0f1217;
+      --panel: #161b22;
+      --text: #e0e0e0;
+      --muted: #888;
+      --accent: #00bfff;
+      --accent-hover: #00e0ff;
+      --radius: 12px;
+    }
+
+    body.light {
+      --bg: #f9f9f9;
+      --panel: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #0077cc;
+      --accent-hover: #005fa3;
+    }
+
+    body.dark {
+      --bg: #0f1217;
+      --panel: #161b22;
+      --text: #e0e0e0;
+      --muted: #888;
+      --accent: #00bfff;
+      --accent-hover: #00e0ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* ================= Header ================= */
+    .site-header {
+      background: var(--panel);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav.nav a {
+      margin-left: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav.nav a.active {
+      color: var(--accent);
+    }
+
+    .nav-actions button {
+      background: transparent;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: color 0.3s ease;
+    }
+
     /* ================= Blog Section ================= */
     .blog-list {
-      padding: 4rem 0;
+      padding: 4rem 1rem;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .blog-list h1 {
       text-align: center;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
     }
 
     .blog-list p {
       text-align: center;
-      color: #ccc;
-      font-size: 1rem;
       max-width: 700px;
-      margin: 0 auto 2rem auto;
+      margin: 0 auto 3rem auto;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .posts {
@@ -40,13 +123,13 @@
     }
 
     .post.card {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      color: var(--text);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      color: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
     }
 
     .post.card img {
@@ -59,48 +142,58 @@
       font-family: 'Poppins', sans-serif;
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
+      color: var(--accent);
     }
 
     .post.card .meta {
       font-size: 0.85rem;
-      color: #aaa;
+      color: var(--muted);
       margin-bottom: 0.5rem;
     }
 
     .post.card p {
       font-size: 0.95rem;
-      color: #ddd;
       line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 1rem;
     }
 
     .post.card .read-more {
       display: inline-block;
       margin-top: 0.8rem;
       text-decoration: none;
-      color: #00bfff;
+      color: var(--accent);
       font-weight: 600;
       transition: color 0.3s ease;
     }
 
     .post.card .read-more:hover {
-      color: #00e0ff;
+      color: var(--accent-hover);
     }
 
-    /* Hover Effect on Card */
     .post.card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
     }
 
-    /* Responsive */
     @media(max-width:768px){
       .posts {
         grid-template-columns: 1fr;
       }
     }
+
+    /* ================= Footer ================= */
+    footer.site-footer {
+      background: var(--panel);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
   </style>
 </head>
-<body>
+<body class="dark">
   <!-- ================= Header ================= -->
   <header class="site-header" data-reveal>
     <div class="container nav-grid">
@@ -169,7 +262,7 @@
           <article class="post card">
             <h2>AI Productivity Tools — Boost Your Workflow</h2>
             <p class="meta">Aug 2024 · 7 min read</p>
-            <img src="assets/images/ai3.jpg.jpg" alt="AI Productivity Tools">
+            <img src="assets/images/ai3.jpg" alt="AI Productivity Tools">
             <p>Explore top AI tools for coding, content creation, task automation, and project management to increase productivity and focus on creative problem-solving.</p>
             <a href="blog/ai-productivity.html" class="read-more btn ghost">Read more →</a>
           </article>
@@ -185,18 +278,16 @@
         <strong>Kelvin Mutwiri</strong>
         <p>Full‑Stack Developer & Designer</p>
       </div>
-
       <div>
         <h4>Contact</h4>
         <ul class="socials">
-          <a href="mailto:kelvinkiambi35@gmai.com">Email</a>
+          <a href="mailto:kelvinkiambi35@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
           <a href="https://github.com/kelvin482">GitHub</a>
           <a href="#">Twitter</a>
           <a href="tel:+25493610003">Phone</a>
         </ul>
       </div>
-
       <div>
         <h4>Site</h4>
         <a href="index.html">Home</a>
@@ -204,11 +295,25 @@
         <a href="skills.html">Skills</a>
       </div>
     </div>
-
     <div class="footer-bottom">
       &copy; 2025 Kelvin Mutwiri. All rights reserved.
     </div>
   </footer>
+
+  <!-- ================= Theme Toggle Script ================= -->
+  <script>
+    const themeToggle = document.getElementById("themeToggle5");
+
+    themeToggle.addEventListener("click", () => {
+      if(document.body.classList.contains("dark")){
+        document.body.classList.remove("dark");
+        document.body.classList.add("light");
+      } else {
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+      }
+    });
+  </script>
 
   <script src="assets/js/script.js"></script>
 </body>

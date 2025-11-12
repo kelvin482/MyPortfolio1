@@ -1,77 +1,70 @@
-// ================= Array of skills =================
-const skills = [
-  { title: "Frontend", description: "HTML, CSS, JavaScript, React", color: "rgba(255, 99, 132, 0.2)" },
-  { title: "Backend", description: "Python, Django, REST APIs", color: "rgba(54, 162, 235, 0.2)" },
-  { title: "DevOps & Networking", description: "Linux, Nginx, Docker", color: "rgba(255, 206, 86, 0.2)" },
-  { title: "UI/UX Design", description: "Figma, Prototyping, Design Systems", color: "rgba(75, 192, 192, 0.2)" },
-  { title: "AI & Automation", description: "Chatbots, Scripts, AI Tools", color: "rgba(153, 102, 255, 0.2)" },
-  { title: "Database", description: "PostgreSQL, MySQL, MongoDB", color: "rgba(255, 159, 64, 0.2)" },
-  { title: "Cloud", description: "AWS, Azure, Cloud Deployment", color: "rgba(0, 200, 200, 0.2)" },
-  { title: "Version Control", description: "Git, GitHub, GitLab", color: "rgba(200, 200, 0, 0.2)" }
-];
+// ===============================================
+// Skills Page JS — Dynamic Skill Cards with Harmonious Colors
+// ===============================================
 
-// ================= DOM Elements =================
-const wrapper = document.getElementById('skillsGrid');
-const leftBtn = document.querySelector('.left-btn');
-const rightBtn = document.querySelector('.right-btn');
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsGrid = document.getElementById("skillsGrid");
+  if (!skillsGrid) return;
 
-// ================= Render Skill Cards Dynamically =================
-function renderCards() {
-  wrapper.innerHTML = ''; // clear existing
-  skills.forEach(skill => {
-    const card = document.createElement('div');
-    card.className = 'glass-card';
-    card.style.background = skill.color; // assign color
-    card.innerHTML = `<h3>${skill.title}</h3><p>${skill.description}</p>`;
-    wrapper.appendChild(card);
+  const skills = [
+    { category: "AI & Automation", tools: "LangChain, OpenAI API, Hugging Face", lightColor: "#FF8A65", darkColor: "#FF7043" },
+    { category: "Databases", tools: "PostgreSQL, Supabase, SQLite", lightColor: "#4DB6AC", darkColor: "#26A69A" },
+    { category: "Cloud & Deployment", tools: "Render, Vercel, GitHub Pages", lightColor: "#FFD54F", darkColor: "#FFCA28" },
+    { category: "Version Control", tools: "Git, GitHub", lightColor: "#9575CD", darkColor: "#7E57C2" },
+    { category: "Project Tools", tools: "Trello, Notion, Figma", lightColor: "#FFB74D", darkColor: "#FFA726" },
+    { category: "Security", tools: "SSL, HTTPS, Firewalls", lightColor: "#4FC3F7", darkColor: "#29B6F6" },
+    { category: "Testing", tools: "Postman, Pytest, Debugging", lightColor: "#AED581", darkColor: "#9CCC65" },
+  ];
+
+  const isDarkMode = document.body.classList.contains("dark") || document.body.classList.contains("dark-mode");
+
+  skills.forEach((skill) => {
+    const card = document.createElement("div");
+    card.className = "skill-card";
+    card.innerHTML = `<h3>${skill.category}</h3><p>${skill.tools}</p>`;
+
+    // Apply theme-friendly color
+    card.style.backgroundColor = isDarkMode ? skill.darkColor : skill.lightColor;
+    card.style.color = isDarkMode ? "#fff" : "#111"; 
+    card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease";
+
+    // Hover effect
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "scale(1.05)";
+      card.style.boxShadow = isDarkMode
+        ? "0 10px 20px rgba(255,255,255,0.15)"
+        : "0 10px 20px rgba(0,0,0,0.2)";
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "scale(1)";
+      card.style.boxShadow = isDarkMode
+        ? "0 4px 10px rgba(255,255,255,0.1)"
+        : "0 4px 10px rgba(0,0,0,0.1)";
+    });
+
+    skillsGrid.appendChild(card);
   });
-}
 
-// ================= Fade-in Animation =================
-function animateFadeIn() {
-  const cards = document.querySelectorAll('.glass-card');
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add('fade-in');
-    }, index * 150); // stagger
+  // Horizontal Scroll Buttons
+  const leftBtn = document.querySelector(".left-btn");
+  const rightBtn = document.querySelector(".right-btn");
+
+  if (leftBtn && rightBtn) {
+    leftBtn.addEventListener("click", () => {
+      skillsGrid.scrollBy({ left: -250, behavior: "smooth" });
+    });
+    rightBtn.addEventListener("click", () => {
+      skillsGrid.scrollBy({ left: 250, behavior: "smooth" });
+    });
+  }
+
+  // Update colors dynamically on theme toggle
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle.addEventListener("click", () => {
+    const darkModeNow = document.body.classList.contains("light") ? false : true;
+    document.querySelectorAll(".skill-card").forEach((card, index) => {
+      card.style.backgroundColor = darkModeNow ? skills[index].darkColor : skills[index].lightColor;
+      card.style.color = darkModeNow ? "#fff" : "#111";
+    });
   });
-}
-
-// ================= Auto-slide =================
-let scrollAmount = 0;
-function autoSlide() {
-  const card = wrapper.querySelector('.glass-card');
-  if (!card) return;
-
-  const cardWidth = card.offsetWidth + 20; // include gap
-  setInterval(() => {
-    if (scrollAmount + wrapper.clientWidth >= wrapper.scrollWidth) {
-      scrollAmount = 0;
-    } else {
-      scrollAmount += cardWidth;
-    }
-    wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-  }, 3000);
-}
-
-// ================= Manual Scroll Buttons =================
-leftBtn.addEventListener('click', () => {
-  const card = wrapper.querySelector('.glass-card');
-  if (!card) return;
-  const cardWidth = card.offsetWidth + 20;
-  wrapper.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-});
-
-rightBtn.addEventListener('click', () => {
-  const card = wrapper.querySelector('.glass-card');
-  if (!card) return;
-  const cardWidth = card.offsetWidth + 20;
-  wrapper.scrollBy({ left: cardWidth, behavior: 'smooth' });
-});
-
-// ================= Initialize =================
-document.addEventListener('DOMContentLoaded', () => {
-  renderCards();
-  animateFadeIn();
-  autoSlide();
 });

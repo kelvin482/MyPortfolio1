@@ -12,6 +12,7 @@
       font-family: 'Inter', sans-serif;
       background: #0f1217;
       color: #e0e0e0;
+      line-height: 1.6;
     }
 
     header.site-header {
@@ -93,6 +94,11 @@
       margin-right: 0.5rem;
     }
 
+    .highlight {
+      color: #00bfff;
+      font-weight: 600;
+    }
+
     footer.site-footer {
       background: #161b22;
       padding: 2rem;
@@ -121,27 +127,51 @@
   <!-- ================= Main ================= -->
   <main class="container">
     <h1>Designing for Performance — 5 Practical Tips</h1>
-    <p class="meta">Jan 2025 · 10 min read</p>
-    <img src="../assets/images/ui.jpg" alt="Web Performance Optimization">
+    <p class="meta">Jan 2025 · 12 min read</p>
+   <img src="../assets/images/ui.jpg" alt="Web Performance Optimization"
+     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);">
 
-    <p>Website performance directly affects user experience and retention. Slow-loading pages frustrate users, reduce conversions, and negatively impact SEO. These practical tips help you optimize performance and deliver faster, smoother web experiences.</p>
 
-    <h2>1. Optimize Critical Rendering Path</h2>
-    <p>Minimize resources required to render the above-the-fold content. Prioritize essential CSS and JS, and defer or lazy-load non-critical assets.</p>
+    <p>Website performance directly affects <span class="highlight">user experience, engagement, and SEO rankings</span>. Slow-loading pages frustrate visitors, reduce conversions, and even impact your brand reputation. In this guide, we explore practical, actionable strategies to optimize web performance for both speed and user satisfaction.</p>
 
-    <h2>2. Use Lazy Loading</h2>
-    <p>Images and videos are often the heaviest elements. Lazy load media so they only appear when in the viewport, improving initial load time.</p>
+    <h2>1. Optimize the Critical Rendering Path</h2>
+    <p>The critical rendering path determines how quickly your page content appears. Prioritize essential CSS and JavaScript for above-the-fold content, and defer non-critical scripts. Techniques include:</p>
+    <ul>
+      <li>Inlining essential CSS for faster rendering</li>
+      <li>Deferring non-critical JavaScript until after page load</li>
+      <li>Minimizing render-blocking resources</li>
+    </ul>
+    <p>Focusing on this ensures users see meaningful content quickly, improving perceived performance.</p>
 
-    <h2>3. Compress & Optimize Images</h2>
-    <p>Large images slow down websites. Use modern formats like WebP or AVIF, compress assets, and serve responsive sizes to reduce bandwidth and speed up loading.</p>
+    <h2>2. Use Lazy Loading for Media</h2>
+    <p>Images and videos are often the heaviest assets. Lazy loading ensures media loads only when it enters the viewport, reducing initial load times. Modern HTML supports the <code>loading="lazy"</code> attribute for images and iframes, making implementation straightforward.</p>
 
-    <h2>4. Implement Caching & CDNs</h2>
-    <p>Cache static assets in the browser and serve content via CDNs to reduce latency. This improves global load times and reduces server load.</p>
+    <h2>3. Compress and Optimize Images</h2>
+    <p>Large image files significantly slow down your site. Optimize by:</p>
+    <ul>
+      <li>Using modern formats like WebP or AVIF for smaller sizes</li>
+      <li>Compressing images without sacrificing quality</li>
+      <li>Serving responsive images for different devices</li>
+    </ul>
+    <p>Smaller images mean faster downloads, lower bandwidth usage, and smoother browsing for users.</p>
 
-    <h2>5. Minify & Bundle Resources</h2>
-    <p>Minify CSS, JS, and HTML to remove unnecessary characters. Bundle small files into larger ones to reduce HTTP requests and ensure faster downloads.</p>
+    <h2>4. Implement Caching and Content Delivery Networks (CDNs)</h2>
+    <p>Caching stores static assets in the user’s browser, allowing repeat visits to load instantly. CDNs distribute content across multiple servers worldwide, reducing latency. Benefits include:</p>
+    <ul>
+      <li>Faster load times for users in different regions</li>
+      <li>Reduced server load and bandwidth consumption</li>
+      <li>Improved reliability during traffic spikes</li>
+    </ul>
 
-    <p>By applying these strategies, your web apps will load faster, deliver smoother experiences, and keep users engaged longer. Performance isn’t just technical—it’s essential UX.</p>
+    <h2>5. Minify, Bundle, and Optimize Resources</h2>
+    <p>Minifying CSS, JavaScript, and HTML removes unnecessary characters, reducing file sizes. Bundling small scripts into a single file reduces HTTP requests. Additional steps include:</p>
+    <ul>
+      <li>Using tree-shaking to remove unused code</li>
+      <li>Compressing files with gzip or Brotli for faster transfers</li>
+      <li>Loading fonts efficiently using font-display strategies</li>
+    </ul>
+
+    <p>By applying these strategies, your web apps will <span class="highlight">load faster, deliver smoother interactions, and increase user retention</span>. Remember, performance is not just technical—it’s an essential part of user experience and brand perception. Investing in optimization today pays off in happier users and better engagement tomorrow.</p>
   </main>
 
   <!-- ================= Footer ================= -->

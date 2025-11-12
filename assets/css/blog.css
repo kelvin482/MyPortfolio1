@@ -1,8 +1,40 @@
 /* ================= Blog Page Styling ================= */
+
+/* ---------- Theme Variables ---------- */
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #111;
+  --panel-light: #fff;
+  --panel-dark: #1e1e1e;
+  --text-light: #111;
+  --text-dark: #fff;
+  --muted-light: #555;
+  --muted-dark: #ccc;
+  --accent: #6c63ff;
+  --radius: 14px;
+}
+
+/* ---------- Theme Modes ---------- */
+body.light {
+  --bg: var(--bg-light);
+  --panel: var(--panel-light);
+  --text: var(--text-light);
+  --muted: var(--muted-light);
+}
+
+body.dark {
+  --bg: var(--bg-dark);
+  --panel: var(--panel-dark);
+  --text: var(--text-dark);
+  --muted: var(--muted-dark);
+}
+
+/* ---------- Blog Page Layout ---------- */
 .blog-list {
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .blog-list h1 {
@@ -14,15 +46,17 @@
   color: var(--text);
 }
 
-.blog-list p {
+.blog-list p.description {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 3rem auto;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
+/* ---------- Posts Grid ---------- */
 .posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -31,13 +65,14 @@
 
 .post.card {
   background: var(--panel);
-  border-radius: var(--radius, 14px);
+  border-radius: var(--radius);
   padding: 2rem 1.5rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: var(--text);
 }
 
 .post.card:hover {
@@ -51,12 +86,14 @@
   font-size: 1.5rem;
   margin-bottom: 0.6rem;
   color: var(--accent);
+  transition: color 0.3s ease;
 }
 
 .post .meta {
   font-size: 0.85rem;
   color: var(--muted);
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .post p {
@@ -64,6 +101,7 @@
   color: var(--text);
   line-height: 1.7;
   margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
 }
 
 .read-more {
@@ -72,6 +110,9 @@
   font-size: 0.9rem;
   border-radius: 10px;
   transition: all 0.3s ease;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--accent);
 }
 
 .read-more:hover {

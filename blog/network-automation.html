@@ -80,6 +80,13 @@
       color: #00bfff;
       margin-right: 0.5rem;
     }
+    ol {
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    ol li {
+      margin-bottom: 0.8rem;
+    }
     footer.site-footer {
       background: #161b22;
       padding: 2rem;
@@ -87,6 +94,10 @@
       margin-top: 3rem;
       color: #888;
       font-size: 0.9rem;
+    }
+    .highlight {
+      color: #00bfff;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -108,32 +119,64 @@
   <!-- ================= Main ================= -->
   <main class="container">
     <h1>Automating Network Tasks with Scripts</h1>
-    <p class="meta">Nov 2024 · 8 min read</p>
-    <img src="../assets/images/network.jpg" alt="Network Automation">
+    <p class="meta">Nov 2024 · 10 min read</p>
+    <img src="../assets/images/network.jpg" alt="Network Automation"
+     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);">
 
-    <p>Managing networks manually can be tedious, error-prone, and time-consuming. Automation allows network engineers to streamline repetitive tasks and focus on strategic improvements. This guide walks you through key automation strategies using scripts.</p>
+    
+
+    <p>Managing networks manually can be <span class="highlight">time-consuming and error-prone</span>. Automation allows engineers to streamline repetitive tasks, improve accuracy, and focus on strategic improvements. In this article, we explore practical ways to automate network operations using scripts, examples, and best practices.</p>
 
     <h2>1. Configuration Automation</h2>
-    <p>Deploy configuration changes consistently across multiple devices using Python, Bash, or PowerShell scripts. Automation reduces downtime and ensures network reliability.</p>
+    <p>Deploying configuration changes manually across multiple devices can lead to inconsistencies and downtime. Using <span class="highlight">Python, Bash, or PowerShell scripts</span>, network engineers can:</p>
+    <ul>
+      <li>Push configuration updates to all switches and routers simultaneously</li>
+      <li>Ensure backup configurations are automatically stored before changes</li>
+      <li>Reduce human errors and maintain network stability</li>
+    </ul>
 
     <h2>2. Monitoring & Alerts</h2>
-    <p>Automated monitoring scripts track device health, bandwidth usage, and connectivity. Instant alerts notify administrators when issues arise, allowing for rapid troubleshooting.</p>
+    <p>Keeping an eye on every network device 24/7 is challenging. Automated monitoring scripts track device health, bandwidth, and connectivity. Benefits include:</p>
     <ul>
-      <li>Monitor server and switch performance</li>
-      <li>Detect outages in real time</li>
-      <li>Receive email or Slack alerts automatically</li>
+      <li>Real-time performance tracking of servers, routers, and switches</li>
+      <li>Instant notifications for outages, packet loss, or latency spikes</li>
+      <li>Integration with Slack, Teams, or email for automatic alerts</li>
     </ul>
 
     <h2>3. Backup & Recovery</h2>
-    <p>Regular automated backups of device configurations and logs ensure quick recovery from failures or misconfigurations. Scheduling these scripts reduces risk and improves continuity.</p>
+    <p>Regular automated backups are critical to recover quickly from failures. Scripts can:</p>
+    <ul>
+      <li>Save device configurations at scheduled intervals</li>
+      <li>Archive logs for compliance and troubleshooting</li>
+      <li>Restore configurations quickly after misconfigurations or hardware replacements</li>
+    </ul>
 
     <h2>4. Network Performance Analysis</h2>
-    <p>Analyze traffic patterns and bottlenecks using scripts. Automatically collecting metrics helps engineers optimize performance and plan capacity upgrades effectively.</p>
+    <p>Understanding traffic patterns and identifying bottlenecks is easier with automation. Scripts can:</p>
+    <ul>
+      <li>Collect and visualize metrics like bandwidth usage and latency</li>
+      <li>Detect anomalies such as sudden traffic spikes or unusual patterns</li>
+      <li>Provide insights for capacity planning and network optimization</li>
+    </ul>
 
     <h2>5. Security & Compliance</h2>
-    <p>Automate firewall rule checks, access policies, and compliance reports. Maintain high-security standards while reducing manual oversight.</p>
+    <p>Automation helps maintain <span class="highlight">strong security standards</span>. Scripts can:</p>
+    <ul>
+      <li>Check firewall rules and access control policies regularly</li>
+      <li>Generate compliance reports automatically</li>
+      <li>Detect suspicious activity faster than manual checks</li>
+    </ul>
 
-    <p>By integrating automation scripts into your workflow, network teams can save time, reduce errors, and focus on innovation rather than repetitive tasks.</p>
+    <h2>6. Practical Tips for Network Automation</h2>
+    <ol>
+      <li>Start small: automate one task at a time and scale gradually.</li>
+      <li>Test scripts in a lab environment before production deployment.</li>
+      <li>Document scripts and workflows for team collaboration.</li>
+      <li>Use version control like Git for tracking changes and updates.</li>
+      <li>Monitor automated tasks and refine them regularly for efficiency.</li>
+    </ol>
+
+    <p>By integrating automation scripts into daily workflows, network teams can <span class="highlight">save time, reduce errors, and improve overall network performance</span>. Automation not only handles repetitive tasks but also provides the insights necessary for proactive network management and innovation.</p>
   </main>
 
   <!-- ================= Footer ================= -->
