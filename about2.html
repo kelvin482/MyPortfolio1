@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kelvin Mutwiri — Full-Stack Developer & Designer</title>
-
-  <!-- Google Fonts -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Kelvin Mutwiri</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Page-specific CSS -->
-  <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/about.css">
-
-  <!-- Project section CSS (from projects page) -->
-  <link rel="stylesheet" href="assets/css/project.css">
-
-  <!-- Theme Color -->
-  <meta name="theme-color" content="#0b1020">
 </head>
 <body>
   <!-- ================= Header / Navigation ================= -->
@@ -27,16 +14,10 @@
     <div class="container nav-grid">
       <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
       <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html" class="contact-cta">Contact</a>
-        <!-- <a href="about.html">About</a> -->
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
-        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+        <button id="themeToggle2" class="icon-btn" aria-label="Toggle theme">🌙</button>
+        <button id="menuBtn2" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
       </div>
     </div>
   </header>
@@ -49,42 +30,15 @@
       <a href="projects.html">Projects</a>
       <a href="skills.html">Skills</a>
       <a href="blog.html">Blog</a>
+      <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
-
+      <a href="about.html" class="active">About</a>
     </nav>
   </div>
 
-  <!-- ================= Main Content ================= -->
+  <!-- ================= Main ================= -->
   <main>
-    <!-- ===== Hero Section ===== -->
-    <section id="hero" class="hero" data-reveal>
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Hello, I'm</p>
-          <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin: 0.5rem 0;">Kelvin<span style="color: var(--accent);"> Mutwiri</span></h1>
-          <p class="lead" style="font-size: 1.25rem; margin-top: 1rem;">Systems & Network Administrator | Full-Stack Developer | AI & Automation Enthusiast</p>
-          <p class="bio" style="margin-top: 1.5rem; max-width: 600px;">
-            I write code that works, design interfaces people actually want to use, and keep systems running smoothly. 
-            Currently tinkering with AI tools and automating the boring stuff so I can focus on building things that matter.
-          </p>
-
-          <div class="hero-cta">
-
-          </div>
-
-        </div>
-
-        <div class="hero-card" aria-hidden="false">
-          <div class="hero-image-wrapper">
-            <img src="assets/images/me12.png" alt="Kelvin Mutwiri" class="profile-img">
-          </div>
-          <div class="card-stats">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== About Section (Interactive) ===== -->
+    <!-- Interactive About Section -->
     <section class="section-container about-interactive" data-reveal>
       <div class="container about-container">
         <!-- Left Column: Control Buttons -->
@@ -103,7 +57,7 @@
           </button>
           <button class="about-btn" data-section="philosophy" aria-label="Show philosophy">
             <span class="btn-indicator"></span>
-            <span class="btn-text">Motivation</span>
+            <span class="btn-text">Philosophy</span>
           </button>
           <button class="about-btn" data-section="certifications" aria-label="Show certifications">
             <span class="btn-indicator"></span>
@@ -119,13 +73,18 @@
               <img class="avatar-inline" src="assets/images/me.jpg" alt="Kelvin Mutwiri">
               <div>
                 <h1>About Me</h1>
+                <p class="lead">I'm Kelvin</p>
               </div>
             </div>
+            <p class="intro-text">I build web applications, design interfaces, and keep systems running. Started with curiosity about how things work, now I'm the one making them work.</p>
+            
             <div class="key-highlights">
+              <h3>What I Do</h3>
               <ul class="highlight-list">
-                  I build solutions that work, design interfaces people genuinely enjoy, and maintain systems that run seamlessly. Passionate about technology, I specialize in creating scalable web applications, optimizing digital infrastructures, and integrating AI to automate repetitive tasks—so I can focus on building things that truly matter. With a strong background in network administration, system installation, and cloud infrastructure, I bridge networking, automation, and web technologies to ensure systems are secure, reliable, and high-performing.
-
-Driven by curiosity and innovation, I constantly explore how AI and automation can enhance IT operations, improve performance, and deliver smarter, more responsive digital experiences. I’m motivated by constructing dependable networks, designing intuitive applications, enhancing efficiency with AI, and sharing knowledge to inspire growth and development in the tech community.
+                <li>Full-stack web development with React & Django</li>
+                <li>UI/UX design and interface development</li>
+                <li>Systems administration and infrastructure automation</li>
+                <li>Building solutions that actually work</li>
               </ul>
             </div>
 
@@ -207,53 +166,6 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
         </div>
       </div>
     </section>
-
-    <!-- ===== What I Do / Features ===== -->
-    <section class="intro" data-reveal>
-      <div class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem;">What I Do</h2>
-        <div class="features">
-          <div class="feature">
-            <h3>Web Development</h3>
-            <p>Building responsive apps with React, Python, and Django. I care about performance and writing code that doesn't break.</p>
-          </div>
-          <div class="feature">
-            <h3>UI / UX Design</h3>
-            <p>Creating interfaces that make sense. From wireframes to polished designs, I focus on what users actually need.</p>
-          </div>
-          <div class="feature">
-            <h3>Systems & Networking</h3>
-            <p>Setting up and maintaining infrastructure that stays up. Linux, Docker, networking — the stuff that keeps things running.</p>
-          </div>
-          <div class="feature">
-            <h3>AI & Automation</h3>
-            <p>Experimenting with AI tools to speed up workflows. Building assistants and scripts that save time.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Projects Preview (Home Page) ===== -->
-    <section class="projects-preview" data-reveal>
-      <div class="container">
-        <div class="section-header">
-          <h2>Highlighted Projects</h2>
-          <a href="projects.html">View all projects →</a>
-        </div>
-        <div class="project-grid" id="projectGrid">
-          <!-- Project cards will be dynamically added via JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Call to Action ===== -->
-    <section class="cta" data-reveal>
-      <div class="container">
-        <h2>Let's Work Together</h2>
-        <p style="max-width: 600px; margin: 1rem auto;">Got a project in mind? I'm open to freelance work and interesting collaborations. Drop me a line and we'll figure it out.</p>
-        <a class="btn primary" href="contact.html">Contact Me</a>
-      </div>
-    </section>
   </main>
 
   <!-- ================= Footer ================= -->
@@ -261,8 +173,9 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
     <div class="container footer-grid">
       <div>
         <strong>Kelvin Mutwiri</strong>
-        <p>Building things that work, look good, and don't break.</p>
+        <p>Full‑Stack Developer & Designer</p>
       </div>
+
       <div>
         <h4>Contact</h4>
         <ul class="socials">
@@ -270,17 +183,19 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
           <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/kelvin482" target="_blank" rel="noopener">GitHub</a></li>
           <li><a href="https://twitter.com/kelvin_kiambi" target="_blank" rel="noopener">Twitter</a></li>
-          <li><a href="https://wa.me/+25493610003" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="tel:+254746310313">Phone</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Site</h4>
         <a href="index.html">Home</a>
-        <!-- <a href="about.html">About</a> -->
         <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
       </div>
     </div>
-    <div class="copyright" style="text-align:center; margin-top:1rem; font-size:0.9rem; color:#888;">
+
+    <div class="copyright">
       © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
     </div>
   </footer>
@@ -292,17 +207,9 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/navigation.js"></script>
   <script src="assets/js/animations.js"></script>
-  <script src="assets/js/scroll-progress.js"></script>
-  <script src="assets/js/navigation-dots.js"></script>
-  <script src="assets/js/command-palette.js"></script>
-  <script src="assets/js/interactive-elements.js"></script>
-  <script src="assets/js/horizontal-scroll.js"></script>
-  <script src="assets/js/scroll-styles.js"></script>
-  <!-- Projects data and rendering -->
-  <script src="assets/js/projects-data.js"></script>
-  <!-- Page-specific scripts -->
+  <!-- Page-specific -->
   <script src="assets/js/about.js"></script>
+  <!-- Main script -->
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/index.js"></script>
 </body>
 </html>

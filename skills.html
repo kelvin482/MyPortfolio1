@@ -5,22 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skills — Kelvin Mutwiri</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts - Monospace for terminal feel -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/skills.css">
 
-  <style>
-    /* Center the copyright */
-    .site-footer .copyright {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-muted, #888);
-    }
-  </style>
 </head>
 <body>
   <!-- ================= Header / Navigation ================= -->
@@ -33,15 +24,11 @@
         <a href="projects.html">Projects</a>
         <a href="skills.html" class="active">Skills</a>
         <a href="blog.html">Blog</a>
-        <a href="services.html">Services</a>
         <a href="contact.html" class="contact-cta">Contact</a>
-         <a href="about.html">About</a>
       </nav>
 
       <div class="nav-actions">
-        <!-- Dark/Light Toggle -->
         <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
-        <!-- Menu Button for Mobile -->
         <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
       </div>
     </div>
@@ -53,57 +40,98 @@
     <nav class="mobile-links">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
+      <a href="skills.html" class="active">Skills</a>
       <a href="blog.html">Blog</a>
-      <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
-       <a href="about.html" class="active">About</a>
+      <!-- <a href="about.html">About</a> -->
     </nav>
   </div>
 
   <!-- ================= Main Content ================= -->
   <main>
-    <section class="skills-section" data-reveal>
+    <!-- Terminal Container -->
+    <section class="terminal-section" data-reveal>
       <div class="container">
-        <h1>Core Skills</h1>
+        <!-- Terminal Window -->
+        <div class="terminal-window">
+          <!-- Terminal Header with Window Controls -->
+          <div class="terminal-header">
+            <div class="window-controls">
+              <span class="control-dot control-close"></span>
+              <span class="control-dot control-minimize"></span>
+              <span class="control-dot control-maximize"></span>
+            </div>
+            <div class="terminal-title">
+              <span class="terminal-icon">💻</span>
+              <span>skills.terminal</span>
+            </div>
+            <div class="terminal-actions">
+              <button class="terminal-btn" aria-label="Clear terminal">Clear</button>
+            </div>
+          </div>
 
-        <!-- Skills Grid -->
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Frontend</h3>
-            <p>HTML, CSS, JavaScript, React</p>
-          </div>
-          <div class="skill-card">
-            <h3>Backend</h3>
-            <p>Python, Django, REST APIs</p>
-          </div>
-          <div class="skill-card">
-            <h3>DevOps & Networking</h3>
-            <p>Linux, Nginx, Docker, Network Design</p>
-          </div>
-          <div class="skill-card">
-            <h3>Design</h3>
-            <p>UI/UX, Figma, Prototyping</p>
+          <!-- Terminal Body -->
+          <div class="terminal-body" id="terminalBody">
+            <!-- Initial Terminal Output -->
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command">cat skills.txt</span>
+            </div>
+
+            <div class="terminal-output">
+              <div class="terminal-text">Loading skills database...</div>
+            </div>
+
+            <!-- Skills will be dynamically added here -->
+            <div id="skillsTerminalContent"></div>
+
+            <!-- Active Prompt with Blinking Cursor -->
+            <div class="terminal-line terminal-active" id="terminalInputLine">
+              <span class="terminal-prompt">$</span>
+              <input 
+                type="text" 
+                class="terminal-input" 
+                id="terminalInput"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Type a command (try: help, list, search [skill])"
+                aria-label="Terminal command input"
+              />
+              <span class="terminal-cursor" id="terminalCursor">█</span>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Skills Grid -->
-<div class="skills-wrapper">
-  <button class="scroll-btn left-btn">‹</button>
-  <div class="skills-grid" id="skillsGrid">
-    <!-- Skill cards will be added dynamically via JS -->
-  </div>
-  <button class="scroll-btn right-btn">›</button>
-</div>
+  
 
-
-        <!-- Longread Section -->
-        <section class="longread" data-reveal>
-          <h2>Why these skills?</h2>
-          <p>
-            Each skill helps me deliver complete solutions — from building responsive frontends, implementing robust backends, managing infrastructure, to designing intuitive user experiences. Real projects combine these skills to create meaningful products.
-          </p>
-        </section>
+    <!-- Why Choose Me Section -->
+    <section class="why-choose" data-reveal>
+      <div class="container">
+        <h1 class="section-title">Why Work With Me</h1>
+        <div class="why-grid">
+          <div class="why-card">
+            <h4>I Get Things Done</h4>
+            <p>I ship working code, not promises. Projects get finished on time, and they actually work.</p>
+          </div>
+          <div class="why-card">
+            <h4>Straightforward Communication</h4>
+            <p>No jargon, no fluff. I'll tell you what's happening, what's possible, and what's not.</p>
+          </div>
+          <div class="why-card">
+            <h4>Practical Solutions</h4>
+            <p>I build what you need, not what's trendy. Simple, maintainable, and actually useful.</p>
+          </div>
+          <div class="why-card">
+            <h4>I Care About Quality</h4>
+            <p>Code that's readable, tested, and won't break in six months. That's the standard.</p>
+          </div>
+          <div class="why-card">
+            <h4>Fair Pricing</h4>
+            <p>You get what you pay for, and I make sure it's worth it. No surprises, no hidden costs.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -113,24 +141,22 @@
     <div class="container footer-grid">
       <div>
         <strong>Kelvin Mutwiri</strong>
-        <p>Full‑Stack Developer & Designer — building delightful web experiences.</p>
+        <p>Building things that work, look good, and don't break.</p>
       </div>
       <div>
         <h4>Contact</h4>
-                 <ul class="socials">
-  <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
-  <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">LinkedIn</a></li>
-  <li><a href="https://github.com/kelvin482" target="_blank">GitHub</a></li>
-  <li><a href="#" target="_blank">Twitter</a></li>
-  <li><a href="tel:+25493610003">Phone</a></li>
-</ul>
-
-          </u>
+        <ul class="socials">
+          <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/kelvin482" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://twitter.com/kelvin_kiambi" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="tel:+254746310313">Phone</a></li>
+        </ul>
       </div>
       <div>
         <h4>Site</h4>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <!-- <a href="about.html">About</a> -->
         <a href="projects.html">Projects</a>
       </div>
     </div>
@@ -140,18 +166,11 @@
   </footer>
 
   <!-- ================= Scripts ================= -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/skills.js"></script>
-  <script>
-    // Dark/Light Mode Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light');
-      themeToggle.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
-    });
-
-    // Set current year dynamically
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="assets/js/skills-terminal.js"></script>
 </body>
 </html>

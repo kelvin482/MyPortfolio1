@@ -12,189 +12,9 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/blog.css">
 
-  <style>
-    /* ================= Theme Variables ================= */
-    :root {
-      --bg: #0f1217;
-      --panel: #161b22;
-      --text: #e0e0e0;
-      --muted: #888;
-      --accent: #00bfff;
-      --accent-hover: #00e0ff;
-      --radius: 12px;
-    }
-
-    body.light {
-      --bg: #f9f9f9;
-      --panel: #ffffff;
-      --text: #1a1a1a;
-      --muted: #555;
-      --accent: #0077cc;
-      --accent-hover: #005fa3;
-    }
-
-    body.dark {
-      --bg: #0f1217;
-      --panel: #161b22;
-      --text: #e0e0e0;
-      --muted: #888;
-      --accent: #00bfff;
-      --accent-hover: #00e0ff;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    /* ================= Header ================= */
-    .site-header {
-      background: var(--panel);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s ease;
-    }
-
-    .brand {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav.nav a {
-      margin-left: 1.5rem;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav.nav a.active {
-      color: var(--accent);
-    }
-
-    .nav-actions button {
-      background: transparent;
-      border: none;
-      font-size: 1.3rem;
-      cursor: pointer;
-      color: var(--text);
-      transition: color 0.3s ease;
-    }
-
-    /* ================= Blog Section ================= */
-    .blog-list {
-      padding: 4rem 1rem;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .blog-list h1 {
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 2.5rem;
-      margin-bottom: 0.6rem;
-      color: var(--text);
-    }
-
-    .blog-list p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem auto;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .posts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .post.card {
-      background: var(--panel);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      color: var(--text);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
-    }
-
-    .post.card img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 0.5rem 0 1rem 0;
-    }
-
-    .post.card h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent);
-    }
-
-    .post.card .meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .post.card p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    .post.card .read-more {
-      display: inline-block;
-      margin-top: 0.8rem;
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .post.card .read-more:hover {
-      color: var(--accent-hover);
-    }
-
-    .post.card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
-    }
-
-    @media(max-width:768px){
-      .posts {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ================= Footer ================= */
-    footer.site-footer {
-      background: var(--panel);
-      padding: 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-  </style>
 </head>
-<body class="dark">
-  <!-- ================= Header ================= -->
+<body>
+  <!-- ================= Header / Navigation ================= -->
   <header class="site-header" data-reveal>
     <div class="container nav-grid">
       <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
@@ -203,9 +23,8 @@
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="blog.html" class="active">Blog</a>
-        <a href="services.html">Services</a>
         <a href="contact.html" class="contact-cta">Contact</a>
-        <a href="about.html">About</a>
+        <!-- <a href="about.html">About</a> -->
       </nav>
       <div class="nav-actions">
         <button id="themeToggle5" class="icon-btn" aria-label="Toggle theme">🌙</button>
@@ -214,12 +33,24 @@
     </div>
   </header>
 
+  <!-- ================= Mobile Navigation ================= -->
+  <div id="mobileNav" class="mobile-nav">
+    <button id="closeMobileNav" class="close-nav">×</button>
+    <nav class="mobile-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
   <!-- ================= Main ================= -->
   <main>
     <section class="blog-list" data-reveal>
       <div class="container">
         <h1>Insights & Articles</h1>
-        <p>Explore detailed articles on AI, cybersecurity, networking innovations, and productivity — discover how technology is shaping the future and empowering professionals worldwide.</p>
+        <p class="description">Explore detailed articles on AI, cybersecurity, networking innovations, and productivity — discover how technology is shaping the future and empowering professionals worldwide.</p>
 
         <div class="posts">
           <!-- Post 1 -->
@@ -262,7 +93,7 @@
           <article class="post card">
             <h2>AI Productivity Tools — Boost Your Workflow</h2>
             <p class="meta">Aug 2024 · 7 min read</p>
-            <img src="assets/images/ai3.jpg" alt="AI Productivity Tools">
+            <img src="assets/images/ai3.jpg.jpg" alt="AI Productivity Tools">
             <p>Explore top AI tools for coding, content creation, task automation, and project management to increase productivity and focus on creative problem-solving.</p>
             <a href="blog/ai-productivity.html" class="read-more btn ghost">Read more →</a>
           </article>
@@ -281,11 +112,11 @@
       <div>
         <h4>Contact</h4>
         <ul class="socials">
-          <a href="mailto:kelvinkiambi35@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
-          <a href="https://github.com/kelvin482">GitHub</a>
-          <a href="#">Twitter</a>
-          <a href="tel:+25493610003">Phone</a>
+          <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/kelvin482" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://twitter.com/kelvin_kiambi" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="tel:+254746310313">Phone</a></li>
         </ul>
       </div>
       <div>
@@ -295,26 +126,19 @@
         <a href="skills.html">Skills</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 Kelvin Mutwiri. All rights reserved.
+    <div class="copyright">
+      © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
     </div>
   </footer>
 
-  <!-- ================= Theme Toggle Script ================= -->
-  <script>
-    const themeToggle = document.getElementById("themeToggle5");
-
-    themeToggle.addEventListener("click", () => {
-      if(document.body.classList.contains("dark")){
-        document.body.classList.remove("dark");
-        document.body.classList.add("light");
-      } else {
-        document.body.classList.remove("light");
-        document.body.classList.add("dark");
-      }
-    });
-  </script>
-
+  <!-- ================= Scripts ================= -->
+  <!-- Configuration must load first -->
+  <script src="assets/js/config.js"></script>
+  <!-- Core modules -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <!-- Main script -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>

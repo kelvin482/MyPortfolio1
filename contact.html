@@ -7,208 +7,151 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0f1217;
-      color: #e0e0e0;
-    }
-    .site-header {
-      background: #161b22;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: #00bfff;
-      text-decoration: none;
-    }
-    nav.nav a {
-      margin-left: 1.5rem;
-      color: #cbd5e0;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav.nav a.active {
-      color: #00bfff;
-    }
-    main {
-      padding: 3rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .contact-left, .contact-right {
-      background: #161b22;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-    }
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      color: #00bfff;
-      margin-bottom: 1rem;
-    }
-    .lead {
-      color: #cbd5e0;
-      margin-bottom: 1.5rem;
-    }
-    label {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.6rem 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #333;
-      border-radius: 8px;
-      background: #0f1217;
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-    }
-    button.btn {
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-right: 1rem;
-    }
-    .btn.primary {
-      background: #00bfff;
-      color: #0f1217;
-    }
-    .btn.ghost {
-      background: transparent;
-      color: #00bfff;
-      border: 1px solid #00bfff;
-    }
-    .form-status {
-      margin-top: 0.5rem;
-      font-weight: 600;
-      color: #ff6b6b;
-    }
-    footer.site-footer {
-      background: #161b22;
-      padding: 2rem;
-      text-align: center;
-      color: #888;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
-    <nav class="nav">
+  <!-- ================= Header / Navigation ================= -->
+  <header class="site-header" data-reveal>
+    <div class="container nav-grid">
+      <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="active contact-cta">Contact</a>
+        <!-- <a href="about.html">About</a> -->
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle4" class="icon-btn" aria-label="Toggle theme">🌙</button>
+        <button id="menuBtn4" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Mobile Navigation ================= -->
+  <div id="mobileNav" class="mobile-nav">
+    <button id="closeMobileNav" class="close-nav">×</button>
+    <nav class="mobile-links">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="skills.html">Skills</a>
       <a href="blog.html">Blog</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" class="active contact-cta">Contact</a>
-      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+
     </nav>
-  </header>
+  </div>
 
+  <!-- ================= Main Content ================= -->
   <main>
-    <div class="contact-left">
-      <h1>Get in touch</h1>
-      <p class="lead">Have a project or just want to say hi? Send a message and I'll get back to you.</p>
+<section class="contact-section" data-reveal>
 
-      <div class="contact-info">
-        <p><strong>Email</strong><br><a href="mailto:kelvinkiambi35@gmail.com">kelvinkiambi35@gmail.com</a></p>
-        <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank">linkedin.com/in/kelvin-kiambi</a></p>
-        <p><strong>GitHub</strong><br><a href="https://github.com/kelvin482" target="_blank">github.com/kelvin482</a></p>
-        <p><strong>Phone</strong><br><a href="tel:+254746310313">+254 746 310 313</a></p>
+
+<section class="contact-section" data-reveal>
+  <div class="container contact-grid">
+    <div class="contact-left">
+      <!-- Centered heading with Email title color -->
+      <h1 class="cmd-prompt" 
+          style="font-size: clamp(2.5rem, 6vw, 3.5rem); margin-bottom: 1.5rem; 
+                 color: #0ff; font-family: 'Poppins', sans-serif; font-weight: 700; text-align: center;">
+        Get in Touch
+      </h1>
+
+      <!-- Left-aligned intro text, arranged in two lines, no cursor -->
+      <p class="contact-lead-typing" 
+         style="font-size: clamp(1rem, 2.2vw, 1.2rem); margin-bottom: 2rem; min-height: 2.8em; 
+                color: #0f0; font-family: 'Courier New', monospace; font-weight: 600; 
+                overflow: hidden; white-space: pre-wrap; border-right: none; animation: none; text-align: left;">
+        Have an idea, a project, or a collaboration in mind?<br>
+        I’m always open to code, build, and discuss new possibilities.
+      </p>
+
+      <!-- Contact links -->
+      <div class="contact-info" style="font-family: 'Courier New', monospace; color: #0f0;">
+        <p><strong style="color: #0ff;">Email</strong><br>
+          <a href="mailto:kelvinkiambi35@gmail.com" style="color: rgb(11, 243, 54); text-decoration: none;">kelvinkiambi35@gmail.com</a>
+        </p>
+        <p><strong style="color: #0ff;">LinkedIn</strong><br>
+          <a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank" rel="noopener" 
+             style="color: rgb(15, 240, 45); text-decoration: none;">linkedin.com/in/kelvin-kiambi</a>
+        </p>
+        <p><strong style="color: #0ff;">GitHub</strong><br>
+          <a href="https://github.com/kelvin482" target="_blank" rel="noopener" 
+             style="color: rgb(13, 220, 27); text-decoration: none;">github.com/kelvin482</a>
+        </p>
+        <p><strong style="color: #0ff;">Phone</strong><br>
+          <a href="tel:+254746310313" style="color: rgb(10, 228, 54); text-decoration: none;">+254 746 310 313</a>
+        </p>
       </div>
     </div>
 
-    <div class="contact-right">
-      <form id="contactForm" action="https://formspree.io/f/mdkyoqyg" method="POST">
-        <label for="name">Your name</label>
-        <input id="name" name="name" type="text" required>
+    
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
+        <div class="contact-right">
+          <form id="contactForm" action="https://formspree.io/f/mdkyoqyg" method="POST">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
 
-        <div class="form-actions">
-          <button type="submit" class="btn primary">Send Message</button>
-          <button type="button" id="saveDraft" class="btn ghost">Save Draft</button>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Send Message</button>
+              <button type="button" id="saveDraft" class="btn ghost">Save Draft</button>
+            </div>
+
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+          </form>
         </div>
-
-        <p id="formStatus" class="form-status" aria-live="polite"></p>
-      </form>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    &copy; 2025 Kelvin Mutwiri. All rights reserved.
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer" data-reveal>
+    <div class="container footer-grid">
+      <div>
+        <strong>Kelvin Mutwiri</strong>
+        <p>Building things that work, look good, and don't break.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="socials">
+          <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/kelvin482" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://twitter.com/kelvin_kiambi" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="tel:+254746310313">Phone</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <!-- <a href="about.html">About</a> -->
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
+    </div>
   </footer>
 
-  <script>
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("formStatus");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: data,
-          headers: { "Accept": "application/json" }
-        });
-
-        if (response.ok) {
-          status.style.color = "#00ff7f";
-          status.textContent = "Message sent successfully ✅";
-          form.reset();
-        } else {
-          const result = await response.json();
-          status.style.color = "#ff6b6b";
-          status.textContent = result.error || "Something went wrong. Try again ❌";
-        }
-      } catch (err) {
-        status.style.color = "#ff6b6b";
-        status.textContent = "Something went wrong. Try again ❌";
-      }
-    });
-
-    // Optional: Save Draft button
-    const saveDraftBtn = document.getElementById("saveDraft");
-    saveDraftBtn.addEventListener("click", () => {
-      localStorage.setItem("contactFormDraft", JSON.stringify({
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-      }));
-      alert("Draft saved locally!");
-    });
-
-    // Load draft if exists
-    window.addEventListener("load", () => {
-      const draft = JSON.parse(localStorage.getItem("contactFormDraft"));
-      if (draft) {
-        form.name.value = draft.name || "";
-        form.email.value = draft.email || "";
-        form.message.value = draft.message || "";
-      }
-    });
-  </script>
+  <!-- ================= Scripts ================= -->
+  <!-- Configuration must load first -->
+  <script src="assets/js/config.js"></script>
+  <!-- Core modules -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <!-- Contact form -->
+  <script src="assets/js/contact-form.js"></script>
+  <!-- Main script -->
+  <script src="assets/js/script.js"></script>
 
 </body>
 </html>

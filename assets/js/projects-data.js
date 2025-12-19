@@ -1,63 +1,109 @@
-// ================= Projects Data =================
-const projects = [
+/**
+ * Projects Data
+ * Centralized project information for the portfolio
+ */
+
+const PROJECTS = [
   {
+    id: 1,
+    title: "Product Dashboard",
+    category: "web",
+    description: "React dashboard with real-time charts and auth",
+    image: "assets/images/dashboard2.jpg.png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 2,
     title: "AI Chat Assistant",
     category: "ai",
+    description: "GPT-powered assistant for support workflows",
     image: "assets/images/ai3.jpg.jpg",
-    description: "AI-powered chat assistant for customer support.",
-    github: "https://github.com/username/ai-chat"
+    live: "#",
+    code: "#"
   },
   {
-    title: "Networking",
-    category: "network",
-    image: "assets/images/network.jpg",
-    description: "Realtime monitoring system for network infrastructure.",
-    github: "https://github.com/username/network-monitor"
-  },
-  {
+    id: 3,
     title: "Portfolio Website",
     category: "web",
+    description: "Modern portfolio website using React and Django",
     image: "assets/images/portfolio.jpg.png",
-    description: "Modern portfolio website using React and Django.",
-    github: "https://github.com/username/portfolio"
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 4,
+    title: "Network Monitor",
+    category: "network",
+    description: "Python scripts and dashboards to monitor LAN health",
+    image: "assets/images/network.jpg",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 5,
+    title: "Networking",
+    category: "network",
+    description: "Realtime monitoring system for network infrastructure",
+    image: "assets/images/network2.jpg",
+    live: "#",
+    code: "#"
   }
-  // Add more projects here
 ];
 
-// ================= Render Projects Function =================
 /**
- * Renders project cards inside a specified container.
- * 
+ * Renders project cards inside a specified container
  * @param {string} containerId - The ID of the container element
- * @param {string} filter - Optional: category filter ('all' by default)
+ * @param {string|Array} filter - Category filter ('all' by default) or array of projects
+ * @param {number} limit - Optional limit for number of projects to display
  */
-function renderProjects(containerId, filter = "all") {
+function renderProjects(containerId, filter = "all", limit = null) {
   const container = document.getElementById(containerId);
-  if (!container) return;
+  if (!container) {
+    console.warn(`Container with ID "${containerId}" not found`);
+    return;
+  }
+
+  // Determine which projects to render
+  let projectsToRender;
+  
+  if (Array.isArray(filter)) {
+    // If filter is an array, use it directly
+    projectsToRender = filter;
+  } else if (filter === "all") {
+    // Show all projects
+    projectsToRender = PROJECTS;
+  } else {
+    // Filter by category
+    projectsToRender = PROJECTS.filter(project => 
+      project.category.toLowerCase() === filter.toLowerCase()
+    );
+  }
+
+  // Apply limit if specified
+  if (limit && limit > 0) {
+    projectsToRender = projectsToRender.slice(0, limit);
+  }
 
   // Clear previous content
   container.innerHTML = "";
 
-  // Filter projects based on category
-  const filteredProjects = filter === "all"
-    ? projects
-    : projects.filter(project => project.category === filter);
-
   // Render each project as a card
-  filteredProjects.forEach(project => {
-    const card = document.createElement("div");
+  projectsToRender.forEach(project => {
+    const card = document.createElement("article");
     card.className = "project-card";
+    card.setAttribute("data-category", project.category);
 
     card.innerHTML = `
       <div class="project-thumb">
-        <img src="${project.image}" alt="${project.title}">
+        <img src="${project.image}" alt="${project.title}" loading="lazy">
       </div>
       <div class="project-content">
         <h4>${project.title}</h4>
         <p>${project.description}</p>
         <div class="project-links">
-          <a href="${project.link}">View</a>
-          <a href="${project.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
+          ${project.live ? `<a href="${project.live}" class="btn" target="_blank" rel="noopener">Live</a>` : ''}
+          ${project.code ? `<a href="${project.code}" class="btn" target="_blank" rel="noopener">Code</a>` : ''}
         </div>
       </div>
     `;

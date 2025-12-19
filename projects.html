@@ -33,9 +33,8 @@
         <a href="projects.html" class="active">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="blog.html">Blog</a>
-        <a href="services.html">Services</a>
         <a href="contact.html" class="contact-cta">Contact</a>
-         <a href="about.html">About</a>
+         <!-- <a href="about.html">About</a> -->
       </nav>
       <div class="nav-actions">
         <button id="themeToggle3" class="icon-btn" aria-label="Toggle theme">🌙</button>
@@ -52,9 +51,8 @@
       <a href="projects.html">Projects</a>
       <a href="skills.html">Skills</a>
       <a href="blog.html">Blog</a>
-      <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
-       <a href="about.html" class="active">About</a>
+    
     </nav>
   </div>
 
@@ -63,7 +61,8 @@
     <section class="projects-list" data-reveal>
       <div class="container">
         <div class="section-header">
-          <h1>Projects</h1>
+          <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem;">Selected Work</h1>
+          <p style="text-align: center; color: var(--muted); margin-bottom: 2rem;">Things I've built and shipped</p>
           <div class="filters">
             <button class="chip active" data-filter="all">All</button>
             <button class="chip" data-filter="web">Web</button>
@@ -88,18 +87,18 @@
       </div>
       <div>
         <h4>Contact</h4>
-                 <ul class="socials">
-            <a href="kelvinkiambi35@gmai.com">Email</a>
-            <a href="www.linkedin.com/in/kelvin-kiambi-01250331b">LinkedIn</a>
-            <a href="https://github.com/kelvin482">GitHub</a>
-            <a href="#">Twitter</a>
-            <a href="+25493610003">Phone</a>
-                 </u>
+        <ul class="socials">
+          <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/kelvin482" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://twitter.com/kelvin_kiambi" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="tel:+254746310313">Phone</a></li>
+        </ul>
       </div>
       <div>
         <h4>Site</h4>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <!-- <a href="about.html">About</a> -->
         <a href="skills.html">Skills</a>
       </div>
     </div>
@@ -109,10 +108,16 @@
   </footer>
 
   <!-- ================= Scripts ================= -->
+  <!-- Configuration must load first -->
+  <script src="assets/js/config.js"></script>
+  <!-- Core modules -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <!-- Projects data and rendering -->
+  <script src="assets/js/projects-data.js"></script>
+  <!-- Page-specific scripts -->
   <script src="assets/js/script.js"></script>
-  <script>
-    // Automatically insert current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="assets/js/project.js"></script>
 </body>
 </html>

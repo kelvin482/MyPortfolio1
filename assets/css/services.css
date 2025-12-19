@@ -21,20 +21,31 @@
 }
 
 .service-card {
-  background: linear-gradient(135deg, rgba(25,209,200,0.05), rgba(11,132,255,0.05));
+  background: var(--bg-secondary);
   border-radius: var(--radius, 14px);
   padding: 2rem 1.5rem;
   text-align: center;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: scale(0.97);
+  opacity: 0.94;
+  will-change: transform;
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
+.service-card:hover,
+.service-card:focus-within {
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: var(--accent-primary);
+  opacity: 1;
+}
+
+.service-card:active {
+  transform: translateY(-2px) scale(1.01);
 }
 
 .service-card h3 {
@@ -46,7 +57,7 @@
   align-items: center;
   gap: 0.6rem;
   justify-content: center;
-  color: var(--accent);
+  color: var(--accent-primary);
 }
 
 .service-card h3::before {
@@ -60,6 +71,63 @@
   line-height: 1.6;
 }
 
+/* ================= Why Choose Me Section ================= */
+.why-choose {
+  margin-top: 5rem;
+  padding: 4rem 0;
+}
+
+.why-choose h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.why-card {
+  background: var(--bg-secondary);
+  padding: 1.8rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.1);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition);
+  transform: scale(0.97);
+  opacity: 0.93;
+  will-change: transform;
+}
+
+.why-card:hover,
+.why-card:focus-within {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 191, 255, 0.2);
+  border-color: var(--accent-primary);
+  opacity: 1;
+}
+
+.why-card:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.why-card h4 {
+  color: var(--accent-primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-card p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 /* ================= Responsive ================= */
 @media (max-width: 900px) {
   .service-grid {
@@ -70,5 +138,10 @@
 @media (max-width: 600px) {
   .service-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .services h1,
+  .why-choose h1 {
+    font-size: 1.6rem;
   }
 }

@@ -64,20 +64,31 @@ body.dark {
 }
 
 .post.card {
-  background: var(--panel);
+  background: var(--bg-secondary);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: var(--text);
+  color: var(--text-primary);
+  transform: scale(0.97);
+  opacity: 0.94;
+  will-change: transform;
 }
 
-.post.card:hover {
-  transform: translateY(-8px);
+.post.card:hover,
+.post.card:focus-within {
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: var(--accent-primary);
+  opacity: 1;
+}
+
+.post.card:active {
+  transform: translateY(-2px) scale(1.01);
 }
 
 .post h2 {
@@ -85,8 +96,8 @@ body.dark {
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 0.6rem;
-  color: var(--accent);
-  transition: color 0.3s ease;
+  color: var(--accent-primary);
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .post .meta {
@@ -109,16 +120,24 @@ body.dark {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   border-radius: 10px;
-  transition: all 0.3s ease;
-  background: var(--panel);
-  color: var(--text);
-  border: 1px solid var(--accent);
+  transition: var(--transition);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-primary);
+  transform: scale(1);
+  will-change: transform;
 }
 
-.read-more:hover {
-  background: var(--accent);
-  color: var(--bg);
+.read-more:hover,
+.read-more:focus {
+  background: var(--accent-primary);
+  color: #fff;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: scale(1.05);
+}
+
+.read-more:active {
+  transform: scale(1.02);
 }
 
 /* Smooth Scroll for In-page Links */
