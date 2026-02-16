@@ -1,185 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automating Network Tasks — Kelvin Mutwiri</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automating Network Tasks - Kelvin Mutwiri</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: #0f1217;
-      color: #e0e0e0;
+    :root{
+      --bg:#0d1117; --panel:#0f1720; --muted:#9aa4b2; --accent:#00bfff;
+      --glass-border: rgba(0,191,255,0.08); --card:#0f1820; --radius:14px; --maxw:1000px;
     }
-    header.site-header {
-      background: #161b22;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header .brand {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: #00bfff;
-      text-decoration: none;
-    }
-    nav.nav a {
-      margin-left: 1.5rem;
-      color: #cbd5e0;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav.nav a.active {
-      color: #00bfff;
-    }
-    main.container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-    main h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      color: #00bfff;
-      margin-bottom: 0.5rem;
-    }
-    .meta {
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 1.5rem;
-    }
-    main img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 1rem 0 2rem 0;
-      box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);
-    }
-    h2 {
-      font-family: 'Poppins', sans-serif;
-      color: #00e0ff;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1rem;
-      color: #d0d7de;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    ul li::before {
-      content: "➤";
-      color: #00bfff;
-      margin-right: 0.5rem;
-    }
-    ol {
-      padding-left: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    ol li {
-      margin-bottom: 0.8rem;
-    }
-    footer.site-footer {
-      background: #161b22;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    .highlight {
-      color: #00bfff;
-      font-weight: 600;
-    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family:'Inter',sans-serif;color:#e6eef6;background:linear-gradient(180deg,var(--bg),#061217 120%);}
+    a{text-decoration:none;color:inherit;}
+    header.site-header{background:linear-gradient(90deg,rgba(0,191,255,0.04),rgba(0,191,255,0.02));border-bottom:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);padding:16px 20px;position:sticky;top:0;z-index:50;}
+    .nav-grid{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .brand{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.3rem;color:var(--accent);}
+    nav.nav{display:flex;align-items:center;gap:12px;}
+    nav.nav a{color:var(--muted);padding:8px 10px;border-radius:10px;font-size:0.95rem;}
+    nav.nav a.active{color:var(--accent);background:rgba(0,191,255,0.04);}
+    main.container{max-width:var(--maxw);margin:28px auto;padding:0 18px;}
+    .hero{display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:var(--radius);border:1px solid var(--glass-border);box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+    .hero-left{flex:1;min-width:0;}
+    .eyebrow{font-size:0.85rem;color:var(--muted);margin-bottom:6px;}
+    h1{font-family:'Poppins',sans-serif;margin:0;font-size:1.6rem;color:var(--accent);}
+    p.lead{color:#cfeeff;margin-top:10px;margin-bottom:0.5rem;opacity:0.95;}
+    .hero-right{width:220px;height:120px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,rgba(0,191,255,0.06),rgba(0,224,255,0.02));display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,191,255,0.06);}
+    .hero-right img{width:100%;height:100%;object-fit:cover;display:block;}
+    article.card{margin-top:18px;background:linear-gradient(180deg,var(--panel),rgba(6,14,20,0.2));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);}
+    .meta{color:var(--muted);font-size:0.9rem;margin-top:6px;}
+    h2.section-title{color:#bff6ff;margin-top:16px;margin-bottom:10px;font-size:1.05rem;}
+    ul.clean-list{padding-left:0;margin:8px 0 16px;list-style:none;display:grid;gap:8px;}
+    ul.clean-list li{background:var(--card);padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);}
+    p{color:#d7eef6;}
+    footer.site-footer{max-width:var(--maxw);margin:26px auto 60px;padding:18px;text-align:center;color:var(--muted);font-size:0.9rem;}
+    .badge{font-size:0.8rem;color:#051217;background:var(--accent);padding:6px 8px;border-radius:8px;font-weight:600;margin-top:6px;display:inline-block;}
+    @media (max-width:960px){.hero{flex-direction:column;}.hero-right{display:none;}}
   </style>
 </head>
 <body>
-  <!-- ================= Header ================= -->
   <header class="site-header">
-    <a class="brand" href="../index.html">Kelvin<span class="accent">.</span></a>
-    <nav class="nav">
-      <a href="../index.html">Home</a>
-      <a href="../projects.html">Projects</a>
-      <a href="../skills.html">Skills</a>
-      <a href="../blog.html" class="active">Blog</a>
-      <a href="../services.html">Services</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../about.html">About</a>
-    </nav>
+    <div class="nav-grid">
+      <a class="brand" href="../index.html">Kelvin<span style="color:transparent">.</span><span style="color:var(--accent)">.</span></a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../skills.html">Skills</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../services.html">Services</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- ================= Main ================= -->
   <main class="container">
-    <h1>Automating Network Tasks with Scripts</h1>
-    <p class="meta">Nov 2024 · 10 min read</p>
-    <img src="../assets/images/network.jpg" alt="Network Automation"
-     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Networking • Automation • Practical Guide</div>
+        <h1>Automating Network Tasks with Scripts</h1>
+        <p class="lead">Practical ways to reduce repetitive network work, improve reliability, and respond faster using automation.</p>
+        <span class="badge">Operations Focus</span>
+      </div>
+      <div class="hero-right">
+        <img src="../assets/images/network.jpg" alt="Network Automation">
+      </div>
+    </div>
 
-    
+    <article class="card">
+      <div class="meta">Nov 2024 · 10 min read</div>
+      <p>Managing networks manually is time-consuming and error-prone. Automation helps teams standardize changes, reduce mistakes, and focus on strategic improvements.</p>
 
-    <p>Managing networks manually can be <span class="highlight">time-consuming and error-prone</span>. Automation allows engineers to streamline repetitive tasks, improve accuracy, and focus on strategic improvements. In this article, we explore practical ways to automate network operations using scripts, examples, and best practices.</p>
+      <h2 class="section-title">1. Configuration Automation</h2>
+      <ul class="clean-list">
+        <li>Push config changes to many devices at once.</li>
+        <li>Take automatic backups before applying updates.</li>
+        <li>Keep environments consistent and easier to audit.</li>
+      </ul>
 
-    <h2>1. Configuration Automation</h2>
-    <p>Deploying configuration changes manually across multiple devices can lead to inconsistencies and downtime. Using <span class="highlight">Python, Bash, or PowerShell scripts</span>, network engineers can:</p>
-    <ul>
-      <li>Push configuration updates to all switches and routers simultaneously</li>
-      <li>Ensure backup configurations are automatically stored before changes</li>
-      <li>Reduce human errors and maintain network stability</li>
-    </ul>
+      <h2 class="section-title">2. Monitoring and Alerts</h2>
+      <ul class="clean-list">
+        <li>Track uptime, latency, and bandwidth continuously.</li>
+        <li>Send instant alerts to email, Slack, or Teams.</li>
+        <li>Detect issues before users notice outages.</li>
+      </ul>
 
-    <h2>2. Monitoring & Alerts</h2>
-    <p>Keeping an eye on every network device 24/7 is challenging. Automated monitoring scripts track device health, bandwidth, and connectivity. Benefits include:</p>
-    <ul>
-      <li>Real-time performance tracking of servers, routers, and switches</li>
-      <li>Instant notifications for outages, packet loss, or latency spikes</li>
-      <li>Integration with Slack, Teams, or email for automatic alerts</li>
-    </ul>
+      <h2 class="section-title">3. Backup and Recovery</h2>
+      <p>Scheduled backups and scripted restores reduce recovery time after failures or misconfigurations.</p>
 
-    <h2>3. Backup & Recovery</h2>
-    <p>Regular automated backups are critical to recover quickly from failures. Scripts can:</p>
-    <ul>
-      <li>Save device configurations at scheduled intervals</li>
-      <li>Archive logs for compliance and troubleshooting</li>
-      <li>Restore configurations quickly after misconfigurations or hardware replacements</li>
-    </ul>
+      <h2 class="section-title">4. Performance Analysis</h2>
+      <p>Automated metric collection makes bottlenecks and unusual traffic patterns easier to spot and fix.</p>
 
-    <h2>4. Network Performance Analysis</h2>
-    <p>Understanding traffic patterns and identifying bottlenecks is easier with automation. Scripts can:</p>
-    <ul>
-      <li>Collect and visualize metrics like bandwidth usage and latency</li>
-      <li>Detect anomalies such as sudden traffic spikes or unusual patterns</li>
-      <li>Provide insights for capacity planning and network optimization</li>
-    </ul>
-
-    <h2>5. Security & Compliance</h2>
-    <p>Automation helps maintain <span class="highlight">strong security standards</span>. Scripts can:</p>
-    <ul>
-      <li>Check firewall rules and access control policies regularly</li>
-      <li>Generate compliance reports automatically</li>
-      <li>Detect suspicious activity faster than manual checks</li>
-    </ul>
-
-    <h2>6. Practical Tips for Network Automation</h2>
-    <ol>
-      <li>Start small: automate one task at a time and scale gradually.</li>
-      <li>Test scripts in a lab environment before production deployment.</li>
-      <li>Document scripts and workflows for team collaboration.</li>
-      <li>Use version control like Git for tracking changes and updates.</li>
-      <li>Monitor automated tasks and refine them regularly for efficiency.</li>
-    </ol>
-
-    <p>By integrating automation scripts into daily workflows, network teams can <span class="highlight">save time, reduce errors, and improve overall network performance</span>. Automation not only handles repetitive tasks but also provides the insights necessary for proactive network management and innovation.</p>
+      <h2 class="section-title">5. Security and Compliance</h2>
+      <p>Automation can validate firewall rules, detect abnormal behavior, and generate compliance snapshots regularly.</p>
+    </article>
   </main>
 
-  <!-- ================= Footer ================= -->
   <footer class="site-footer">
     &copy; 2025 Kelvin Mutwiri. All rights reserved.
   </footer>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -20,9 +20,16 @@
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
-    window.addEventListener("pageshow", function () {
+    function resetSkillsScrollTop() {
       window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+    window.addEventListener("pageshow", resetSkillsScrollTop);
+    window.addEventListener("DOMContentLoaded", function () {
+      requestAnimationFrame(resetSkillsScrollTop);
     });
+    window.addEventListener("load", resetSkillsScrollTop);
   </script>
 </head>
 <body>
@@ -138,90 +145,6 @@
       </div>
     </section>
 
-    <!-- What I Can Do For You Section -->
-    <section class="services" data-reveal>
-      <div class="container">
-        <div class="section-header">
-          <h1 class="section-title">What I Can Do For You</h1>
-          <p class="section-subtitle">Professional services tailored to your needs</p>
-        </div>
-        <div class="service-grid">
-          <div class="service-card" data-service="web">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h3>Web Applications</h3>
-            <p>Build full-stack apps from scratch. React for the front, Django for the back, and everything tested.</p>
-            <div class="service-features">
-              <span class="feature-tag">Full-Stack</span>
-              <span class="feature-tag">React</span>
-              <span class="feature-tag">Django</span>
-            </div>
-            <div class="service-hover-effect"></div>
-          </div>
-
-          <div class="service-card" data-service="design">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5"></path>
-                <path d="M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-            <h3>UI/UX Design</h3>
-            <p>Design interfaces that make sense. I focus on usability first, then make it look good.</p>
-            <div class="service-features">
-              <span class="feature-tag">User-Centered</span>
-              <span class="feature-tag">Modern</span>
-              <span class="feature-tag">Accessible</span>
-            </div>
-            <div class="service-hover-effect"></div>
-          </div>
-
-          <div class="service-card" data-service="infrastructure">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-              </svg>
-            </div>
-            <h3>Infrastructure & Networking</h3>
-            <p>Set up servers, networks, and monitoring. Make sure things stay up and running smoothly.</p>
-            <div class="service-features">
-              <span class="feature-tag">DevOps</span>
-              <span class="feature-tag">Cloud</span>
-              <span class="feature-tag">Monitoring</span>
-            </div>
-            <div class="service-hover-effect"></div>
-          </div>
-
-          <div class="service-card" data-service="ai">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5"></path>
-                <path d="M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-            <h3>AI Integration</h3>
-            <p>Add AI features to your apps. Chatbots, automation, and tools that actually save time.</p>
-            <div class="service-features">
-              <span class="feature-tag">AI/ML</span>
-              <span class="feature-tag">Automation</span>
-              <span class="feature-tag">Smart Tools</span>
-            </div>
-            <div class="service-hover-effect"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Why Choose Me Section -->
     <section class="why-choose" data-reveal>
       <div class="container">
@@ -330,3 +253,7 @@
   <script src="assets/js/skills-sections.js"></script>
 </body>
 </html>
+
+
+
+

@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects('projectsList', 'all');
   }
 
+  // Prevent duplicate filter listeners if shared script already initialized them.
+  if (window.__KM_PROJECT_FILTERS_BOUND) return;
+  window.__KM_PROJECT_FILTERS_BOUND = true;
+
   // Filter functionality
   const filterButtons = document.querySelectorAll('.chip[data-filter]');
   

@@ -6,45 +6,45 @@
 const PROJECTS = [
   {
     id: 1,
-    title: "Product Dashboard",
+    title: "Clinical Decision Support Dashboard",
     category: "web",
-    description: "React dashboard with real-time charts and auth",
+    description: "Role-based healthcare dashboard with patient insights, risk indicators, and clinician workflow tools.",
     image: "assets/images/dashboard2.jpg.png",
     live: "#",
     code: "#"
   },
   {
     id: 2,
-    title: "AI Chat Assistant",
+    title: "Cancer Diagnosis Assistant",
     category: "ai",
-    description: "GPT-powered assistant for support workflows",
+    description: "AI-assisted diagnostic workflow for screening support, triage guidance, and faster clinical decision-making.",
     image: "assets/images/ai3.jpg.jpg",
     live: "#",
     code: "#"
   },
   {
     id: 3,
-    title: "Portfolio Website",
+    title: "TharakaHub Content Platform",
     category: "web",
-    description: "Modern portfolio website using React and Django",
+    description: "Multi-page academic and career content platform featuring role-aware navigation and structured article publishing.",
     image: "assets/images/portfolio.jpg.png",
     live: "#",
     code: "#"
   },
   {
     id: 4,
-    title: "Network Monitor",
+    title: "Branch-to-Data-Center Network Design",
     category: "network",
-    description: "Python scripts and dashboards to monitor LAN health",
+    description: "Cisco Packet Tracer architecture connecting branch, teleworker, and data center environments with routed WAN paths.",
     image: "assets/images/network.jpg",
     live: "#",
     code: "#"
   },
   {
     id: 5,
-    title: "Networking",
+    title: "Inter-Department Routing and Simulation Lab",
     category: "network",
-    description: "Realtime monitoring system for network infrastructure",
+    description: "Department-segmented LAN topology with router-based interconnection, endpoint services, and packet-flow validation.",
     image: "assets/images/network2.jpg",
     live: "#",
     code: "#"
@@ -94,6 +94,14 @@ function renderProjects(containerId, filter = "all", limit = null) {
     card.className = "project-card";
     card.setAttribute("data-category", project.category);
 
+    const hasLive = Boolean(project.live) && project.live !== "#";
+    const hasCode = Boolean(project.code) && project.code !== "#";
+    const primaryLink = hasLive
+      ? `<a href="${project.live}" class="btn" target="_blank" rel="noopener">View Project</a>`
+      : hasCode
+        ? `<a href="${project.code}" class="btn" target="_blank" rel="noopener">Source</a>`
+        : "";
+
     card.innerHTML = `
       <div class="project-thumb">
         <img src="${project.image}" alt="${project.title}" loading="lazy">
@@ -101,10 +109,7 @@ function renderProjects(containerId, filter = "all", limit = null) {
       <div class="project-content">
         <h4>${project.title}</h4>
         <p>${project.description}</p>
-        <div class="project-links">
-          ${project.live ? `<a href="${project.live}" class="btn" target="_blank" rel="noopener">Live</a>` : ''}
-          ${project.code ? `<a href="${project.code}" class="btn" target="_blank" rel="noopener">Code</a>` : ''}
-        </div>
+        ${primaryLink ? `<div class="project-links">${primaryLink}</div>` : ""}
       </div>
     `;
 

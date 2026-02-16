@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kelvin Mutwiri — Full-Stack Developer & Designer</title>
+  <title>Kelvin Mutwiri - Systems & Network Engineer</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -35,15 +35,15 @@
         <!-- <a href="about.html">About</a> -->
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
-        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">&#127769;</button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">&#9776;</button>
       </div>
     </div>
   </header>
 
   <!-- ================= Mobile Navigation ================= -->
   <div id="mobileNav" class="mobile-nav">
-    <button id="closeMobileNav" class="close-nav">×</button>
+    <button id="closeMobileNav" class="close-nav">&times;</button>
     <nav class="mobile-links">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
@@ -58,27 +58,79 @@
   <main>
     <!-- ===== Hero Section ===== -->
     <section id="hero" class="hero" data-reveal>
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Hello, I'm</p>
-          <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin: 0.5rem 0;">Kelvin<span style="color: var(--accent);"> Mutwiri</span></h1>
-          <p class="lead" style="font-size: 1.25rem; margin-top: 1rem;">Systems & Network Administrator | Full-Stack Developer | AI & Automation Enthusiast</p>
-          <p class="bio" style="margin-top: 1.5rem; max-width: 600px;">
-            I write code that works, design interfaces people actually want to use, and keep systems running smoothly. 
-            Currently tinkering with AI tools and automating the boring stuff so I can focus on building things that matter.
+      <div class="container readme-hero">
+        <aside class="readme-sidebar">
+          <div class="readme-avatar-wrap">
+            <img class="readme-avatar" src="assets/images/me.jpg" alt="Kelvin Mutwiri profile photo">
+          </div>
+          <p class="readme-username">kelvin482</p>
+          <p class="readme-role">Systems &amp; Network Engineer | AI-Driven Web Development • Automation • Cloud &amp; Full-Stack Solutions</p>
+          <div class="profile-actions">
+            <button type="button" class="like-btn" id="profileLikeBtn" aria-label="Like profile">
+              <span class="like-icon" aria-hidden="true">&#10084;</span>
+              <span class="like-text">Like</span>
+              <span class="like-count" id="profileLikeCount">90</span>
+            </button>
+            <a href="contact.html" class="message-btn">Message</a>
+          </div>
+          <div class="readme-socials">
+            <a href="https://github.com/kelvin482" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/kelvin-kiambi-01250331b" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:kelvinkiambi35@gmail.com">Email</a>
+          </div>
+        </aside>
+
+        <div class="readme-main">
+          <section class="contribution-section">
+            <div class="contrib-header">
+              <h3 class="contrib-title"><span class="contrib-count" id="contribCount">0</span> contributions in the last year</h3>
+            </div>
+
+            <div class="contribution-graph-wrapper">
+              <div class="month-labels">
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+                <span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+              </div>
+
+              <div class="day-labels">
+                <span>Mon</span>
+                <span>Wed</span>
+                <span>Fri</span>
+              </div>
+
+              <div class="contrib-grid" id="contributionGrid" role="img" aria-label="GitHub-style contribution activity graph with animated snake"></div>
+
+              <div class="contrib-legend">
+                <span class="legend-label">Less</span>
+                <div class="legend-squares">
+                  <span class="legend-square" data-level="0"></span>
+                  <span class="legend-square" data-level="1"></span>
+                  <span class="legend-square" data-level="2"></span>
+                  <span class="legend-square" data-level="3"></span>
+                  <span class="legend-square" data-level="4"></span>
+                </div>
+                <span class="legend-label">More</span>
+              </div>
+            </div>
+
+            <div class="activity-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+              </div>
+              <span class="progress-label">Activity streak: <strong id="streakDays">0</strong> days</span>
+            </div>
+          </section>
+
+          <h1 class="readme-greeting">Hi <span class="wave-emoji" aria-hidden="true">&#128075;</span>, I'm Kelvin Mutwiri</h1>
+          <p class="readme-subheading"><span class="typing-text" data-text="Building Intelligent Systems That Scale">Building Intelligent Systems That Scale</span></p>
+          <p class="readme-bio">
+            Highly motivated Full-Stack AI Systems Engineer specializing in Machine Learning, Cloud Infrastructure, and Scalable Web Systems.
+            I design and build intelligent, secure, and high-performance digital solutions with a strong focus on system architecture,
+            automation, and real-world impact.
           </p>
-
-          <div class="hero-cta">
-
-          </div>
-
-        </div>
-
-        <div class="hero-card" aria-hidden="false">
-          <div class="hero-image-wrapper">
-            <img src="assets/images/me12.png" alt="Kelvin Mutwiri" class="profile-img">
-          </div>
-          <div class="card-stats">
+          <div class="profile-views-badge">
+            <span>PROFILE VIEWS</span>
+            <strong id="profileViewsCount">81</strong>
           </div>
         </div>
       </div>
@@ -123,9 +175,9 @@
             </div>
             <div class="key-highlights">
               <ul class="highlight-list">
-                  I build solutions that work, design interfaces people genuinely enjoy, and maintain systems that run seamlessly. Passionate about technology, I specialize in creating scalable web applications, optimizing digital infrastructures, and integrating AI to automate repetitive tasks—so I can focus on building things that truly matter. With a strong background in network administration, system installation, and cloud infrastructure, I bridge networking, automation, and web technologies to ensure systems are secure, reliable, and high-performing.
+                  I build solutions that work, design interfaces people genuinely enjoy, and maintain systems that run seamlessly. Passionate about technology, I specialize in creating scalable web applications, optimizing digital infrastructures, and integrating AI to automate repetitive tasks so I can focus on building things that truly matter. With a strong background in network administration, system installation, and cloud infrastructure, I bridge networking, automation, and web technologies to ensure systems are secure, reliable, and high-performing.
 
-Driven by curiosity and innovation, I constantly explore how AI and automation can enhance IT operations, improve performance, and deliver smarter, more responsive digital experiences. I’m motivated by constructing dependable networks, designing intuitive applications, enhancing efficiency with AI, and sharing knowledge to inspire growth and development in the tech community.
+Driven by curiosity and innovation, I constantly explore how AI and automation can enhance IT operations, improve performance, and deliver smarter, more responsive digital experiences. I am motivated by constructing dependable networks, designing intuitive applications, enhancing efficiency with AI, and sharing knowledge to inspire growth and development in the tech community.
               </ul>
             </div>
 
@@ -143,7 +195,7 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
             
             <h3>My Approach</h3>
             <p>My approach is straightforward: understand the problem, build a solution, test it, then improve it. I prefer code that's readable over clever, and designs that work over flashy.</p>
-            <p>I start by asking questions, sketching ideas, then building. I iterate based on what actually works, not what looks good in theory. Performance and accessibility aren't afterthoughts — they're built in from the start.</p>
+            <p>I start by asking questions, sketching ideas, then building. I iterate based on what actually works, not what looks good in theory. Performance and accessibility are not afterthoughts; they are built in from the start.</p>
           </div>
 
           <!-- Timeline Section -->
@@ -151,12 +203,12 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
             <h2>Where I've Been</h2>
             <ol class="timeline-list">
               <li>
-                <strong>2025–Present</strong>
-                <span>Full‑Stack Development & Freelance Product Work</span>
+                <strong>2025-Present</strong>
+                <span>Full-Stack Development & Freelance Product Work</span>
                 <p>Building web apps with React, Django and implementing infrastructure automation.</p>
               </li>
               <li>
-                <strong>2024–2025</strong>
+                <strong>2024-2025</strong>
                 <span>Systems & Network Admin</span>
                 <p>Managed networks, servers, and on-prem infrastructure for clients and small teams.</p>
               </li>
@@ -164,6 +216,11 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
                 <strong>2025</strong>
                 <span>Junior Developer</span>
                 <p>Worked on front-end projects and small web apps.</p>
+              </li>
+              <li>
+                <strong>2022</strong>
+                <span>Adobe suite</span>
+                <p>Mastered graphics and design</p>
               </li>
             </ol>
           </div>
@@ -183,27 +240,72 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
             <h2>Certifications & Achievements</h2>
             <div class="cert-grid">
               <div class="cert-card">
-                <img src="assets/images/cert1.png" alt="Full-Stack Web Development">
-                <h3>💻 Full-Stack Web Development</h3>
+                <img src="assets/images/web.jpg" alt="Full-Stack Web Development">
+                <h3>Full-Stack Web Development</h3>
                 <p>Completed a comprehensive web development course covering React, Django, and APIs.</p>
               </div>
               <div class="cert-card">
-                <img src="assets/images/cert2.png" alt="UI/UX Design Essentials">
-                <h3>🎨 UI/UX Design Essentials</h3>
+                <img src="assets/images/ux.jpg" alt="UI/UX Design Essentials">
+                <h3>UI/UX Design Essentials</h3>
                 <p>Learned modern design systems, wireframing, and prototyping techniques.</p>
               </div>
               <div class="cert-card">
-                <img src="assets/images/cert3.png" alt="Cloud & Networking">
-                <h3>☁️ Cloud & Networking</h3>
+                <img src="assets/images/network2.jpg" alt="Cloud & Networking">
+                <h3>Cloud & Networking</h3>
                 <p>Certified in cloud infrastructure, networking fundamentals, and automation practices.</p>
               </div>
               <div class="cert-card">
-                <img src="assets/images/cert4.png" alt="AI & Automation">
-                <h3>🤖 AI & Automation</h3>
+                <img src="assets/images/ai2.jpg" alt="AI & Automation">
+                <h3>AI &amp; Automation</h3>
                 <p>Gained skills in AI integration, chatbots, and workflow automation tools.</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Technology Stack ===== -->
+    <section class="tech-stack" data-reveal>
+      <div class="container">
+        <div class="tech-stack-header">
+          <h2>Technology Stack &amp; Expertise</h2>
+        </div>
+
+        <div class="tech-stack-grid" aria-label="Technology stack icons">
+          <a class="tech-icon" href="https://www.python.org/" target="_blank" rel="noopener" aria-label="Python">
+            <img src="https://cdn.simpleicons.org/python/FFD43B" alt="Python">
+          </a>
+          <a class="tech-icon" href="https://www.djangoproject.com/" target="_blank" rel="noopener" aria-label="Django">
+            <img src="https://cdn.simpleicons.org/django/44B78B" alt="Django">
+          </a>
+          <a class="tech-icon" href="https://react.dev/" target="_blank" rel="noopener" aria-label="React">
+            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
+          </a>
+          <a class="tech-icon" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener" aria-label="JavaScript">
+            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">
+          </a>
+          <a class="tech-icon" href="https://www.docker.com/" target="_blank" rel="noopener" aria-label="Docker">
+            <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker">
+          </a>
+          <a class="tech-icon" href="https://kubernetes.io/" target="_blank" rel="noopener" aria-label="Kubernetes">
+            <img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes">
+          </a>
+          <a class="tech-icon" href="https://www.linux.org/" target="_blank" rel="noopener" aria-label="Linux">
+            <img src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux">
+          </a>
+          <a class="tech-icon" href="https://www.postgresql.org/" target="_blank" rel="noopener" aria-label="PostgreSQL">
+            <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL">
+          </a>
+          <a class="tech-icon" href="https://git-scm.com/" target="_blank" rel="noopener" aria-label="Git">
+            <img src="https://cdn.simpleicons.org/git/F05032" alt="Git">
+          </a>
+          <a class="tech-icon" href="https://www.tensorflow.org/" target="_blank" rel="noopener" aria-label="TensorFlow">
+            <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow">
+          </a>
+          <a class="tech-icon" href="https://pytorch.org/" target="_blank" rel="noopener" aria-label="PyTorch">
+            <img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch">
+          </a>
         </div>
       </div>
     </section>
@@ -213,20 +315,20 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
       <div class="container">
         <h2 style="text-align: center; margin-bottom: 3rem;">What I Do</h2>
         <div class="features">
-          <div class="feature">
+          <div class="feature feature-web">
             <h3>Web Development</h3>
             <p>Building responsive apps with React, Python, and Django. I care about performance and writing code that doesn't break.</p>
           </div>
-          <div class="feature">
+          <div class="feature feature-ui">
             <h3>UI / UX Design</h3>
             <p>Creating interfaces that make sense. From wireframes to polished designs, I focus on what users actually need.</p>
           </div>
-          <div class="feature">
+          <div class="feature feature-network">
             <h3>Systems & Networking</h3>
-            <p>Setting up and maintaining infrastructure that stays up. Linux, Docker, networking — the stuff that keeps things running.</p>
+            <p>Setting up and maintaining infrastructure that stays up. Linux, Docker, networking - the stuff that keeps things running.</p>
           </div>
-          <div class="feature">
-            <h3>AI & Automation</h3>
+          <div class="feature feature-ai">
+            <h3>AI &amp; Automation</h3>
             <p>Experimenting with AI tools to speed up workflows. Building assistants and scripts that save time.</p>
           </div>
         </div>
@@ -238,7 +340,7 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
       <div class="container">
         <div class="section-header">
           <h2>Highlighted Projects</h2>
-          <a href="projects.html">View all projects →</a>
+          <a href="projects.html">View all projects &rarr;</a>
         </div>
         <div class="project-grid" id="projectGrid">
           <!-- Project cards will be dynamically added via JS -->
@@ -249,9 +351,17 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
     <!-- ===== Call to Action ===== -->
     <section class="cta" data-reveal>
       <div class="container">
-        <h2>Let's Work Together</h2>
-        <p style="max-width: 600px; margin: 1rem auto;">Got a project in mind? I'm open to freelance work and interesting collaborations. Drop me a line and we'll figure it out.</p>
-        <a class="btn primary" href="contact.html">Contact Me</a>
+        <div class="cta-layout">
+          <aside class="cta-illustration" aria-hidden="true">
+            <div class="cta-illustration-strip"></div>
+            <img src="assets/images/me4.png" alt="">
+          </aside>
+          <div class="cta-content">
+            <h2>Let's Work Together</h2>
+            <p style="max-width: 600px; margin: 1rem auto;">Got a project in mind? I'm open to freelance work and interesting collaborations. Drop me a line and we'll figure it out.</p>
+            <a class="btn primary" href="contact.html">Contact Me</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -281,7 +391,7 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
       </div>
     </div>
     <div class="copyright" style="text-align:center; margin-top:1rem; font-size:0.9rem; color:#888;">
-      © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
+      &copy; <span id="year"></span> Kelvin Mutwiri. All rights reserved.
     </div>
   </footer>
 
@@ -303,6 +413,16 @@ Driven by curiosity and innovation, I constantly explore how AI and automation c
   <!-- Page-specific scripts -->
   <script src="assets/js/about.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/hero-readme.js"></script>
   <script src="assets/js/index.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

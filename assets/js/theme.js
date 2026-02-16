@@ -1,81 +1,53 @@
 /**
  * Theme Management
- * Handles dark/light mode toggle across all pages
+ * Dark-mode only lock for the entire portfolio.
  */
 
-(function() {
+(function () {
   'use strict';
 
   const root = document.documentElement;
   const themeKey = CONFIG.theme.storageKey;
-  const defaultTheme = CONFIG.theme.defaultTheme;
 
-  /**
-   * Apply theme to the document
-   * @param {string} theme - 'light' or 'dark'
-   */
-  function applyTheme(theme) {
-    if (theme === 'light') {
-      root.classList.add('light');
-    } else {
-      root.classList.remove('light');
+  function applyDarkTheme() {
+    root.classList.remove('light');
+    localStorage.setItem(themeKey, 'dark');
+    updateThemeButtons();
+  }
+
+  function updateThemeButtons() {
+    CONFIG.theme.toggleIds.forEach((id) => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+      btn.textContent = '🌙';
+      btn.setAttribute('aria-label', 'Dark mode only');
+      btn.setAttribute('title', 'Dark mode only');
+    });
+  }
+
+  function blockThemeToggle(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-    
-    localStorage.setItem(themeKey, theme);
-    updateThemeToggleButtons(theme);
+    applyDarkTheme();
   }
 
-  /**
-   * Update all theme toggle buttons with appropriate icon
-   * @param {string} theme - Current theme
-   */
-  function updateThemeToggleButtons(theme) {
-    CONFIG.theme.toggleIds.forEach(id => {
-      const btn = document.getElementById(id);
-      if (btn) {
-        btn.textContent = theme === 'light' ? '🌞' : '🌙';
-        btn.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`);
-      }
-    });
-  }
-
-  /**
-   * Toggle between light and dark theme
-   */
-  function toggleTheme() {
-    const currentTheme = root.classList.contains('light') ? 'light' : 'dark';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    applyTheme(newTheme);
-  }
-
-  /**
-   * Initialize theme on page load
-   */
-  function initTheme() {
-    const savedTheme = localStorage.getItem(themeKey) || defaultTheme;
-    applyTheme(savedTheme);
-  }
-
-  /**
-   * Attach event listeners to all theme toggle buttons
-   */
   function attachThemeListeners() {
-    CONFIG.theme.toggleIds.forEach(id => {
+    CONFIG.theme.toggleIds.forEach((id) => {
       const btn = document.getElementById(id);
-      if (btn) {
-        btn.addEventListener('click', toggleTheme);
-      }
+      if (!btn) return;
+      btn.addEventListener('click', blockThemeToggle);
     });
   }
 
-  // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      initTheme();
+      applyDarkTheme();
       attachThemeListeners();
     });
   } else {
-    initTheme();
+    applyDarkTheme();
     attachThemeListeners();
   }
 })();

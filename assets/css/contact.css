@@ -213,3 +213,106 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------------- Uniform Professional Surface Override ---------------- */
+.contact-section {
+  --contact-bg: #0f172a;
+  --contact-panel: #1e293b;
+  --contact-panel-soft: #1f2e46;
+  --contact-border: rgba(148, 163, 184, 0.18);
+  --contact-text: #f1f5f9;
+  --contact-muted: #cbd5e1;
+  --contact-accent: #38bdf8;
+  --contact-accent-soft: rgba(56, 189, 248, 0.14);
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  color: var(--contact-text);
+}
+
+.contact-section .container {
+  max-width: 1280px;
+  padding: clamp(1.2rem, 2vw, 2rem);
+  border-radius: 16px;
+  border: 1px solid var(--contact-border);
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.56));
+  box-shadow: 0 16px 34px rgba(2, 8, 22, 0.24);
+  backdrop-filter: blur(6px);
+}
+
+.contact-left,
+.contact-right {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.62), rgba(15, 23, 42, 0.62));
+  border: 1px solid var(--contact-border);
+  box-shadow: 0 10px 22px rgba(2, 8, 22, 0.2);
+}
+
+.contact-left:hover,
+.contact-right:hover {
+  border-color: rgba(56, 189, 248, 0.42);
+  box-shadow: 0 14px 28px rgba(2, 8, 22, 0.26);
+}
+
+.contact-heading,
+.contact-left h1 {
+  color: var(--contact-text);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.contact-lead-typing {
+  font-family: 'Inter', sans-serif;
+  color: var(--contact-muted);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.contact-info strong,
+.contact-right form label {
+  color: var(--contact-accent);
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-info a {
+  color: var(--contact-text);
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+  color: var(--contact-accent);
+}
+
+.contact-right input,
+.contact-right textarea {
+  background: rgba(15, 23, 42, 0.8);
+  color: var(--contact-text);
+  border: 1px solid var(--contact-border);
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  border-color: var(--contact-accent);
+  box-shadow: 0 0 0 3px var(--contact-accent-soft);
+}
+
+.contact-right .btn.primary {
+  background: #0ea5e9;
+  color: #f8fafc;
+  box-shadow: 0 8px 18px rgba(14, 165, 233, 0.25);
+}
+
+.contact-right .btn.primary:hover {
+  background: #0284c7;
+}
+
+.contact-right .btn.ghost {
+  border-color: var(--contact-border);
+  color: var(--contact-text);
+}
+
+.contact-right .btn.ghost:hover {
+  border-color: var(--contact-accent);
+  background: var(--contact-accent-soft);
+}
