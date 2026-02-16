@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skills — Kelvin Mutwiri</title>
+  <title>Skills - Kelvin Mutwiri</title>
 
   <!-- Google Fonts - Monospace for terminal feel -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -11,7 +11,19 @@
   <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/skills.css">
-
+  <style>
+    .terminal-section {
+      min-height: auto;
+    }
+  </style>
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.addEventListener("pageshow", function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
 </head>
 <body>
   <!-- ================= Header / Navigation ================= -->
@@ -28,15 +40,15 @@
       </nav>
 
       <div class="nav-actions">
-        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
-        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">&#127769;</button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">&#9776;</button>
       </div>
     </div>
   </header>
 
   <!-- ================= Mobile Navigation ================= -->
   <div id="mobileNav" class="mobile-nav">
-    <button id="closeMobileNav" class="close-nav">×</button>
+    <button id="closeMobileNav" class="close-nav">&times;</button>
     <nav class="mobile-links">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
@@ -52,6 +64,13 @@
     <!-- Terminal Container -->
     <section class="terminal-section" data-reveal>
       <div class="container">
+        <div class="skills-intro">
+          <p class="skills-kicker">Skills Matrix</p>
+          <h1 class="skills-headline">Technical Capabilities</h1>
+          <p class="skills-description">A structured view of my core engineering, infrastructure, and product delivery skills.</p>
+          <div id="skillsSummary" class="skills-summary" aria-live="polite"></div>
+        </div>
+
         <!-- Terminal Window -->
         <div class="terminal-window">
           <!-- Terminal Header with Window Controls -->
@@ -62,74 +81,210 @@
               <span class="control-dot control-maximize"></span>
             </div>
             <div class="terminal-title">
-              <span class="terminal-icon">💻</span>
-              <span>skills.terminal</span>
+              <span class="terminal-icon">Console</span>
+              <div class="terminal-title-text">
+                <span>skills.terminal</span>
+                <small>Interactive skill inventory</small>
+              </div>
             </div>
             <div class="terminal-actions">
+              <span class="terminal-status">Ready</span>
               <button class="terminal-btn" aria-label="Clear terminal">Clear</button>
             </div>
           </div>
 
           <!-- Terminal Body -->
           <div class="terminal-body" id="terminalBody">
-            <!-- Initial Terminal Output -->
-            <div class="terminal-line">
-              <span class="terminal-prompt">$</span>
-              <span class="terminal-command">cat skills.txt</span>
+            <div class="terminal-meta">
+              <span>Profile: Kelvin Mutwiri</span>
+              <span>Mode: Interactive</span>
             </div>
 
-            <div class="terminal-output">
-              <div class="terminal-text">Loading skills database...</div>
-            </div>
+            <div class="terminal-stream" id="terminalStream">
+              <!-- Initial Terminal Output -->
+              <div class="terminal-line">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-command">cat skills.txt</span>
+              </div>
 
-            <!-- Skills will be dynamically added here -->
-            <div id="skillsTerminalContent"></div>
+              <div class="terminal-output boot-output">
+                <div class="terminal-text">Loading skills database...</div>
+              </div>
+
+              <!-- Skills will be dynamically added here -->
+              <div id="skillsTerminalContent"></div>
+            </div>
 
             <!-- Active Prompt with Blinking Cursor -->
             <div class="terminal-line terminal-active" id="terminalInputLine">
               <span class="terminal-prompt">$</span>
-              <input 
-                type="text" 
-                class="terminal-input" 
+              <input
+                type="text"
+                class="terminal-input"
                 id="terminalInput"
                 autocomplete="off"
                 spellcheck="false"
                 placeholder="Type a command (try: help, list, search [skill])"
                 aria-label="Terminal command input"
               />
-              <span class="terminal-cursor" id="terminalCursor">█</span>
+              <span class="terminal-cursor" id="terminalCursor">|</span>
             </div>
+          </div>
+
+          <div class="terminal-footer">
+            <span>Commands: `help`, `list`, `search [skill]`, `about`, `clear`</span>
           </div>
         </div>
       </div>
     </section>
 
-  
+    <!-- What I Can Do For You Section -->
+    <section class="services" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">What I Can Do For You</h1>
+          <p class="section-subtitle">Professional services tailored to your needs</p>
+        </div>
+        <div class="service-grid">
+          <div class="service-card" data-service="web">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3>Web Applications</h3>
+            <p>Build full-stack apps from scratch. React for the front, Django for the back, and everything tested.</p>
+            <div class="service-features">
+              <span class="feature-tag">Full-Stack</span>
+              <span class="feature-tag">React</span>
+              <span class="feature-tag">Django</span>
+            </div>
+            <div class="service-hover-effect"></div>
+          </div>
+
+          <div class="service-card" data-service="design">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Design interfaces that make sense. I focus on usability first, then make it look good.</p>
+            <div class="service-features">
+              <span class="feature-tag">User-Centered</span>
+              <span class="feature-tag">Modern</span>
+              <span class="feature-tag">Accessible</span>
+            </div>
+            <div class="service-hover-effect"></div>
+          </div>
+
+          <div class="service-card" data-service="infrastructure">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3>Infrastructure & Networking</h3>
+            <p>Set up servers, networks, and monitoring. Make sure things stay up and running smoothly.</p>
+            <div class="service-features">
+              <span class="feature-tag">DevOps</span>
+              <span class="feature-tag">Cloud</span>
+              <span class="feature-tag">Monitoring</span>
+            </div>
+            <div class="service-hover-effect"></div>
+          </div>
+
+          <div class="service-card" data-service="ai">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3>AI Integration</h3>
+            <p>Add AI features to your apps. Chatbots, automation, and tools that actually save time.</p>
+            <div class="service-features">
+              <span class="feature-tag">AI/ML</span>
+              <span class="feature-tag">Automation</span>
+              <span class="feature-tag">Smart Tools</span>
+            </div>
+            <div class="service-hover-effect"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Why Choose Me Section -->
     <section class="why-choose" data-reveal>
       <div class="container">
-        <h1 class="section-title">Why Work With Me</h1>
+        <div class="section-header">
+          <h1 class="section-title">Why Work With Me</h1>
+          <p class="section-subtitle">What sets me apart from the rest</p>
+        </div>
         <div class="why-grid">
-          <div class="why-card">
+          <div class="why-card" data-why="delivery">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
             <h4>I Get Things Done</h4>
             <p>I ship working code, not promises. Projects get finished on time, and they actually work.</p>
+            <div class="why-hover-effect"></div>
           </div>
-          <div class="why-card">
+
+          <div class="why-card" data-why="communication">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
             <h4>Straightforward Communication</h4>
             <p>No jargon, no fluff. I'll tell you what's happening, what's possible, and what's not.</p>
+            <div class="why-hover-effect"></div>
           </div>
-          <div class="why-card">
+
+          <div class="why-card" data-why="solutions">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
             <h4>Practical Solutions</h4>
             <p>I build what you need, not what's trendy. Simple, maintainable, and actually useful.</p>
+            <div class="why-hover-effect"></div>
           </div>
-          <div class="why-card">
+
+          <div class="why-card" data-why="quality">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
             <h4>I Care About Quality</h4>
             <p>Code that's readable, tested, and won't break in six months. That's the standard.</p>
+            <div class="why-hover-effect"></div>
           </div>
-          <div class="why-card">
+
+          <div class="why-card" data-why="pricing">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
             <h4>Fair Pricing</h4>
             <p>You get what you pay for, and I make sure it's worth it. No surprises, no hidden costs.</p>
+            <div class="why-hover-effect"></div>
           </div>
         </div>
       </div>
@@ -161,7 +316,7 @@
       </div>
     </div>
     <div class="copyright">
-      © <span id="year"></span> Kelvin Mutwiri. All rights reserved.
+      &copy; <span id="year"></span> Kelvin Mutwiri. All rights reserved.
     </div>
   </footer>
 
@@ -172,5 +327,6 @@
   <script src="assets/js/animations.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/skills-terminal.js"></script>
+  <script src="assets/js/skills-sections.js"></script>
 </body>
 </html>
