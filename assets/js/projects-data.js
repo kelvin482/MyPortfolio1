@@ -7,45 +7,90 @@ const PROJECTS = [
   {
     id: 1,
     title: "Clinical Decision Support Dashboard",
-    category: "web",
-    description: "Role-based healthcare dashboard with patient insights, risk indicators, and clinician workflow tools.",
-    image: "assets/images/dashboard2.jpg.png",
+    category: "ai",
+    description: "Doctor-facing dashboard with triage metrics, risk distribution, and clinical interpretation summaries.",
+    image: "assets/images/screenshots/Screenshot (840).png",
     live: "#",
     code: "#"
   },
   {
     id: 2,
-    title: "Cancer Diagnosis Assistant",
+    title: "Medical Assessment Intake Flow",
     category: "ai",
-    description: "AI-assisted diagnostic workflow for screening support, triage guidance, and faster clinical decision-making.",
-    image: "assets/images/ai3.jpg.jpg",
+    description: "Structured patient intake and morphology capture flow designed for AI-assisted diagnosis.",
+    image: "assets/images/screenshots/Screenshot (839).png",
     live: "#",
     code: "#"
   },
   {
     id: 3,
-    title: "TharakaHub Content Platform",
-    category: "web",
-    description: "Multi-page academic and career content platform featuring role-aware navigation and structured article publishing.",
-    image: "assets/images/portfolio.jpg.png",
+    title: "AI Diagnosis Report Generator",
+    category: "ai",
+    description: "Printable diagnostic report page with patient details, risk labels, and clinical interpretation output.",
+    image: "assets/images/screenshots/Screenshot (841).png",
     live: "#",
     code: "#"
   },
   {
     id: 4,
-    title: "Branch-to-Data-Center Network Design",
-    category: "network",
-    description: "Cisco Packet Tracer architecture connecting branch, teleworker, and data center environments with routed WAN paths.",
-    image: "assets/images/network.jpg",
+    title: "Role-Based Healthcare Authentication Portal",
+    category: "web",
+    description: "Patient and doctor sign-in interface with role selection and streamlined onboarding UI.",
+    image: "assets/images/screenshots/Screenshot 2026-01-30 144710.png",
     live: "#",
     code: "#"
   },
   {
     id: 5,
-    title: "Inter-Department Routing and Simulation Lab",
+    title: "TharakaHub Freelancer Dashboard",
+    category: "web",
+    description: "Freelancer operations dashboard showing earnings analytics, project statistics, and quick actions.",
+    image: "assets/images/screenshots/Screenshot 2026-02-14 124122.png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 6,
+    title: "TharakaHub Assignment Discovery Page",
+    category: "web",
+    description: "Assignment browsing interface with department filters and student-focused navigation.",
+    image: "assets/images/screenshots/Screenshot 2025-11-03 184941.png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 7,
+    title: "TharakaHub Blog and Content Module",
+    category: "web",
+    description: "Article listing module with category cards and editorial content previews for users.",
+    image: "assets/images/screenshots/Screenshot 2025-11-03 185009.png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 8,
+    title: "Branch-to-Data-Center WAN Topology",
     category: "network",
-    description: "Department-segmented LAN topology with router-based interconnection, endpoint services, and packet-flow validation.",
-    image: "assets/images/network2.jpg",
+    description: "Cisco Packet Tracer design connecting branch office, teleworker home, and data center over routed links.",
+    image: "assets/images/screenshots/Screenshot (385).png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 9,
+    title: "Inter-Department Routing Simulation Lab",
+    category: "network",
+    description: "Department-segmented network simulation validating connectivity, packet paths, and command-line diagnostics.",
+    image: "assets/images/screenshots/Screenshot (514).png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 10,
+    title: "Physical Rack and Cabling Layout",
+    category: "network",
+    description: "Packet Tracer physical-mode rack visualization for switch/router placement and structured cabling.",
+    image: "assets/images/screenshots/Screenshot (386).png",
     live: "#",
     code: "#"
   }
