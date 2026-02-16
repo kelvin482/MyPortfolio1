@@ -7,7 +7,7 @@ const CONFIG = {
   // Contact Information
   contact: {
     email: 'kelvinkiambi35@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/kelvin-kiambi-01250331b',
+    linkedin: 'https://www.linkedin.com/in/kelvin-mutwiri-01250331b',
     github: 'https://github.com/kelvin482',
     twitter: 'https://twitter.com/kelvin_kiambi',
     whatsapp: 'https://wa.me/+254746310313',
