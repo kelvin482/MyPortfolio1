@@ -1,180 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Designing for Performance — Kelvin Mutwiri</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Designing for Performance - Kelvin Mutwiri</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: #0f1217;
-      color: #e0e0e0;
-      line-height: 1.6;
+    :root{
+      --bg:#0d1117; --panel:#0f1720; --muted:#9aa4b2; --accent:#00bfff;
+      --glass-border: rgba(0,191,255,0.08); --card:#0f1820; --radius:14px; --maxw:1000px;
     }
-
-    header.site-header {
-      background: #161b22;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .brand {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: #00bfff;
-      text-decoration: none;
-    }
-
-    nav.nav a {
-      margin-left: 1.5rem;
-      color: #cbd5e0;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav.nav a.active {
-      color: #00bfff;
-    }
-
-    main.container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-
-    main h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      color: #00bfff;
-      margin-bottom: 0.5rem;
-    }
-
-    .meta {
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 1.5rem;
-    }
-
-    main img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 1rem 0 2rem 0;
-      box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);
-    }
-
-    h2 {
-      font-family: 'Poppins', sans-serif;
-      color: #00e0ff;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #d0d7de;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    ul li::before {
-      content: "➤";
-      color: #00bfff;
-      margin-right: 0.5rem;
-    }
-
-    .highlight {
-      color: #00bfff;
-      font-weight: 600;
-    }
-
-    footer.site-footer {
-      background: #161b22;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family:'Inter',sans-serif;color:#e6eef6;background:linear-gradient(180deg,var(--bg),#061217 120%);}
+    a{text-decoration:none;color:inherit;}
+    header.site-header{background:linear-gradient(90deg,rgba(0,191,255,0.04),rgba(0,191,255,0.02));border-bottom:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);padding:16px 20px;position:sticky;top:0;z-index:50;}
+    .nav-grid{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .brand{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.3rem;color:var(--accent);}
+    nav.nav{display:flex;align-items:center;gap:12px;}
+    nav.nav a{color:var(--muted);padding:8px 10px;border-radius:10px;font-size:0.95rem;}
+    nav.nav a.active{color:var(--accent);background:rgba(0,191,255,0.04);}
+    main.container{max-width:var(--maxw);margin:28px auto;padding:0 18px;}
+    .hero{display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:var(--radius);border:1px solid var(--glass-border);box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+    .hero-left{flex:1;min-width:0;}
+    .eyebrow{font-size:0.85rem;color:var(--muted);margin-bottom:6px;}
+    h1{font-family:'Poppins',sans-serif;margin:0;font-size:1.6rem;color:var(--accent);}
+    p.lead{color:#cfeeff;margin-top:10px;margin-bottom:0.5rem;opacity:0.95;}
+    .hero-right{width:220px;height:120px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,rgba(0,191,255,0.06),rgba(0,224,255,0.02));display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,191,255,0.06);}
+    .hero-right img{width:100%;height:100%;object-fit:cover;display:block;}
+    article.card{margin-top:18px;background:linear-gradient(180deg,var(--panel),rgba(6,14,20,0.2));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);}
+    .meta{color:var(--muted);font-size:0.9rem;margin-top:6px;}
+    h2.section-title{color:#bff6ff;margin-top:16px;margin-bottom:10px;font-size:1.05rem;}
+    ul.clean-list{padding-left:0;margin:8px 0 16px;list-style:none;display:grid;gap:8px;}
+    ul.clean-list li{background:var(--card);padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);}
+    p{color:#d7eef6;}
+    footer.site-footer{max-width:var(--maxw);margin:26px auto 60px;padding:18px;text-align:center;color:var(--muted);font-size:0.9rem;}
+    .badge{font-size:0.8rem;color:#051217;background:var(--accent);padding:6px 8px;border-radius:8px;font-weight:600;margin-top:6px;display:inline-block;}
+    @media (max-width:960px){.hero{flex-direction:column;}.hero-right{display:none;}}
   </style>
 </head>
 <body>
-  <!-- ================= Header ================= -->
   <header class="site-header">
-    <a class="brand" href="../index.html">Kelvin<span class="accent">.</span></a>
-    <nav class="nav">
-      <a href="../index.html">Home</a>
-      <a href="../projects.html">Projects</a>
-      <a href="../skills.html">Skills</a>
-      <a href="../blog.html" class="active">Blog</a>
-      <a href="../services.html">Services</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../about.html">About</a>
-    </nav>
+    <div class="nav-grid">
+      <a class="brand" href="../index.html">Kelvin<span style="color:transparent">.</span><span style="color:var(--accent)">.</span></a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../skills.html">Skills</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../services.html">Services</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- ================= Main ================= -->
   <main class="container">
-    <h1>Designing for Performance — 5 Practical Tips</h1>
-    <p class="meta">Jan 2025 · 12 min read</p>
-   <img src="../assets/images/ui.jpg" alt="Web Performance Optimization"
-     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Frontend • Performance • Practical Tips</div>
+        <h1>Designing for Performance - 5 Practical Tips</h1>
+        <p class="lead">Speed is part of user experience. These practical optimizations improve load times and engagement across modern web apps.</p>
+        <span class="badge">Frontend Focus</span>
+      </div>
+      <div class="hero-right">
+        <img src="../assets/images/ui.jpg" alt="Web Performance Optimization">
+      </div>
+    </div>
 
+    <article class="card">
+      <div class="meta">Jan 2025 · 12 min read</div>
+      <p>Performance affects conversions, retention, and search visibility. Treat it as a product feature, not a late optimization task.</p>
 
-    <p>Website performance directly affects <span class="highlight">user experience, engagement, and SEO rankings</span>. Slow-loading pages frustrate visitors, reduce conversions, and even impact your brand reputation. In this guide, we explore practical, actionable strategies to optimize web performance for both speed and user satisfaction.</p>
+      <h2 class="section-title">1. Optimize the Critical Rendering Path</h2>
+      <ul class="clean-list">
+        <li>Inline essential styles for above-the-fold content.</li>
+        <li>Defer non-critical scripts.</li>
+        <li>Remove render-blocking dependencies.</li>
+      </ul>
 
-    <h2>1. Optimize the Critical Rendering Path</h2>
-    <p>The critical rendering path determines how quickly your page content appears. Prioritize essential CSS and JavaScript for above-the-fold content, and defer non-critical scripts. Techniques include:</p>
-    <ul>
-      <li>Inlining essential CSS for faster rendering</li>
-      <li>Deferring non-critical JavaScript until after page load</li>
-      <li>Minimizing render-blocking resources</li>
-    </ul>
-    <p>Focusing on this ensures users see meaningful content quickly, improving perceived performance.</p>
+      <h2 class="section-title">2. Lazy Load Media</h2>
+      <p>Load images and videos only when needed to reduce initial payload and improve time to interactive.</p>
 
-    <h2>2. Use Lazy Loading for Media</h2>
-    <p>Images and videos are often the heaviest assets. Lazy loading ensures media loads only when it enters the viewport, reducing initial load times. Modern HTML supports the <code>loading="lazy"</code> attribute for images and iframes, making implementation straightforward.</p>
+      <h2 class="section-title">3. Compress and Resize Images</h2>
+      <p>Use modern formats (WebP/AVIF), right-sized assets, and aggressive but safe compression.</p>
 
-    <h2>3. Compress and Optimize Images</h2>
-    <p>Large image files significantly slow down your site. Optimize by:</p>
-    <ul>
-      <li>Using modern formats like WebP or AVIF for smaller sizes</li>
-      <li>Compressing images without sacrificing quality</li>
-      <li>Serving responsive images for different devices</li>
-    </ul>
-    <p>Smaller images mean faster downloads, lower bandwidth usage, and smoother browsing for users.</p>
+      <h2 class="section-title">4. Use Caching and CDNs</h2>
+      <p>Serve assets from edge locations and cache static files to reduce latency and server load.</p>
 
-    <h2>4. Implement Caching and Content Delivery Networks (CDNs)</h2>
-    <p>Caching stores static assets in the user’s browser, allowing repeat visits to load instantly. CDNs distribute content across multiple servers worldwide, reducing latency. Benefits include:</p>
-    <ul>
-      <li>Faster load times for users in different regions</li>
-      <li>Reduced server load and bandwidth consumption</li>
-      <li>Improved reliability during traffic spikes</li>
-    </ul>
-
-    <h2>5. Minify, Bundle, and Optimize Resources</h2>
-    <p>Minifying CSS, JavaScript, and HTML removes unnecessary characters, reducing file sizes. Bundling small scripts into a single file reduces HTTP requests. Additional steps include:</p>
-    <ul>
-      <li>Using tree-shaking to remove unused code</li>
-      <li>Compressing files with gzip or Brotli for faster transfers</li>
-      <li>Loading fonts efficiently using font-display strategies</li>
-    </ul>
-
-    <p>By applying these strategies, your web apps will <span class="highlight">load faster, deliver smoother interactions, and increase user retention</span>. Remember, performance is not just technical—it’s an essential part of user experience and brand perception. Investing in optimization today pays off in happier users and better engagement tomorrow.</p>
+      <h2 class="section-title">5. Minify and Bundle Wisely</h2>
+      <ul class="clean-list">
+        <li>Minify CSS/JS/HTML and compress responses.</li>
+        <li>Split bundles by route for faster first load.</li>
+        <li>Eliminate dead code with tree-shaking.</li>
+      </ul>
+    </article>
   </main>
 
-  <!-- ================= Footer ================= -->
   <footer class="site-footer">
     &copy; 2025 Kelvin Mutwiri. All rights reserved.
   </footer>

@@ -1,101 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Networking Revolution — Kelvin Mutwiri</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Networking Revolution - Kelvin Mutwiri</title>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0f1217;
-      color: #e4e4e4;
-      line-height: 1.6;
+    :root{
+      --bg:#0d1117; --panel:#0f1720; --muted:#9aa4b2; --accent:#00bfff;
+      --glass-border: rgba(0,191,255,0.08); --card:#0f1820; --radius:14px; --maxw:1000px;
     }
-    header.site-header {
-      background: #161b22;
-      padding: 1rem 2rem;
-    }
-    header .brand {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: #00bfff;
-      text-decoration: none;
-    }
-    nav.nav a {
-      margin-left: 1.5rem;
-      color: #cbd5e0;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav.nav a.active {
-      color: #00bfff;
-    }
-    main.container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-    main h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      color: #00bfff;
-      margin-bottom: 0.5rem;
-    }
-    .meta {
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 1.5rem;
-    }
-    main img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 1rem 0 2rem 0;
-      box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);
-    }
-    h2 {
-      font-family: 'Poppins', sans-serif;
-      color: #00e0ff;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1rem;
-      color: #d0d7de;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    ul li::before {
-      content: "➤";
-      color: #00bfff;
-      margin-right: 0.5rem;
-    }
-    .highlight {
-      color: #00bfff;
-      font-weight: 600;
-    }
-    footer.site-footer {
-      background: #161b22;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family:'Inter',sans-serif;color:#e6eef6;background:linear-gradient(180deg,var(--bg),#061217 120%);}
+    a{text-decoration:none;color:inherit;}
+    header.site-header{background:linear-gradient(90deg,rgba(0,191,255,0.04),rgba(0,191,255,0.02));border-bottom:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);padding:16px 20px;position:sticky;top:0;z-index:50;}
+    .nav-grid{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .brand{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.3rem;color:var(--accent);}
+    nav.nav{display:flex;align-items:center;gap:12px;}
+    nav.nav a{color:var(--muted);padding:8px 10px;border-radius:10px;font-size:0.95rem;}
+    nav.nav a.active{color:var(--accent);background:rgba(0,191,255,0.04);}
+    main.container{max-width:var(--maxw);margin:28px auto;padding:0 18px;}
+    .hero{display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:var(--radius);border:1px solid var(--glass-border);box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+    .hero-left{flex:1;min-width:0;}
+    .eyebrow{font-size:0.85rem;color:var(--muted);margin-bottom:6px;}
+    h1{font-family:'Poppins',sans-serif;margin:0;font-size:1.6rem;color:var(--accent);}
+    p.lead{color:#cfeeff;margin-top:10px;margin-bottom:0.5rem;opacity:0.95;}
+    .hero-right{width:220px;height:120px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,rgba(0,191,255,0.06),rgba(0,224,255,0.02));display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,191,255,0.06);}
+    .hero-right img{width:100%;height:100%;object-fit:cover;display:block;}
+    article.card{margin-top:18px;background:linear-gradient(180deg,var(--panel),rgba(6,14,20,0.2));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);}
+    .meta{color:var(--muted);font-size:0.9rem;margin-top:6px;}
+    h2.section-title{color:#bff6ff;margin-top:16px;margin-bottom:10px;font-size:1.05rem;}
+    ul.clean-list{padding-left:0;margin:8px 0 16px;list-style:none;display:grid;gap:8px;}
+    ul.clean-list li{background:var(--card);padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);}
+    p{color:#d7eef6;}
+    footer.site-footer{max-width:var(--maxw);margin:26px auto 60px;padding:18px;text-align:center;color:var(--muted);font-size:0.9rem;}
+    .badge{font-size:0.8rem;color:#051217;background:var(--accent);padding:6px 8px;border-radius:8px;font-weight:600;margin-top:6px;display:inline-block;}
+    @media (max-width:960px){.hero{flex-direction:column;}.hero-right{display:none;}}
   </style>
 </head>
 <body>
-  <!-- ================= Header ================= -->
   <header class="site-header">
-    <div class="container nav-grid">
-      <a class="brand" href="../index.html">Kelvin<span class="accent">.</span></a>
+    <div class="nav-grid">
+      <a class="brand" href="../index.html">Kelvin<span style="color:transparent">.</span><span style="color:var(--accent)">.</span></a>
       <nav class="nav">
         <a href="../index.html">Home</a>
         <a href="../projects.html">Projects</a>
@@ -108,63 +53,48 @@
     </div>
   </header>
 
-  <!-- ================= Main ================= -->
   <main class="container">
-    <h1>The Networking Revolution — Emerging Trends</h1>
-    <p class="meta">Sep 2024 · 12 min read</p>
-    <img src="../assets/images/network2.jpg" alt="Networking Revolution"
-     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Networking • Cloud • Future Trends</div>
+        <h1>The Networking Revolution - Emerging Trends</h1>
+        <p class="lead">How 5G, AI-driven traffic management, edge computing, and zero-trust architecture are reshaping modern networks.</p>
+        <span class="badge">Infrastructure Focus</span>
+      </div>
+      <div class="hero-right">
+        <img src="../assets/images/network2.jpg" alt="Networking Revolution">
+      </div>
+    </div>
 
+    <article class="card">
+      <div class="meta">Sep 2024 · 12 min read</div>
+      <p>Networking is moving from simple connectivity to intelligent, adaptive infrastructure that is faster, safer, and more resilient.</p>
 
-    <p>The world of networking is evolving at an unprecedented pace. With new technologies like <span class="highlight">5G and 6G</span>, AI-driven traffic management, edge computing, and zero-trust security frameworks, organizations must adapt to maintain reliable, secure, and high-speed connectivity. The networking revolution isn’t just about speed—it’s about smarter, safer, and more flexible infrastructure.</p>
+      <h2 class="section-title">1. 5G and Beyond</h2>
+      <p>5G enables low latency and high throughput at scale. 6G discussions are already centered around AI-native networks.</p>
 
-    <h2>1. 5G and Beyond</h2>
-    <p>5G has transformed connectivity with ultra-fast internet speeds, low latency, and the ability to connect massive numbers of devices simultaneously. Industries are leveraging 5G for:</p>
-    <ul>
-      <li>Smart city deployments with connected sensors</li>
-      <li>Real-time remote operations and telemedicine</li>
-      <li>High-speed cloud gaming and immersive experiences</li>
-    </ul>
-    <p>Looking ahead, 6G is expected to push speeds even further, incorporate advanced AI integration for network management, and introduce intelligent traffic prioritization, opening doors to next-level innovations.</p>
+      <h2 class="section-title">2. AI-Powered Management</h2>
+      <ul class="clean-list">
+        <li>Predict failures before they become outages.</li>
+        <li>Route traffic dynamically for better performance.</li>
+        <li>Spot anomalies in real time with behavior analysis.</li>
+      </ul>
 
-    <h2>2. AI-Powered Network Management</h2>
-    <p>Artificial intelligence is no longer optional—it’s central to modern networking. AI enables proactive management by predicting failures, identifying congestion, and dynamically rerouting traffic. Key benefits include:</p>
-    <ul>
-      <li>Predictive maintenance to minimize downtime and costly outages</li>
-      <li>Dynamic traffic routing ensuring optimal speed and performance</li>
-      <li>Real-time anomaly detection, alerting administrators instantly to potential issues</li>
-    </ul>
-    <p>AI-driven analytics also provide actionable insights, allowing engineers to make data-driven decisions that improve network efficiency and resilience.</p>
+      <h2 class="section-title">3. Zero-Trust Security</h2>
+      <p>Modern networks verify every identity and request continuously instead of relying on perimeter trust.</p>
 
-    <h2>3. Zero-Trust Security Models</h2>
-    <p>The traditional “trust but verify” approach is no longer sufficient. Zero-trust models operate on the principle that <span class="highlight">no user or device is trusted by default</span>. Every access request is verified continuously, reducing the risk of breaches and insider threats. Benefits include:</p>
-    <ul>
-      <li>Strict identity verification for users and devices</li>
-      <li>Continuous monitoring for abnormal behavior</li>
-      <li>Seamless integration with cloud services and hybrid networks</li>
-    </ul>
+      <h2 class="section-title">4. Edge + IoT Integration</h2>
+      <p>Processing workloads near users and devices improves responsiveness and lowers central infrastructure load.</p>
 
-    <h2>4. Edge Computing & IoT Integration</h2>
-    <p>Edge computing brings computation closer to devices, reducing latency and improving response times. When combined with IoT devices, networks can:</p>
-    <ul>
-      <li>Process real-time data locally without relying on centralized servers</li>
-      <li>Enhance performance for autonomous vehicles, smart factories, and AR/VR applications</li>
-      <li>Reduce bandwidth consumption while maintaining reliability</li>
-    </ul>
-
-    <h2>5. Future-Proof Enterprise Strategies</h2>
-    <p>To stay competitive, businesses must adopt flexible, scalable, and intelligent network architectures. Key strategies include:</p>
-    <ul>
-      <li>Leveraging cloud-native solutions for agility and scalability</li>
-      <li>Implementing AI monitoring and predictive analytics</li>
-      <li>Maintaining robust security frameworks for both on-premises and remote environments</li>
-    </ul>
-    <p>By combining emerging technologies with best practices, organizations can ensure that their networks are ready for future demands, providing <span class="highlight">speed, security, and reliability</span> in an increasingly connected world.</p>
-
-    <p>The networking revolution is here, and staying informed is critical. Businesses that embrace these trends will not only maintain seamless connectivity but also gain a competitive edge in the digital era.</p>
+      <h2 class="section-title">5. Enterprise Readiness</h2>
+      <ul class="clean-list">
+        <li>Design for hybrid and cloud-native operations.</li>
+        <li>Automate observability and incident workflows.</li>
+        <li>Build security controls into architecture from day one.</li>
+      </ul>
+    </article>
   </main>
 
-  <!-- ================= Footer ================= -->
   <footer class="site-footer">
     &copy; 2025 Kelvin Mutwiri. All rights reserved.
   </footer>

@@ -1,16 +1,10 @@
-/**
- * Terminal-Style Skills Page
- * Creates a modern CMD/terminal interface for displaying skills
- */
-
-(function() {
+(function () {
   'use strict';
 
-  // Skills data organized by categories
   const skillsData = [
     {
       category: 'Frontend Development',
-      icon: '💻',
+      icon: 'FE',
       description: 'Building responsive and interactive user interfaces',
       skills: [
         { name: 'HTML5', level: 95, tools: ['Semantic HTML', 'Accessibility'] },
@@ -22,7 +16,7 @@
     },
     {
       category: 'Backend Development',
-      icon: '⚙️',
+      icon: 'BE',
       description: 'Creating robust server-side applications and APIs',
       skills: [
         { name: 'Python', level: 92, tools: ['Django', 'Flask', 'REST APIs'] },
@@ -32,8 +26,8 @@
       ]
     },
     {
-      category: 'DevOps & Networking',
-      icon: '🌐',
+      category: 'DevOps and Networking',
+      icon: 'OPS',
       description: 'Infrastructure management and network administration',
       skills: [
         { name: 'Linux', level: 90, tools: ['Bash', 'System Administration'] },
@@ -43,9 +37,9 @@
       ]
     },
     {
-      category: 'UI/UX Design',
-      icon: '🎨',
-      description: 'Designing intuitive and beautiful user experiences',
+      category: 'UI and UX Design',
+      icon: 'UX',
+      description: 'Designing intuitive and polished user experiences',
       skills: [
         { name: 'Figma', level: 88, tools: ['Prototyping', 'Design Systems'] },
         { name: 'Wireframing', level: 85, tools: ['User Flows', 'Information Architecture'] },
@@ -53,8 +47,8 @@
       ]
     },
     {
-      category: 'AI & Automation',
-      icon: '🤖',
+      category: 'AI and Automation',
+      icon: 'AI',
       description: 'Integrating AI capabilities and automating workflows',
       skills: [
         { name: 'OpenAI API', level: 85, tools: ['GPT Integration', 'Chatbots'] },
@@ -63,8 +57,8 @@
       ]
     },
     {
-      category: 'Tools & Version Control',
-      icon: '🛠️',
+      category: 'Tools and Version Control',
+      icon: 'VC',
       description: 'Essential development tools and collaboration',
       skills: [
         { name: 'Git', level: 95, tools: ['Version Control', 'Branching'] },
@@ -73,8 +67,8 @@
       ]
     },
     {
-      category: 'Testing & Quality',
-      icon: '🧪',
+      category: 'Testing and Quality',
+      icon: 'QA',
       description: 'Ensuring code quality and reliability',
       skills: [
         { name: 'Testing', level: 85, tools: ['Unit Tests', 'Integration Tests'] },
@@ -84,457 +78,380 @@
     }
   ];
 
-  /**
-   * Initialize terminal skills display
-   */
-  function initTerminalSkills() {
-    const terminalContent = document.getElementById('skillsTerminalContent');
-    if (!terminalContent) return;
-
-    // Clear initial loading message
-    setTimeout(() => {
-      const loadingText = terminalContent.previousElementSibling;
-      if (loadingText && loadingText.classList.contains('terminal-output')) {
-        loadingText.innerHTML = '<div class="terminal-text success">✓ Skills database loaded successfully</div>';
-      }
-
-      // Render skills with sequential animation
-      renderSkillsSequentially(terminalContent);
-    }, 800);
+  function slugify(text) {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
 
-  /**
-   * Render skills categories sequentially
-   */
-  function renderSkillsSequentially(container) {
-    skillsData.forEach((category, categoryIndex) => {
-      setTimeout(() => {
-        const categoryElement = createCategoryElement(category);
-        container.appendChild(categoryElement);
+  function getStats() {
+    const allSkills = skillsData.flatMap((category) => category.skills);
+    const totalSkills = allSkills.length;
+    const avgLevel = Math.round(allSkills.reduce((sum, skill) => sum + skill.level, 0) / totalSkills);
+    const strongest = allSkills.reduce((best, skill) => (skill.level > best.level ? skill : best), allSkills[0]);
 
-        // Add command explanation
-        const explanation = document.createElement('div');
-        explanation.className = 'cmd-explanation';
-        explanation.textContent = `Displaying ${category.category.toLowerCase()} skills...`;
-        container.appendChild(explanation);
-
-        // Scroll to bottom
-        const terminalBody = document.getElementById('terminalBody');
-        if (terminalBody) {
-          terminalBody.scrollTop = terminalBody.scrollHeight;
-        }
-      }, categoryIndex * 600);
-    });
+    return {
+      categories: skillsData.length,
+      totalSkills,
+      avgLevel,
+      strongest
+    };
   }
 
-  /**
-   * Create category element with skills
-   */
-  function createCategoryElement(category) {
-    const categoryDiv = document.createElement('div');
-    categoryDiv.className = 'skill-category';
+  function renderSummary() {
+    const summaryContainer = document.getElementById('skillsSummary');
+    if (!summaryContainer) return;
 
-    // Category header
-    const header = document.createElement('div');
-    header.className = 'category-header';
-    header.innerHTML = `
-      <span class="category-icon">${category.icon}</span>
-      <span class="category-title">${category.category}</span>
+    const stats = getStats();
+    summaryContainer.innerHTML = `
+      <article class="summary-card">
+        <span class="summary-label">Categories</span>
+        <strong class="summary-value">${stats.categories}</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Skill Items</span>
+        <strong class="summary-value">${stats.totalSkills}</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Average Proficiency</span>
+        <strong class="summary-value">${stats.avgLevel}%</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Strongest Skill</span>
+        <strong class="summary-value">${stats.strongest.name}</strong>
+      </article>
     `;
-
-    // Category description
-    const description = document.createElement('div');
-    description.className = 'category-description';
-    description.textContent = category.description;
-
-    // Skills container
-    const skillsContainer = document.createElement('div');
-    skillsContainer.className = 'skill-items';
-
-    // Create skill items
-    category.skills.forEach((skill, skillIndex) => {
-      setTimeout(() => {
-        const skillItem = createSkillItem(skill);
-        skillsContainer.appendChild(skillItem);
-
-        // Animate progress bar
-        setTimeout(() => {
-          const progressFill = skillItem.querySelector('.progress-fill');
-          if (progressFill) {
-            progressFill.style.width = `${skill.level}%`;
-          }
-        }, 100);
-      }, skillIndex * 150);
-    });
-
-    categoryDiv.appendChild(header);
-    categoryDiv.appendChild(description);
-    categoryDiv.appendChild(skillsContainer);
-
-    return categoryDiv;
   }
 
-  /**
-   * Create individual skill item
-   */
+  async function runBootSequence() {
+    const output = document.querySelector('#terminalBody .terminal-output');
+    if (!output) return;
+
+    const steps = [
+      'Loading skills database...',
+      'Indexing categories...',
+      'Calculating proficiency metrics...',
+      'Ready.'
+    ];
+
+    output.innerHTML = '<div class="terminal-text">Loading skills database...</div>';
+
+    for (const step of steps) {
+      output.innerHTML = `<div class="terminal-text">${step}</div>`;
+      await new Promise((resolve) => setTimeout(resolve, 220));
+    }
+
+    output.innerHTML = '<div class="terminal-text success">Skills database loaded successfully.</div>';
+  }
+
+  function animateProgressBars(scope) {
+    const bars = scope.querySelectorAll('.progress-fill');
+    bars.forEach((bar) => {
+      const level = Number(bar.dataset.level || 0);
+      requestAnimationFrame(() => {
+        bar.style.width = `${level}%`;
+      });
+    });
+  }
+
   function createSkillItem(skill) {
     const skillDiv = document.createElement('div');
     skillDiv.className = 'skill-item';
 
-    // Skill name
-    const nameDiv = document.createElement('div');
-    nameDiv.className = 'skill-name';
-    nameDiv.textContent = skill.name;
+    const tools = Array.isArray(skill.tools) ? skill.tools : [];
+    const toolsMarkup = tools.map((tool) => `<span class="skill-badge">${tool}</span>`).join('');
 
-    // Skill tools as badges
-    if (skill.tools && skill.tools.length > 0) {
-      skill.tools.forEach(tool => {
-        const badge = document.createElement('span');
-        badge.className = 'skill-badge';
-        badge.textContent = tool;
-        nameDiv.appendChild(badge);
-      });
-    }
-
-    // Progress bar
-    const progressDiv = document.createElement('div');
-    progressDiv.className = 'skill-progress';
-
-    const labelDiv = document.createElement('div');
-    labelDiv.className = 'progress-label';
-    labelDiv.innerHTML = `<span>Proficiency</span><span>${skill.level}%</span>`;
-
-    const barDiv = document.createElement('div');
-    barDiv.className = 'progress-bar';
-
-    const fillDiv = document.createElement('div');
-    fillDiv.className = 'progress-fill';
-    fillDiv.style.width = '0%';
-
-    barDiv.appendChild(fillDiv);
-    progressDiv.appendChild(labelDiv);
-    progressDiv.appendChild(barDiv);
-
-    skillDiv.appendChild(nameDiv);
-    skillDiv.appendChild(progressDiv);
-
-    // Add hover effect
-    skillDiv.addEventListener('mouseenter', () => {
-      skillDiv.style.borderColor = 'var(--accent-primary)';
-    });
-
-    skillDiv.addEventListener('mouseleave', () => {
-      skillDiv.style.borderColor = 'var(--border-subtle)';
-    });
+    skillDiv.innerHTML = `
+      <div class="skill-topline">
+        <h4 class="skill-name">${skill.name}</h4>
+        <span class="skill-level">${skill.level}%</span>
+      </div>
+      <div class="skill-progress">
+        <div class="progress-bar">
+          <div class="progress-fill" data-level="${skill.level}" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="skill-tools">${toolsMarkup}</div>
+    `;
 
     return skillDiv;
   }
 
-  /**
-   * Handle terminal clear button
-   */
-  function initTerminalControls() {
-    const clearBtn = document.querySelector('.terminal-btn');
-    if (clearBtn) {
-      clearBtn.addEventListener('click', () => {
-        const terminalContent = document.getElementById('skillsTerminalContent');
-        const terminalBody = document.getElementById('terminalBody');
-        if (terminalContent && terminalBody) {
-          terminalContent.innerHTML = '';
-          // Clear all output except initial command
-          const outputs = terminalBody.querySelectorAll('.terminal-output, .skill-category, .cmd-explanation');
-          outputs.forEach(output => {
-            if (output.id !== 'skillsTerminalContent') {
-              output.remove();
-            }
-          });
-          // Re-render skills
-          setTimeout(() => {
-            renderSkillsSequentially(terminalContent);
-          }, 500);
-        }
+  function createCategoryElement(category, index) {
+    const categoryDiv = document.createElement('section');
+    const categoryId = slugify(category.category);
+    const sortedSkills = [...category.skills].sort((a, b) => b.level - a.level);
+    const average = Math.round(sortedSkills.reduce((sum, skill) => sum + skill.level, 0) / sortedSkills.length);
+
+    categoryDiv.className = 'skill-category';
+    categoryDiv.id = `skills-${categoryId}`;
+    categoryDiv.style.setProperty('--skill-enter-delay', `${index * 90}ms`);
+
+    const itemsContainer = document.createElement('div');
+    itemsContainer.className = 'skill-items';
+    sortedSkills.forEach((skill) => itemsContainer.appendChild(createSkillItem(skill)));
+
+    categoryDiv.innerHTML = `
+      <div class="category-header">
+        <span class="category-icon">${category.icon}</span>
+        <div>
+          <h3 class="category-title">${category.category}</h3>
+          <p class="category-description">${category.description}</p>
+        </div>
+      </div>
+      <div class="category-meta">
+        <span class="meta-badge">${sortedSkills.length} skills</span>
+        <span class="meta-badge">Average ${average}%</span>
+      </div>
+    `;
+
+    categoryDiv.appendChild(itemsContainer);
+    return categoryDiv;
+  }
+
+  function renderSkills(container) {
+    container.innerHTML = '';
+
+    const fragment = document.createDocumentFragment();
+    skillsData.forEach((category, index) => {
+      const categoryEl = createCategoryElement(category, index);
+      fragment.appendChild(categoryEl);
+    });
+
+    container.appendChild(fragment);
+
+    container.querySelectorAll('.skill-category').forEach((categoryEl) => {
+      requestAnimationFrame(() => {
+        categoryEl.classList.add('is-visible');
       });
-    }
-  }
-
-  /**
-   * Initialize interactive command input
-   */
-  function initCommandInput() {
-    const terminalInput = document.getElementById('terminalInput');
-    const terminalBody = document.getElementById('terminalBody');
-    const terminalContent = document.getElementById('skillsTerminalContent');
-    
-    if (!terminalInput || !terminalBody || !terminalContent) return;
-
-    // Focus input on load
-    setTimeout(() => {
-      terminalInput.focus();
-    }, 1000);
-
-    // Handle command submission
-    terminalInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        const command = terminalInput.value.trim();
-        
-        if (command) {
-          // Display the command
-          displayCommand(command);
-          
-          // Process command
-          processCommand(command, terminalBody, terminalContent);
-          
-          // Clear input
-          terminalInput.value = '';
-          
-          // Scroll to bottom
-          setTimeout(() => {
-            terminalBody.scrollTop = terminalBody.scrollHeight;
-          }, 100);
-        }
-      }
-    });
-
-    // Keep cursor visible when typing
-    terminalInput.addEventListener('input', () => {
-      const cursor = document.getElementById('terminalCursor');
-      if (cursor) {
-        cursor.style.opacity = '1';
-      }
-    });
-
-    terminalInput.addEventListener('blur', () => {
-      terminalInput.focus(); // Keep focus on input
+      animateProgressBars(categoryEl);
     });
   }
 
-  /**
-   * Display user command in terminal
-   */
+  function clearTerminal(terminalBody, terminalContent) {
+    const dynamicNodes = terminalBody.querySelectorAll('.terminal-output.dynamic-output, .terminal-line.dynamic-line, .cmd-explanation');
+    dynamicNodes.forEach((node) => node.remove());
+    renderSkills(terminalContent);
+  }
+
   function displayCommand(command) {
-    const terminalBody = document.getElementById('terminalBody');
-    if (!terminalBody) return;
+    const terminalStream = document.getElementById('terminalStream');
+    if (!terminalStream) return;
 
     const commandLine = document.createElement('div');
-    commandLine.className = 'terminal-line';
+    commandLine.className = 'terminal-line dynamic-line';
     commandLine.innerHTML = `
       <span class="terminal-prompt">$</span>
       <span class="terminal-command">${escapeHtml(command)}</span>
     `;
-    
-    const inputLine = document.getElementById('terminalInputLine');
-    if (inputLine && inputLine.parentNode) {
-      inputLine.parentNode.insertBefore(commandLine, inputLine);
-    }
+
+    terminalStream.appendChild(commandLine);
   }
 
-  /**
-   * Process user command and generate response
-   */
-  function processCommand(command, terminalBody, terminalContent) {
-    const cmd = command.toLowerCase().trim();
-    const parts = cmd.split(' ');
-    const mainCmd = parts[0];
-    const args = parts.slice(1).join(' ');
+  function displayResponse(response) {
+    const terminalStream = document.getElementById('terminalStream');
+    if (!terminalStream) return;
 
-    let response = '';
-
-    switch(mainCmd) {
-      case 'help':
-        response = getHelpResponse();
-        break;
-      
-      case 'list':
-      case 'ls':
-        response = getListResponse();
-        break;
-      
-      case 'search':
-      case 'find':
-        response = getSearchResponse(args);
-        break;
-      
-      case 'clear':
-      case 'cls':
-        clearTerminal(terminalBody, terminalContent);
-        return;
-      
-      case 'about':
-      case 'info':
-        response = getAboutResponse();
-        break;
-      
-      case 'skills':
-      case 'show':
-        response = getSkillsResponse();
-        break;
-      
-      default:
-        response = getUnknownCommandResponse(mainCmd);
-    }
-
-    if (response) {
-      displayResponse(response, terminalBody);
-    }
-  }
-
-  /**
-   * Display response in terminal
-   */
-  function displayResponse(response, terminalBody) {
     const outputDiv = document.createElement('div');
-    outputDiv.className = 'terminal-output';
+    outputDiv.className = 'terminal-output dynamic-output';
     outputDiv.innerHTML = response;
-    
-    const inputLine = document.getElementById('terminalInputLine');
-    if (inputLine && inputLine.parentNode) {
-      inputLine.parentNode.insertBefore(outputDiv, inputLine);
-    }
+
+    terminalStream.appendChild(outputDiv);
   }
 
-  /**
-   * Get help response
-   */
   function getHelpResponse() {
     return `
       <div class="terminal-text info">Available commands:</div>
-      <div class="terminal-text" style="margin-left: 1.5rem; margin-top: 0.5rem;">
+      <div class="terminal-text" style="margin-left:1.5rem; margin-top:0.5rem;">
         <div><span style="color: var(--accent-primary);">help</span> - Show this help message</div>
         <div><span style="color: var(--accent-primary);">list</span> - List all skill categories</div>
         <div><span style="color: var(--accent-primary);">search [skill]</span> - Search for a specific skill</div>
-        <div><span style="color: var(--accent-primary);">about</span> - Show information about skills</div>
-        <div><span style="color: var(--accent-primary);">skills</span> - Display all skills</div>
-        <div><span style="color: var(--accent-primary);">clear</span> - Clear terminal output</div>
+        <div><span style="color: var(--accent-primary);">about</span> - Show summary metrics</div>
+        <div><span style="color: var(--accent-primary);">skills</span> - Re-render skills matrix</div>
+        <div><span style="color: var(--accent-primary);">clear</span> - Clear terminal history</div>
       </div>
     `;
   }
 
-  /**
-   * Get list response
-   */
   function getListResponse() {
-    let list = '<div class="terminal-text info">Skill Categories:</div><div class="terminal-text" style="margin-left: 1.5rem; margin-top: 0.5rem;">';
-    skillsData.forEach((category, index) => {
-      list += `<div>${index + 1}. ${category.icon} ${category.category}</div>`;
-    });
-    list += '</div>';
-    return list;
+    const categories = skillsData
+      .map((category, index) => `<div>${index + 1}. ${category.category}</div>`)
+      .join('');
+
+    return `<div class="terminal-text info">Skill Categories:</div><div class="terminal-text" style="margin-left:1.5rem; margin-top:0.5rem;">${categories}</div>`;
   }
 
-  /**
-   * Get search response
-   */
   function getSearchResponse(query) {
-    if (!query) {
+    if (!query || !query.trim()) {
       return '<div class="terminal-text warning">Usage: search [skill name]</div>';
     }
 
+    const term = query.trim().toLowerCase();
     const results = [];
-    const searchTerm = query.toLowerCase();
 
-    skillsData.forEach(category => {
-      category.skills.forEach(skill => {
-        if (skill.name.toLowerCase().includes(searchTerm) || 
-            skill.tools.some(tool => tool.toLowerCase().includes(searchTerm))) {
-          results.push({ category: category.category, skill: skill });
+    skillsData.forEach((category) => {
+      category.skills.forEach((skill) => {
+        const skillMatch = skill.name.toLowerCase().includes(term);
+        const toolMatch = skill.tools.some((tool) => tool.toLowerCase().includes(term));
+        const categoryMatch = category.category.toLowerCase().includes(term);
+
+        if (skillMatch || toolMatch || categoryMatch) {
+          results.push({ category: category.category, skill });
         }
       });
     });
 
-    if (results.length === 0) {
-      return `<div class="terminal-text warning">No skills found matching "${query}"</div>`;
+    if (!results.length) {
+      return `<div class="terminal-text warning">No skills found matching "${escapeHtml(query)}"</div>`;
     }
 
-    let response = `<div class="terminal-text success">Found ${results.length} result(s) for "${query}":</div><div class="terminal-text" style="margin-left: 1.5rem; margin-top: 0.5rem;">`;
-    results.forEach(result => {
-      response += `<div><span style="color: var(--accent-primary);">${result.skill.name}</span> (${result.skill.level}%) - ${result.category}</div>`;
-      if (result.skill.tools.length > 0) {
-        response += `<div style="margin-left: 1rem; color: var(--text-secondary);">Tools: ${result.skill.tools.join(', ')}</div>`;
-      }
-    });
-    response += '</div>';
-    return response;
+    const markup = results
+      .map((result, index) => {
+        const tools = result.skill.tools.join(', ');
+        return `
+          <div style="margin-bottom:0.65rem;">
+            <span style="color: var(--accent-primary); font-weight:600;">${index + 1}. ${result.skill.name}</span>
+            <span style="color: var(--text-secondary);"> (${result.skill.level}%)</span>
+            <span style="color: var(--accent-purple);"> - ${result.category}</span>
+            <div style="margin-left:1.2rem; color: var(--text-secondary); font-size:0.9em;">Tools: ${tools}</div>
+          </div>
+        `;
+      })
+      .join('');
+
+    return `<div class="terminal-text success">Found ${results.length} result(s) for "${escapeHtml(query)}":</div><div class="terminal-text" style="margin-left:1.1rem; margin-top:0.5rem;">${markup}</div>`;
   }
 
-  /**
-   * Get about response
-   */
   function getAboutResponse() {
-    const totalSkills = skillsData.reduce((sum, cat) => sum + cat.skills.length, 0);
-    const avgLevel = Math.round(
-      skillsData.reduce((sum, cat) => 
-        sum + cat.skills.reduce((s, skill) => s + skill.level, 0), 0
-      ) / totalSkills
-    );
+    const stats = getStats();
 
     return `
       <div class="terminal-text info">Skills Database Information:</div>
-      <div class="terminal-text" style="margin-left: 1.5rem; margin-top: 0.5rem;">
-        <div>Total Categories: <span style="color: var(--accent-primary);">${skillsData.length}</span></div>
-        <div>Total Skills: <span style="color: var(--accent-primary);">${totalSkills}</span></div>
-        <div>Average Proficiency: <span style="color: var(--accent-primary);">${avgLevel}%</span></div>
-        <div style="margin-top: 0.5rem;">Type <span style="color: var(--accent-primary);">help</span> for available commands</div>
+      <div class="terminal-text" style="margin-left:1.5rem; margin-top:0.5rem;">
+        <div>Total Categories: <span style="color: var(--accent-primary);">${stats.categories}</span></div>
+        <div>Total Skills: <span style="color: var(--accent-primary);">${stats.totalSkills}</span></div>
+        <div>Average Proficiency: <span style="color: var(--accent-primary);">${stats.avgLevel}%</span></div>
+        <div>Strongest Skill: <span style="color: var(--accent-primary);">${stats.strongest.name}</span></div>
       </div>
     `;
   }
 
-  /**
-   * Get skills response
-   */
-  function getSkillsResponse() {
-    return '<div class="terminal-text info">All skills are displayed above. Use "search [skill]" to find specific skills.</div>';
-  }
-
-  /**
-   * Get unknown command response
-   */
-  function getUnknownCommandResponse(cmd) {
+  function getUnknownCommandResponse(command) {
     return `
-      <div class="terminal-text warning">Command not found: "${cmd}"</div>
-      <div class="terminal-text" style="margin-left: 1.5rem; margin-top: 0.5rem;">
-        Type <span style="color: var(--accent-primary);">help</span> for available commands
-      </div>
+      <div class="terminal-text warning">Command not found: "${escapeHtml(command)}"</div>
+      <div class="terminal-text" style="margin-left:1.5rem; margin-top:0.5rem;">Type <span style="color: var(--accent-primary);">help</span> for available commands.</div>
     `;
   }
 
-  /**
-   * Clear terminal
-   */
-  function clearTerminal(terminalBody, terminalContent) {
-    terminalContent.innerHTML = '';
-    const outputs = terminalBody.querySelectorAll('.terminal-output, .skill-category, .cmd-explanation');
-    outputs.forEach(output => {
-      if (output.id !== 'skillsTerminalContent' && !output.classList.contains('terminal-line')) {
-        output.remove();
-      }
-    });
-    // Re-render skills
-    setTimeout(() => {
-      renderSkillsSequentially(terminalContent);
-    }, 500);
+  function processCommand(rawCommand, terminalBody, terminalContent) {
+    const command = rawCommand.trim().toLowerCase();
+    const [mainCommand, ...rest] = command.split(/\s+/);
+    const args = rest.join(' ');
+
+    switch (mainCommand) {
+      case 'help':
+      case 'h':
+      case '?':
+        displayResponse(getHelpResponse());
+        break;
+      case 'list':
+      case 'ls':
+      case 'dir':
+        displayResponse(getListResponse());
+        break;
+      case 'search':
+      case 'find':
+      case 'grep':
+        displayResponse(getSearchResponse(args));
+        break;
+      case 'about':
+      case 'info':
+      case 'whoami':
+        displayResponse(getAboutResponse());
+        break;
+      case 'skills':
+      case 'show':
+      case 'display':
+        renderSkills(terminalContent);
+        displayResponse('<div class="terminal-text info">Skills matrix refreshed.</div>');
+        break;
+      case 'clear':
+      case 'cls':
+      case 'reset':
+        clearTerminal(terminalBody, terminalContent);
+        break;
+      default:
+        displayResponse(getUnknownCommandResponse(mainCommand));
+    }
   }
 
-  /**
-   * Escape HTML to prevent XSS
-   */
+  function initCommandInput() {
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalBody = document.getElementById('terminalBody');
+    const terminalStream = document.getElementById('terminalStream');
+    const terminalContent = document.getElementById('skillsTerminalContent');
+
+    if (!terminalInput || !terminalBody || !terminalContent) return;
+
+    setTimeout(() => {
+      try {
+        terminalInput.focus({ preventScroll: true });
+      } catch (error) {
+        terminalInput.focus();
+      }
+    }, 350);
+
+    terminalInput.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      event.preventDefault();
+
+      const command = terminalInput.value.trim();
+      if (!command) return;
+
+      displayCommand(command);
+      processCommand(command, terminalBody, terminalContent);
+
+      terminalInput.value = '';
+      const scrollContainer = terminalStream || terminalBody;
+      scrollContainer.scrollTo({ top: scrollContainer.scrollHeight, behavior: 'smooth' });
+    });
+  }
+
+  function initTerminalControls() {
+    const clearBtn = document.querySelector('.terminal-btn');
+    const terminalBody = document.getElementById('terminalBody');
+    const terminalContent = document.getElementById('skillsTerminalContent');
+
+    if (!clearBtn || !terminalBody || !terminalContent) return;
+
+    clearBtn.addEventListener('click', () => {
+      clearTerminal(terminalBody, terminalContent);
+      displayResponse('<div class="terminal-text info">Terminal history cleared.</div>');
+    });
+  }
+
   function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
   }
 
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      initTerminalSkills();
-      initTerminalControls();
-      initCommandInput();
-    });
-  } else {
+  async function initTerminalSkills() {
+    const terminalContent = document.getElementById('skillsTerminalContent');
+    if (!terminalContent) return;
+
+    renderSummary();
+    await runBootSequence();
+    renderSkills(terminalContent);
+  }
+
+  function init() {
     initTerminalSkills();
     initTerminalControls();
     initCommandInput();
   }
-})();
 
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Command Palette
  * Cmd+Space (or Ctrl+K) style command palette for quick navigation
  */
@@ -7,23 +7,23 @@
   'use strict';
 
   const commands = [
-    { id: 'home', label: 'Go to Home', action: () => window.location.href = 'index.html', icon: '🏠' },
-    { id: 'projects', label: 'View Projects', action: () => window.location.href = 'projects.html', icon: '💼' },
-    { id: 'skills', label: 'View Skills', action: () => window.location.href = 'skills.html', icon: '⚡' },
+    { id: 'home', label: 'Go to Home', action: () => window.location.href = 'index.html', icon: 'ðŸ ' },
+    { id: 'projects', label: 'View Projects', action: () => window.location.href = 'projects.html', icon: 'ðŸ’¼' },
+    { id: 'skills', label: 'View Skills', action: () => window.location.href = 'skills.html', icon: 'âš¡' },
     { id: 'blog', label: 'View Blog', action: () => window.location.href = 'blog.html', icon: '📝' },
-    { id: 'services', label: 'View Services', action: () => window.location.href = 'services.html', icon: '🛠️' },
-    { id: 'contact', label: 'Contact Me', action: () => window.location.href = 'contact.html', icon: '✉️' },
-    { id: 'about', label: 'About', action: () => window.location.href = 'about.html', icon: '👤' },
+    { id: 'services', label: 'View Services', action: () => window.location.href = 'services.html', icon: 'ðŸ› ï¸' },
+    { id: 'contact', label: 'Contact Me', action: () => window.location.href = 'contact.html', icon: 'âœ‰ï¸' },
+    { id: 'about', label: 'About', action: () => window.location.href = 'about.html', icon: 'ðŸ‘¤' },
     { id: 'theme', label: 'Toggle Theme', action: () => {
       const themeToggle = document.getElementById('themeToggle');
       if (themeToggle) themeToggle.click();
-    }, icon: '🌙' },
+    }, icon: 'ðŸŒ™' },
     { id: 'resume', label: 'Download Resume', action: () => {
       const link = document.createElement('a');
       link.href = 'assets/resume.pdf';
       link.download = 'resume.pdf';
       link.click();
-    }, icon: '📄' }
+    }, icon: 'ðŸ“„' }
   ];
 
   let palette = null;
@@ -52,8 +52,8 @@
         </div>
         <div class="command-palette-results" role="listbox"></div>
         <div class="command-palette-footer">
-          <span>↑↓ Navigate</span>
-          <span>↵ Select</span>
+          <span>â†‘â†“ Navigate</span>
+          <span>â†µ Select</span>
           <span>Esc Close</span>
         </div>
       </div>
@@ -197,4 +197,5 @@
     createPalette();
   }
 })();
+
 

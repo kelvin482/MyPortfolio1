@@ -32,9 +32,12 @@
    * Initialize project filters
    */
   function initProjectFilters() {
+    if (window.__KM_PROJECT_FILTERS_BOUND) return;
+
     const filterButtons = utils.qsa('.chip[data-filter]');
     
     if (filterButtons.length === 0) return;
+    window.__KM_PROJECT_FILTERS_BOUND = true;
 
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {

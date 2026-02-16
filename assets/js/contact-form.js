@@ -12,6 +12,10 @@
   ];
 
   let currentStep = 0;
+  const configuredDraftKey = (typeof CONFIG !== 'undefined' && CONFIG.storage && CONFIG.storage.contactDraft)
+    ? CONFIG.storage.contactDraft
+    : 'contactDraft';
+  const legacyDraftKey = 'contactDraft';
 
   function init() {
     if (!form) return;
@@ -153,7 +157,11 @@
       const el = form.querySelector(`#${step.id}`);
       if (el) draftData[step.id] = el.value.trim();
     });
-    localStorage.setItem('contactDraft', JSON.stringify(draftData));
+    localStorage.setItem(configuredDraftKey, JSON.stringify(draftData));
+    // Keep legacy key in sync to avoid breaking existing saved drafts.
+    if (configuredDraftKey !== legacyDraftKey) {
+      localStorage.setItem(legacyDraftKey, JSON.stringify(draftData));
+    }
     if (statusEl) {
       statusEl.textContent = 'Draft saved ✅';
       statusEl.style.color = '#0f0';
@@ -163,7 +171,11 @@
 
   function restoreDraft() {
     try {
-      const draft = JSON.parse(localStorage.getItem('contactDraft') || '{}');
+      const primaryDraft = localStorage.getItem(configuredDraftKey);
+      const fallbackDraft = configuredDraftKey !== legacyDraftKey
+        ? localStorage.getItem(legacyDraftKey)
+        : null;
+      const draft = JSON.parse(primaryDraft || fallbackDraft || '{}');
       steps.forEach(step => {
         const el = form.querySelector(`#${step.id}`);
         if (el && draft[step.id]) el.value = draft[step.id];
@@ -191,7 +203,10 @@
         statusEl.textContent = 'Message sent successfully ✅';
         statusEl.style.color = '#0f0';
         form.reset();
-        localStorage.removeItem('contactDraft');
+        localStorage.removeItem(configuredDraftKey);
+        if (configuredDraftKey !== legacyDraftKey) {
+          localStorage.removeItem(legacyDraftKey);
+        }
       } else {
         const result = await response.json().catch(() => ({}));
         statusEl.textContent = result.error || 'Something went wrong ❌';
