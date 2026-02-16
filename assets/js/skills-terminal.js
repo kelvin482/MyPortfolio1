@@ -19,7 +19,7 @@
       icon: 'BE',
       description: 'Creating robust server-side applications and APIs',
       skills: [
-        { name: 'Python', level: 92, tools: ['Django', 'Flask', 'REST APIs'] },
+        { name: 'Python', level: 97, tools: ['Django', 'Flask', 'REST APIs'] },
         { name: 'Django', level: 90, tools: ['ORM', 'Authentication', 'Admin'] },
         { name: 'REST APIs', level: 88, tools: ['JSON', 'Authentication', 'Documentation'] },
         { name: 'Database Design', level: 85, tools: ['PostgreSQL', 'SQLite', 'Migrations'] }
