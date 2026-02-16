@@ -96,6 +96,8 @@ const PROJECTS = [
   }
 ];
 
+window.PROJECTS = PROJECTS;
+
 /**
  * Renders project cards inside a specified container
  * @param {string} containerId - The ID of the container element
@@ -133,10 +135,15 @@ function renderProjects(containerId, filter = "all", limit = null) {
   // Clear previous content
   container.innerHTML = "";
 
+  const isRepositoryView = containerId === "projectsList";
+
   // Render each project as a card
   projectsToRender.forEach(project => {
+    const categoryLabel = String(project.category || "project").toUpperCase();
+    const metaTags = [categoryLabel, "Portfolio"];
+
     const card = document.createElement("article");
-    card.className = "project-card";
+    card.className = "project-card card-visible";
     card.setAttribute("data-category", project.category);
 
     const hasLive = Boolean(project.live) && project.live !== "#";
@@ -147,17 +154,41 @@ function renderProjects(containerId, filter = "all", limit = null) {
         ? `<a href="${project.code}" class="btn" target="_blank" rel="noopener">Source</a>`
         : "";
 
+    const cardHeader = isRepositoryView
+      ? `
+      <header class="repo-card-head card-visible">
+        <span class="project-type">${categoryLabel}</span>
+        <span class="project-id">#${project.id}</span>
+      </header>`
+      : "";
+    const cardMeta = isRepositoryView
+      ? `
+        <div class="project-meta">
+          ${metaTags.map(tag => `<span class="meta-tag">${tag}</span>`).join("")}
+        </div>`
+      : "";
+
     card.innerHTML = `
+      ${cardHeader}
       <div class="project-thumb">
         <img src="${project.image}" alt="${project.title}" loading="lazy">
       </div>
       <div class="project-content">
         <h4>${project.title}</h4>
         <p>${project.description}</p>
+        ${cardMeta}
         ${primaryLink ? `<div class="project-links">${primaryLink}</div>` : ""}
       </div>
     `;
 
     container.appendChild(card);
   });
+
+  window.dispatchEvent(new CustomEvent("km:projectsRendered", {
+    detail: {
+      containerId,
+      filter,
+      total: projectsToRender.length
+    }
+  }));
 }

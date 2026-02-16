@@ -54,28 +54,58 @@
 
   <!-- ================= Main Content ================= -->
   <main>
-    <section class="projects-list" data-reveal>
+    <section class="projects-list">
       <div class="container">
-        <div class="section-header">
-          <h1>Selected Work</h1>
-          <p>Things I've built and shipped</p>
-          <div class="filters">
-            <button class="chip active" data-filter="all">All</button>
-            <button class="chip" data-filter="web">Web</button>
-            <button class="chip" data-filter="ai">AI</button>
-            <button class="chip" data-filter="network">Network</button>
-          </div>
-        </div>
+        <div class="projects-shell">
+          <header class="repo-hero">
+            <div class="repo-title-row">
+              <span class="repo-badge">Portfolio Repository</span>
+              <h1>Projects</h1>
+              <p>GitHub-inspired showcase of shipped work across AI, web platforms, and network engineering.</p>
+            </div>
+            <div class="repo-stats">
+              <article class="repo-stat">
+                <span class="stat-label">Total Repos</span>
+                <strong id="repoTotalCount">0</strong>
+              </article>
+              <article class="repo-stat">
+                <span class="stat-label">Web</span>
+                <strong id="repoWebCount">0</strong>
+              </article>
+              <article class="repo-stat">
+                <span class="stat-label">AI</span>
+                <strong id="repoAiCount">0</strong>
+              </article>
+              <article class="repo-stat">
+                <span class="stat-label">Network</span>
+                <strong id="repoNetworkCount">0</strong>
+              </article>
+            </div>
+          </header>
 
-        <div class="project-grid" id="projectsList">
-          <!-- Project cards dynamically generated via JS -->
+          <div class="projects-toolbar">
+            <div class="toolbar-copy">
+              <h2><span id="activeFilterLabel">All</span> Projects</h2>
+              <p><span id="projectsResultCount">0</span> repositories visible</p>
+            </div>
+            <div class="filters">
+              <button class="chip active" data-filter="all">All</button>
+              <button class="chip" data-filter="web">Web</button>
+              <button class="chip" data-filter="ai">AI</button>
+              <button class="chip" data-filter="network">Network</button>
+            </div>
+          </div>
+
+          <div class="project-grid" id="projectsList">
+            <!-- Project cards dynamically generated via JS -->
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ================= Footer ================= -->
-  <footer class="site-footer" data-reveal>
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <strong>Kelvin Mutwiri</strong>
