@@ -1,115 +1,97 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects Kelvin Mutwiri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <!--style-->
+  <title>Projects - Kelvin Mutwiri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!--project style-->
   <link rel="stylesheet" href="assets/css/project.css">
-  <style>
-    /* Center copyright text */
-    .site-footer .copyright {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-muted, #888);
-    }
-  </style>
 </head>
-<body>
-  <!-- ================= Header / Navigation ================= -->
-  <header class="site-header" data-reveal>
+<body class="projects-premium-page">
+  <header class="site-header">
     <div class="container nav-grid">
       <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="projects.html" class="active">Projects</a>
         <a href="skills.html">Skills</a>
-        <a href="blog.html">Blog</a>
         <a href="contact.html" class="contact-cta">Contact</a>
-         <!-- <a href="about.html">About</a> -->
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle3" class="icon-btn" aria-label="Toggle theme">ðŸŒ™</button>
-        <button id="menuBtn3" class="icon-btn menu-btn" aria-label="Open menu">â˜°</button>
+        <button id="themeToggle3" class="icon-btn" aria-label="Toggle theme">&#127769;</button>
+        <button id="menuBtn3" class="icon-btn menu-btn" aria-label="Open menu">&#9776;</button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Mobile Navigation ================= -->
   <div id="mobileNav" class="mobile-nav">
-    <button id="closeMobileNav" class="close-nav">Ã—</button>
+    <button id="closeMobileNav" class="close-nav">&times;</button>
     <nav class="mobile-links">
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="skills.html">Skills</a>
-      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
-    
     </nav>
   </div>
 
-  <!-- ================= Main Content ================= -->
   <main>
-    <section class="projects-list">
-      <div class="container">
-        <div class="projects-shell">
-          <header class="repo-hero">
-            <div class="repo-title-row">
-              <span class="repo-badge">Portfolio Repository</span>
-              <h1>Projects</h1>
-              <p>GitHub-inspired showcase of shipped work across AI, web platforms, and network engineering.</p>
-            </div>
-            <div class="repo-stats">
-              <article class="repo-stat">
-                <span class="stat-label">Total Repos</span>
-                <strong id="repoTotalCount">0</strong>
-              </article>
-              <article class="repo-stat">
-                <span class="stat-label">Web</span>
-                <strong id="repoWebCount">0</strong>
-              </article>
-              <article class="repo-stat">
-                <span class="stat-label">AI</span>
-                <strong id="repoAiCount">0</strong>
-              </article>
-              <article class="repo-stat">
-                <span class="stat-label">Network</span>
-                <strong id="repoNetworkCount">0</strong>
-              </article>
-            </div>
-          </header>
-
-          <div class="projects-toolbar">
-            <div class="toolbar-copy">
-              <h2><span id="activeFilterLabel">All</span> Projects</h2>
-              <p><span id="projectsResultCount">0</span> repositories visible</p>
-            </div>
-            <div class="filters">
-              <button class="chip active" data-filter="all">All</button>
-              <button class="chip" data-filter="web">Web</button>
-              <button class="chip" data-filter="ai">AI</button>
-              <button class="chip" data-filter="network">Network</button>
-            </div>
+    <section class="pp-hero reveal reveal-base">
+      <div class="pp-container">
+        <div class="pp-hero-inner">
+          <div class="pp-hero-copy">
+            <p class="pp-kicker">Selected Work</p>
+            <h1 class="pp-title">
+              Things I've Built
+              <span>&amp; Shipped</span>
+            </h1>
+            <p class="pp-subtitle">
+              A focused collection of production-ready work across AI systems, web applications,
+              design-heavy interfaces, and data-driven tooling.
+            </p>
           </div>
-
-          <div class="project-grid" id="projectsList">
-            <!-- Project cards dynamically generated via JS -->
-          </div>
+          <div class="pp-ghost-number" aria-hidden="true">20</div>
         </div>
+      </div>
+    </section>
+
+    <section class="pp-filters reveal reveal-base">
+      <div class="pp-container">
+        <div class="pill-row" role="toolbar" aria-label="Filter projects">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="aiml">AI&#183;ML</button>
+          <button class="pill" data-filter="web">Web Apps</button>
+          <button class="pill" data-filter="data">Data</button>
+          <button class="pill" data-filter="ux">UI&#183;UX</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-featured reveal reveal-base">
+      <div class="pp-container">
+        <div class="featured-list" id="featuredProjects"></div>
+      </div>
+    </section>
+
+    <section class="pp-other reveal reveal-base">
+      <div class="pp-container">
+        <header class="other-header">
+          <div class="other-title-wrap">
+            <h2>Other Projects</h2>
+            <span class="other-line" aria-hidden="true"></span>
+          </div>
+          <button id="toggleOther" class="other-toggle btn-ghost" type="button">Show all &rarr;</button>
+        </header>
+        <div class="other-grid" id="otherProjects"></div>
       </div>
     </section>
   </main>
 
-  <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <strong>Kelvin Mutwiri</strong>
-        <p>Fullâ€‘Stack Developer & Designer â€” building delightful web experiences.</p>
+        <p>Building things that work, look clean, and scale with confidence.</p>
       </div>
       <div>
         <h4>Contact</h4>
@@ -124,30 +106,19 @@
       <div>
         <h4>Site</h4>
         <a href="index.html">Home</a>
-        <!-- <a href="about.html">About</a> -->
         <a href="skills.html">Skills</a>
       </div>
     </div>
     <div class="copyright">
-      Â© <span id="year"></span> Kelvin Mutwiri. All rights reserved.
+      &copy; <span id="year"></span> Kelvin Mutwiri. All rights reserved.
     </div>
   </footer>
 
-  <!-- ================= Scripts ================= -->
-  <!-- Configuration must load first -->
   <script src="assets/js/config.js"></script>
-  <!-- Core modules -->
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/navigation.js"></script>
-  <script src="assets/js/animations.js"></script>
-  <!-- Projects data and rendering -->
   <script src="assets/js/projects-data.js"></script>
-  <!-- Page-specific scripts -->
   <script src="assets/js/script.js"></script>
   <script src="assets/js/project.js"></script>
 </body>
 </html>
-
-
-
-

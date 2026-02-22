@@ -36,13 +36,23 @@
       observer.observe(card);
     });
 
-    // Add smooth scroll on wheel event (horizontal scrolling)
-    let isScrolling = false;
+    const hasHorizontalOverflow = () => projectGrid.scrollWidth > projectGrid.clientWidth + 2;
+
+    // Add smooth wheel-to-horizontal behavior only when overflow exists.
     projectGrid.addEventListener('wheel', (e) => {
-      if (e.deltaY !== 0) {
-        e.preventDefault();
-        projectGrid.scrollLeft += e.deltaY;
-      }
+      if (!hasHorizontalOverflow()) return;
+
+      const delta = e.deltaY !== 0 ? e.deltaY : e.deltaX;
+      if (delta === 0) return;
+
+      const atStart = projectGrid.scrollLeft <= 0;
+      const atEnd = projectGrid.scrollLeft + projectGrid.clientWidth >= projectGrid.scrollWidth - 1;
+
+      // Let normal page scroll continue when user reaches the horizontal edges.
+      if ((delta < 0 && atStart) || (delta > 0 && atEnd)) return;
+
+      e.preventDefault();
+      projectGrid.scrollBy({ left: delta * 0.9, behavior: 'smooth' });
     }, { passive: false });
 
     // Add touch support for mobile
@@ -55,6 +65,8 @@
     }, { passive: true });
 
     projectGrid.addEventListener('touchmove', (e) => {
+      if (!hasHorizontalOverflow()) return;
+
       if (Math.abs(e.touches[0].clientX - touchStartX) > Math.abs(e.touches[0].clientY - touchStartY)) {
         // Horizontal scroll
         e.preventDefault();

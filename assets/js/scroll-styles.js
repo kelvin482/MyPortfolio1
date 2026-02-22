@@ -7,22 +7,15 @@
   'use strict';
 
   function initScrollStyles() {
-    // Observe all sections for style variations
+    // Observe all sections and reveal them without decorative edge variations.
     const sections = document.querySelectorAll('section[data-reveal]');
     
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Add style variation class based on section index
-            const variationClass = `style-variation-${(index % 4) + 1}`;
-            entry.target.classList.add('scroll-styled', variationClass);
-            
-            // Add staggered animation delay
-            setTimeout(() => {
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
+            entry.target.classList.add('scroll-styled');
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -40,11 +33,10 @@
     const certCards = document.querySelectorAll('.cert-card');
     const certObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('scroll-visible');
-            }, index * 150);
+            entry.target.classList.add('scroll-visible');
+            certObserver.unobserve(entry.target);
           }
         });
       },

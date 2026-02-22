@@ -1,235 +1,295 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skills - Kelvin Mutwiri</title>
-
-  <!-- Google Fonts - Monospace for terminal feel -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Global Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/skills.css">
-  <style>
-    .terminal-section {
-      min-height: auto;
-    }
-  </style>
-  <script>
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-    function resetSkillsScrollTop() {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }
-    window.addEventListener("pageshow", resetSkillsScrollTop);
-    window.addEventListener("DOMContentLoaded", function () {
-      requestAnimationFrame(resetSkillsScrollTop);
-    });
-    window.addEventListener("load", resetSkillsScrollTop);
-  </script>
 </head>
-<body>
-  <!-- ================= Header / Navigation ================= -->
-  <header class="site-header" data-reveal>
-    <div class="container nav-grid">
-      <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
+<body class="skills-premium-page">
+  <div class="skp-cross skp-cross-tl" aria-hidden="true"></div>
+  <div class="skp-cross skp-cross-tr" aria-hidden="true"></div>
+  <div class="skp-cross skp-cross-bl" aria-hidden="true"></div>
+  <div class="skp-cross skp-cross-br" aria-hidden="true"></div>
 
+  <span class="skp-dot skp-dot-1" aria-hidden="true"></span>
+  <span class="skp-dot skp-dot-2" aria-hidden="true"></span>
+  <span class="skp-dot skp-dot-3" aria-hidden="true"></span>
+  <span class="skp-dot skp-dot-4" aria-hidden="true"></span>
+  <span class="skp-dot skp-dot-5" aria-hidden="true"></span>
+  <span class="skp-dot skp-dot-6" aria-hidden="true"></span>
+
+  <header class="site-header">
+    <div class="container skp-container nav-grid skp-nav-shell">
+      <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html" class="active">Skills</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html" class="contact-cta">Contact</a>
       </nav>
-
       <div class="nav-actions">
+        <a href="contact.html" class="contact-cta">Contact</a>
         <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">&#127769;</button>
         <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">&#9776;</button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Mobile Navigation ================= -->
   <div id="mobileNav" class="mobile-nav">
     <button id="closeMobileNav" class="close-nav">&times;</button>
     <nav class="mobile-links">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="skills.html" class="active">Skills</a>
-      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
-      <!-- <a href="about.html">About</a> -->
     </nav>
   </div>
 
-  <!-- ================= Main Content ================= -->
   <main>
-    <!-- Terminal Container -->
-    <section class="terminal-section" data-reveal>
-      <div class="container">
-        <div class="skills-intro">
-          <p class="skills-kicker">Skills Matrix</p>
-          <h1 class="skills-headline">Technical Capabilities</h1>
-          <p class="skills-description">A structured view of my core engineering, infrastructure, and product delivery skills.</p>
-          <div id="skillsSummary" class="skills-summary" aria-live="polite"></div>
+    <section class="skp-hero skp-section reveal">
+      <div class="skp-container skp-hero-grid">
+        <div class="skp-hero-copy">
+          <p class="skp-kicker">Skills Matrix</p>
+          <h1 class="skp-title">
+            Technical
+            <em>Capabilities</em>
+          </h1>
+          <p class="skp-description">
+            A refined breakdown of my engineering, product, and infrastructure skillset across frontend,
+            backend, cloud, AI systems, and UX delivery.
+          </p>
+          <div class="skp-stats">
+            <article class="skp-stat">
+              <p class="skp-stat-num">5<span>+</span></p>
+              <p class="skp-stat-label">Years Exp.</p>
+            </article>
+            <article class="skp-stat">
+              <p class="skp-stat-num">30<span>+</span></p>
+              <p class="skp-stat-label">Projects</p>
+            </article>
+            <article class="skp-stat">
+              <p class="skp-stat-num">12<span>+</span></p>
+              <p class="skp-stat-label">Technologies</p>
+            </article>
+          </div>
         </div>
 
-        <!-- Terminal Window -->
-        <div class="terminal-window">
-          <!-- Terminal Header with Window Controls -->
-          <div class="terminal-header">
-            <div class="window-controls">
-              <span class="control-dot control-close"></span>
-              <span class="control-dot control-minimize"></span>
-              <span class="control-dot control-maximize"></span>
+        <article class="skp-card skp-json-card">
+          <div class="skp-window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="skp-window-title">skills/profile.json</span>
+          </div>
+          <pre class="skp-json"><code>{
+  <span class="k">"name"</span>: <span class="v">"Kelvin Mutwiri"</span>,
+  <span class="k">"role"</span>: <span class="v">"Full-Stack Developer"</span>,
+  <span class="k">"stack"</span>: [<span class="v">"React"</span>, <span class="v">"Django"</span>, <span class="v">"PostgreSQL"</span>, <span class="v">"Docker"</span>],
+  <span class="k">"focus"</span>: [<span class="v">"AI Automations"</span>, <span class="v">"Cloud Delivery"</span>, <span class="v">"UX Systems"</span>],
+  <span class="k">"status"</span>: <span class="v">"Open to projects"</span>
+}<span class="cursor">|</span></code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="skp-matrix skp-section reveal">
+      <div class="skp-container">
+        <header class="skp-header-row">
+          <div>
+            <p class="skp-kicker">Core Toolkit</p>
+            <h2 class="skp-title-sm">Skills <em>Matrix</em></h2>
+            <p class="skp-description">Depth across frontend delivery, backend architecture, AI integration, and design systems.</p>
+          </div>
+          <span class="skp-ghost">SK</span>
+        </header>
+
+        <div class="skp-matrix-grid">
+          <article class="skp-card skp-skill-card">
+            <header>
+              <span class="skp-icon-badge">🌐</span>
+              <h3>Frontend</h3>
+            </header>
+            <div class="skp-tag-wrap">
+              <span class="skp-tag">React</span><span class="skp-tag">JavaScript</span><span class="skp-tag">TypeScript</span>
+              <span class="skp-tag">HTML5</span><span class="skp-tag">CSS3</span><span class="skp-tag">Tailwind</span><span class="skp-tag">Next.js</span>
             </div>
-            <div class="terminal-title">
-              <span class="terminal-icon">Console</span>
-              <div class="terminal-title-text">
-                <span>skills.terminal</span>
-                <small>Interactive skill inventory</small>
-              </div>
+          </article>
+
+          <article class="skp-card skp-skill-card">
+            <header>
+              <span class="skp-icon-badge">⚙️</span>
+              <h3>Backend</h3>
+            </header>
+            <div class="skp-tag-wrap">
+              <span class="skp-tag">Python</span><span class="skp-tag">Django</span><span class="skp-tag">FastAPI</span>
+              <span class="skp-tag">Node.js</span><span class="skp-tag">REST API</span><span class="skp-tag">GraphQL</span>
             </div>
-            <div class="terminal-actions">
-              <span class="terminal-status">Ready</span>
-              <button class="terminal-btn" aria-label="Clear terminal">Clear</button>
+          </article>
+
+          <article class="skp-card skp-skill-card">
+            <header>
+              <span class="skp-icon-badge">🗄️</span>
+              <h3>Databases</h3>
+            </header>
+            <div class="skp-tag-wrap">
+              <span class="skp-tag">PostgreSQL</span><span class="skp-tag">MySQL</span><span class="skp-tag">MongoDB</span>
+              <span class="skp-tag">Redis</span><span class="skp-tag">SQLite</span>
             </div>
+          </article>
+
+          <article class="skp-card skp-skill-card">
+            <header>
+              <span class="skp-icon-badge">☁️</span>
+              <h3>DevOps</h3>
+            </header>
+            <div class="skp-tag-wrap">
+              <span class="skp-tag">Docker</span><span class="skp-tag">Kubernetes</span><span class="skp-tag">Linux</span>
+              <span class="skp-tag">CI/CD</span><span class="skp-tag">Git</span><span class="skp-tag">GitHub Actions</span>
+            </div>
+          </article>
+
+          <article class="skp-card skp-skill-card">
+            <header>
+              <span class="skp-icon-badge">🤖</span>
+              <h3>AI / ML</h3>
+            </header>
+            <div class="skp-tag-wrap">
+              <span class="skp-tag">TensorFlow</span><span class="skp-tag">PyTorch</span><span class="skp-tag">scikit-learn</span>
+              <span class="skp-tag">LangChain</span><span class="skp-tag">LLMs</span>
+            </div>
+          </article>
+
+          <article class="skp-card skp-skill-card">
+            <header>
+              <span class="skp-icon-badge">🎨</span>
+              <h3>Design</h3>
+            </header>
+            <div class="skp-tag-wrap">
+              <span class="skp-tag">Figma</span><span class="skp-tag">Prototyping</span><span class="skp-tag">Design Systems</span>
+              <span class="skp-tag">Responsive</span><span class="skp-tag">Accessibility</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skp-terminal skp-section reveal">
+      <div class="skp-container">
+        <header class="skp-header-row">
+          <div>
+            <p class="skp-kicker">Interactive</p>
+            <h2 class="skp-title-sm">Skill <em>Terminal</em></h2>
+          </div>
+          <span class="skp-ghost">CLI</span>
+        </header>
+
+        <article class="skp-card skp-terminal-card">
+          <div class="skp-window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="skp-console-badge">Console</span>
+            <span class="skp-window-title">skills.terminal</span>
+            <span class="skp-status-dot" aria-hidden="true"></span>
+            <button id="terminalClear" class="skp-clear-btn" type="button">Clear</button>
           </div>
 
-          <!-- Terminal Body -->
-          <div class="terminal-body" id="terminalBody">
-            <div class="terminal-meta">
+          <div class="skp-terminal-body" id="terminalBody">
+            <div class="skp-terminal-meta">
               <span>Profile: Kelvin Mutwiri</span>
               <span>Mode: Interactive</span>
             </div>
-
-            <div class="terminal-stream" id="terminalStream">
-              <!-- Initial Terminal Output -->
-              <div class="terminal-line">
-                <span class="terminal-prompt">$</span>
-                <span class="terminal-command">cat skills.txt</span>
-              </div>
-
-              <div class="terminal-output boot-output">
-                <div class="terminal-text">Loading skills database...</div>
-              </div>
-
-              <!-- Skills will be dynamically added here -->
-              <div id="skillsTerminalContent"></div>
-            </div>
-
-            <!-- Active Prompt with Blinking Cursor -->
-            <div class="terminal-line terminal-active" id="terminalInputLine">
-              <span class="terminal-prompt">$</span>
-              <input
-                type="text"
-                class="terminal-input"
-                id="terminalInput"
-                autocomplete="off"
-                spellcheck="false"
-                placeholder="Type a command (try: help, list, search [skill])"
-                aria-label="Terminal command input"
-              />
-              <span class="terminal-cursor" id="terminalCursor">|</span>
+            <div class="skp-terminal-stream" id="terminalStream"></div>
+            <div class="skp-terminal-input-row">
+              <span class="prompt">$</span>
+              <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" placeholder="Type: help, list, search [skill], about, clear">
+              <span class="cursor">|</span>
             </div>
           </div>
+        </article>
+      </div>
+    </section>
 
-          <div class="terminal-footer">
-            <span>Commands: `help`, `list`, `search [skill]`, `about`, `clear`</span>
+    <section class="skp-why skp-section reveal">
+      <div class="skp-container">
+        <header class="skp-header-row">
+          <div>
+            <p class="skp-kicker">The Difference</p>
+            <h2 class="skp-title-sm">Why Work <em>With Me</em></h2>
           </div>
+          <span class="skp-ghost">05</span>
+        </header>
+
+        <div class="skp-bento">
+          <article class="skp-card skp-why-card wide a">
+            <div class="skp-why-icon">✓</div>
+            <div class="skp-why-content">
+              <h3>I Get Things Done</h3>
+              <span class="skp-divider"></span>
+              <p>I ship reliable work with clear milestones, realistic timelines, and practical delivery discipline.</p>
+            </div>
+            <span class="skp-card-num">01</span>
+          </article>
+
+          <article class="skp-card skp-why-card wide b">
+            <div class="skp-why-icon">💬</div>
+            <div class="skp-why-content">
+              <h3>Straightforward Communication</h3>
+              <span class="skp-divider"></span>
+              <p>Clear updates, honest tradeoffs, and no unnecessary complexity between idea and implementation.</p>
+            </div>
+            <span class="skp-card-num">02</span>
+          </article>
+
+          <article class="skp-card skp-why-card slim c">
+            <div class="skp-why-icon">🛡</div>
+            <h3>Practical Solutions</h3>
+            <span class="skp-divider"></span>
+            <p>Built for real operations, maintainability, and long-term value.</p>
+            <span class="skp-card-num">03</span>
+          </article>
+
+          <article class="skp-card skp-why-card slim d">
+            <div class="skp-why-icon">✅</div>
+            <h3>I Care About Quality</h3>
+            <span class="skp-divider"></span>
+            <p>Structured code quality, careful testing, and performance-aware decisions.</p>
+            <span class="skp-card-num">04</span>
+          </article>
+
+          <article class="skp-card skp-why-card slim e">
+            <div class="skp-why-icon">$</div>
+            <h3>Fair Pricing</h3>
+            <span class="skp-divider"></span>
+            <p>Transparent scope and pricing aligned to outcomes, not noise.</p>
+            <span class="skp-card-num">05</span>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Me Section -->
-    <section class="why-choose" data-reveal>
-      <div class="container">
-        <div class="section-header">
-          <h1 class="section-title">Why Work With Me</h1>
-          <p class="section-subtitle">What sets me apart from the rest</p>
-        </div>
-        <div class="why-grid">
-          <div class="why-card" data-why="delivery">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-            <h4>I Get Things Done</h4>
-            <p>I ship working code, not promises. Projects get finished on time, and they actually work.</p>
-            <div class="why-hover-effect"></div>
+    <section class="skp-cta skp-section reveal">
+      <div class="skp-container">
+        <article class="skp-card skp-cta-panel">
+          <div class="skp-cta-copy">
+            <h2 class="skp-title-sm">Let's Work <em>Together</em></h2>
+            <p class="skp-description">Open to freelance projects, product collaborations, and long-term technical partnerships.</p>
           </div>
-
-          <div class="why-card" data-why="communication">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-            </div>
-            <h4>Straightforward Communication</h4>
-            <p>No jargon, no fluff. I'll tell you what's happening, what's possible, and what's not.</p>
-            <div class="why-hover-effect"></div>
+          <div class="skp-cta-action">
+            <a href="contact.html" class="btn-primary">Contact Me</a>
           </div>
-
-          <div class="why-card" data-why="solutions">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h4>Practical Solutions</h4>
-            <p>I build what you need, not what's trendy. Simple, maintainable, and actually useful.</p>
-            <div class="why-hover-effect"></div>
-          </div>
-
-          <div class="why-card" data-why="quality">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-            <h4>I Care About Quality</h4>
-            <p>Code that's readable, tested, and won't break in six months. That's the standard.</p>
-            <div class="why-hover-effect"></div>
-          </div>
-
-          <div class="why-card" data-why="pricing">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
-            </div>
-            <h4>Fair Pricing</h4>
-            <p>You get what you pay for, and I make sure it's worth it. No surprises, no hidden costs.</p>
-            <div class="why-hover-effect"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills-cta" data-reveal>
-      <div class="container">
-        <div class="cta-panel">
-          <h2>Let's Work Together</h2>
-          <p>Got a project in mind? I am open to freelance work and meaningful collaborations. Drop me a message and we will scope it clearly.</p>
-          <a href="contact.html" class="btn primary cta-btn">Contact Me</a>
-        </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- ================= Footer ================= -->
-  <footer class="site-footer" data-reveal>
-    <div class="container footer-grid">
+  <footer class="site-footer reveal">
+    <div class="container skp-container footer-grid skp-footer-grid">
       <div>
-        <strong>Kelvin Mutwiri</strong>
-        <p>Building things that work, look good, and don't break.</p>
+        <a class="brand" href="index.html">Kelvin<span class="accent">.</span></a>
+        <p>Building digital products that are robust, clear, and premium.</p>
       </div>
       <div>
         <h4>Contact</h4>
@@ -237,33 +297,23 @@
           <li><a href="mailto:kelvinkiambi35@gmail.com">Email</a></li>
           <li><a href="https://www.linkedin.com/in/kelvin-mutwiri-01250331b" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/kelvin482" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://twitter.com/kelvin_kiambi" target="_blank" rel="noopener">Twitter</a></li>
           <li><a href="tel:+254746310313">Phone</a></li>
         </ul>
       </div>
       <div>
         <h4>Site</h4>
         <a href="index.html">Home</a>
-        <!-- <a href="about.html">About</a> -->
         <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
-    <div class="copyright">
-      &copy; <span id="year"></span> Kelvin Mutwiri. All rights reserved.
-    </div>
+    <div class="copyright">&copy; <span id="year"></span> Kelvin Mutwiri. All rights reserved.</div>
   </footer>
 
-  <!-- ================= Scripts ================= -->
   <script src="assets/js/config.js"></script>
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/navigation.js"></script>
-  <script src="assets/js/animations.js"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/skills-terminal.js"></script>
-  <script src="assets/js/skills-sections.js"></script>
+  <script src="assets/js/skills-premium.js"></script>
 </body>
 </html>
-
-
-
-

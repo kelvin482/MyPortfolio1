@@ -6,91 +6,145 @@
 const PROJECTS = [
   {
     id: 1,
-    title: "Clinical Decision Support Dashboard",
+    title: "Cancer Assessment - Clinical Dashboard",
     category: "ai",
-    description: "Doctor-facing dashboard with triage metrics, risk distribution, and clinical interpretation summaries.",
-    image: "assets/images/screenshots/Screenshot (840).png",
+    description: "Clinical dashboard for patient triage, risk indicators, and doctor-facing decision support metrics.",
+    image: "assets/images/PROJECTS/CANCER_ASSESMENT/DASHBOARD.png",
     live: "#",
     code: "#"
   },
   {
     id: 2,
-    title: "Medical Assessment Intake Flow",
+    title: "Cancer Assessment - Intake Form Workflow",
     category: "ai",
-    description: "Structured patient intake and morphology capture flow designed for AI-assisted diagnosis.",
-    image: "assets/images/screenshots/Screenshot (839).png",
+    description: "Structured intake interface for symptom capture and assessment feature entry before model evaluation.",
+    image: "assets/images/PROJECTS/CANCER_ASSESMENT/ASSESMENTS.png",
     live: "#",
     code: "#"
   },
   {
     id: 3,
-    title: "AI Diagnosis Report Generator",
+    title: "Cancer Assessment - Diagnosis Report View",
     category: "ai",
-    description: "Printable diagnostic report page with patient details, risk labels, and clinical interpretation output.",
-    image: "assets/images/screenshots/Screenshot (841).png",
+    description: "Report-style results page presenting diagnostic output, risk context, and interpretation summary.",
+    image: "assets/images/PROJECTS/CANCER_ASSESMENT/REPORTS.png",
     live: "#",
     code: "#"
   },
   {
     id: 4,
-    title: "Role-Based Healthcare Authentication Portal",
+    title: "Cow Calving - Login Portal",
     category: "web",
-    description: "Patient and doctor sign-in interface with role selection and streamlined onboarding UI.",
-    image: "assets/images/screenshots/Screenshot 2026-01-30 144710.png",
+    description: "Authentication screen for the livestock workflow platform with clean, role-based access entry.",
+    image: "assets/images/PROJECTS/COW CALVING/COW CALVING LOGIN.png",
     live: "#",
     code: "#"
   },
   {
     id: 5,
-    title: "TharakaHub Freelancer Dashboard",
+    title: "Cow Calving - Monitoring Screen",
     category: "web",
-    description: "Freelancer operations dashboard showing earnings analytics, project statistics, and quick actions.",
-    image: "assets/images/screenshots/Screenshot 2026-02-14 124122.png",
+    description: "Operational view for calving management and record tracking inside the livestock support app.",
+    image: "assets/images/PROJECTS/COW CALVING/COW CALVING 2.png",
     live: "#",
     code: "#"
   },
   {
     id: 6,
-    title: "TharakaHub Assignment Discovery Page",
+    title: "TharakaHub - Main Dashboard",
     category: "web",
-    description: "Assignment browsing interface with department filters and student-focused navigation.",
-    image: "assets/images/screenshots/Screenshot 2025-11-03 184941.png",
+    description: "Primary operations dashboard with project visibility, user flow, and analytics highlights.",
+    image: "assets/images/PROJECTS/THARAKA HUB/dashboard2.jpg.png",
     live: "#",
     code: "#"
   },
   {
     id: 7,
-    title: "TharakaHub Blog and Content Module",
+    title: "TharakaHub - Assignment Discovery",
     category: "web",
-    description: "Article listing module with category cards and editorial content previews for users.",
-    image: "assets/images/screenshots/Screenshot 2025-11-03 185009.png",
+    description: "Assignment listing interface with category browsing and streamlined academic content navigation.",
+    image: "assets/images/PROJECTS/THARAKA HUB/Screenshot 2025-11-03 184941.png",
     live: "#",
     code: "#"
   },
   {
     id: 8,
-    title: "Branch-to-Data-Center WAN Topology",
-    category: "network",
-    description: "Cisco Packet Tracer design connecting branch office, teleworker home, and data center over routed links.",
-    image: "assets/images/screenshots/Screenshot (385).png",
+    title: "TharakaHub - Blog Module",
+    category: "web",
+    description: "Editorial and blog layout for publishing updates, learning resources, and category-based posts.",
+    image: "assets/images/PROJECTS/THARAKA HUB/Screenshot 2025-11-03 185009.png",
     live: "#",
     code: "#"
   },
   {
     id: 9,
-    title: "Inter-Department Routing Simulation Lab",
+    title: "Networking Lab - Branch WAN Topology",
     category: "network",
-    description: "Department-segmented network simulation validating connectivity, packet paths, and command-line diagnostics.",
-    image: "assets/images/screenshots/Screenshot (514).png",
+    description: "Packet Tracer topology connecting branch and central network zones across routed infrastructure.",
+    image: "assets/images/PROJECTS/NETWORKING/Screenshot (385).png",
     live: "#",
     code: "#"
   },
   {
     id: 10,
-    title: "Physical Rack and Cabling Layout",
+    title: "Networking Lab - Physical Rack Layout",
     category: "network",
-    description: "Packet Tracer physical-mode rack visualization for switch/router placement and structured cabling.",
-    image: "assets/images/screenshots/Screenshot (386).png",
+    description: "Physical-mode rack planning with device placement and cable paths for deployment readiness.",
+    image: "assets/images/PROJECTS/NETWORKING/Screenshot (386).png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 11,
+    title: "Networking Lab - Routed Segment Simulation",
+    category: "network",
+    description: "Simulation of routed segments and path behavior for diagnostics, testing, and packet validation.",
+    image: "assets/images/PROJECTS/NETWORKING/Screenshot (512).png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 12,
+    title: "Networking Lab - Interconnect Validation",
+    category: "network",
+    description: "Connectivity validation scenario for inter-device communication and network state checks.",
+    image: "assets/images/PROJECTS/NETWORKING/Screenshot (513).png",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 13,
+    title: "Tech Support - Landing Experience",
+    category: "web",
+    description: "Front-facing service landing page for tech support with clear messaging and conversion sections.",
+    image: "assets/images/PROJECTS/TECH SUPPORT/TechsupportMeru.jpeg",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 14,
+    title: "Tech Support - Ticketing Interface",
+    category: "web",
+    description: "Ticket flow interface designed for issue logging, priority handling, and support request tracking.",
+    image: "assets/images/PROJECTS/TECH SUPPORT/Tickets.jpeg",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 15,
+    title: "Tech Support - Smart Support Module",
+    category: "web",
+    description: "Guided support module focused on fast problem routing and assisted troubleshooting experience.",
+    image: "assets/images/PROJECTS/TECH SUPPORT/smartsupport.jpeg",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 16,
+    title: "Tech Support - Trust & Why Us Section",
+    category: "web",
+    description: "Brand trust section presenting service value, reliability points, and customer assurance blocks.",
+    image: "assets/images/PROJECTS/TECH SUPPORT/Whyus.jpeg",
     live: "#",
     code: "#"
   }

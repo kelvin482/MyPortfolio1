@@ -10,7 +10,6 @@
     { id: 'home', label: 'Go to Home', action: () => window.location.href = 'index.html', icon: 'ðŸ ' },
     { id: 'projects', label: 'View Projects', action: () => window.location.href = 'projects.html', icon: 'ðŸ’¼' },
     { id: 'skills', label: 'View Skills', action: () => window.location.href = 'skills.html', icon: 'âš¡' },
-    { id: 'blog', label: 'View Blog', action: () => window.location.href = 'blog.html', icon: '📝' },
     { id: 'services', label: 'View Services', action: () => window.location.href = 'services.html', icon: 'ðŸ› ï¸' },
     { id: 'contact', label: 'Contact Me', action: () => window.location.href = 'contact.html', icon: 'âœ‰ï¸' },
     { id: 'about', label: 'About', action: () => window.location.href = 'about.html', icon: 'ðŸ‘¤' },
