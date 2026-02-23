@@ -42,15 +42,6 @@ const PROJECTS = [
   },
   {
     id: 5,
-    title: "Cow Calving - Monitoring Screen",
-    category: "web",
-    description: "Operational view for calving management and record tracking inside the livestock support app.",
-    image: "assets/images/PROJECTS/COW CALVING/COW CALVING 2.png",
-    live: "#",
-    code: "#"
-  },
-  {
-    id: 6,
     title: "TharakaHub - Main Dashboard",
     category: "web",
     description: "Primary operations dashboard with project visibility, user flow, and analytics highlights.",
@@ -59,7 +50,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 7,
+    id: 6,
     title: "TharakaHub - Assignment Discovery",
     category: "web",
     description: "Assignment listing interface with category browsing and streamlined academic content navigation.",
@@ -68,7 +59,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 8,
+    id: 7,
     title: "TharakaHub - Blog Module",
     category: "web",
     description: "Editorial and blog layout for publishing updates, learning resources, and category-based posts.",
@@ -77,7 +68,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 9,
+    id: 8,
     title: "Networking Lab - Branch WAN Topology",
     category: "network",
     description: "Packet Tracer topology connecting branch and central network zones across routed infrastructure.",
@@ -86,7 +77,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 10,
+    id: 9,
     title: "Networking Lab - Physical Rack Layout",
     category: "network",
     description: "Physical-mode rack planning with device placement and cable paths for deployment readiness.",
@@ -95,7 +86,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 11,
+    id: 10,
     title: "Networking Lab - Routed Segment Simulation",
     category: "network",
     description: "Simulation of routed segments and path behavior for diagnostics, testing, and packet validation.",
@@ -104,7 +95,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 12,
+    id: 11,
     title: "Networking Lab - Interconnect Validation",
     category: "network",
     description: "Connectivity validation scenario for inter-device communication and network state checks.",
@@ -113,7 +104,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 13,
+    id: 12,
     title: "Tech Support - Landing Experience",
     category: "web",
     description: "Front-facing service landing page for tech support with clear messaging and conversion sections.",
@@ -122,7 +113,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 14,
+    id: 13,
     title: "Tech Support - Ticketing Interface",
     category: "web",
     description: "Ticket flow interface designed for issue logging, priority handling, and support request tracking.",
@@ -131,7 +122,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 15,
+    id: 14,
     title: "Tech Support - Smart Support Module",
     category: "web",
     description: "Guided support module focused on fast problem routing and assisted troubleshooting experience.",
@@ -140,7 +131,7 @@ const PROJECTS = [
     code: "#"
   },
   {
-    id: 16,
+    id: 15,
     title: "Tech Support - Trust & Why Us Section",
     category: "web",
     description: "Brand trust section presenting service value, reliability points, and customer assurance blocks.",

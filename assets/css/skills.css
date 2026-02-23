@@ -1,4 +1,7 @@
 :root {
+  --font-head: "Syne", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-body: "Outfit", sans-serif;
   --bg: #050507;
   --bg2: #0a0a0e;
   --glass: rgba(13, 13, 20, 0.9);
@@ -30,7 +33,7 @@ body.skills-premium-page {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-body);
   overflow-x: hidden;
   position: relative;
   letter-spacing: 0.01em;
@@ -1008,6 +1011,72 @@ main,
 .skills-premium-page .socials a:hover {
   color: #00f5d4;
   padding-left: 6px;
+}
+
+/* Align typography with home page and center section headers */
+.skills-premium-page .brand,
+.skills-premium-page .skp-title,
+.skills-premium-page .skp-title-sm,
+.skills-premium-page .skp-skill-card h3,
+.skills-premium-page .skp-why-card h3,
+.skills-premium-page .skp-card-num,
+.skills-premium-page .skp-ghost,
+.skills-premium-page .site-footer strong {
+  font-family: var(--font-head);
+}
+
+.skills-premium-page .skp-description,
+.skills-premium-page .skp-why-card p,
+.skills-premium-page .btn-primary,
+.skills-premium-page .site-footer p {
+  font-family: var(--font-body);
+}
+
+.skills-premium-page .nav a,
+.skills-premium-page .contact-cta,
+.skills-premium-page .skp-kicker,
+.skills-premium-page .skp-window-bar,
+.skills-premium-page .skp-json,
+.skills-premium-page .skp-tag,
+.skills-premium-page .skp-console-badge,
+.skills-premium-page .skp-clear-btn,
+.skills-premium-page .skp-terminal-body,
+.skills-premium-page .skp-terminal-input-row input,
+.skills-premium-page .site-footer h4,
+.skills-premium-page .site-footer a,
+.skills-premium-page .socials a,
+.skills-premium-page .copyright {
+  font-family: var(--font-mono) !important;
+}
+
+.skills-premium-page .skp-hero-copy {
+  text-align: center;
+}
+
+.skills-premium-page .skp-hero-copy .skp-kicker,
+.skills-premium-page .skp-header-row .skp-kicker {
+  justify-content: center;
+}
+
+.skills-premium-page .skp-hero-copy .skp-description,
+.skills-premium-page .skp-header-row .skp-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-premium-page .skp-header-row {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+.skills-premium-page .skp-header-row > div {
+  display: grid;
+  justify-items: center;
+}
+
+.skills-premium-page .skp-header-row .skp-ghost {
+  display: none;
 }
 
 .skills-premium-page .socials a:hover::before,
