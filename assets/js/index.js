@@ -149,7 +149,7 @@
 
   function initFeatureCards() {
     const features = document.querySelectorAll('.intro .features .feature');
-    const featureClasses = ['feature-web', 'feature-ui', 'feature-network', 'feature-ai'];
+    const featureClasses = ['feature-web', 'feature-ui', 'feature-network', 'feature-ai', 'feature-graphic', 'feature-network-advanced'];
 
     features.forEach((feature, index) => {
       if (index < featureClasses.length) {

@@ -132,6 +132,7 @@ main {
   background: transparent !important;
   position: relative;
   isolation: isolate;
+  overflow-x: clip;
 }
 
 main::before {
@@ -1527,6 +1528,12 @@ main > section.intro > .container {
   display: block;
 }
 
+/* Keep the portrait AI image from stretching this single card taller than others */
+.intro .service-ai .service-media img {
+  height: 186px;
+  min-height: 186px;
+}
+
 .intro .service-content {
   padding: 1.5rem 1.7rem;
   display: flex;
@@ -2274,17 +2281,22 @@ main > section.projects-preview > .container {
 
   .intro .service-tag {
     --service-offset: 0px;
-    grid-template-columns: 182px minmax(0, 1fr);
+    grid-template-columns: clamp(120px, 28vw, 182px) minmax(0, 1fr);
     min-height: 166px;
-    width: min(100%, 820px);
+    width: 100%;
     transform: translate3d(0, 0, 0);
   }
 
   .intro .service-tag:nth-child(even) {
-    grid-template-columns: minmax(0, 1fr) 182px;
+    grid-template-columns: minmax(0, 1fr) clamp(120px, 28vw, 182px);
   }
 
   .intro .service-media img {
+    min-height: 166px;
+  }
+
+  .intro .service-ai .service-media img {
+    height: 166px;
     min-height: 166px;
   }
 
@@ -2406,8 +2418,8 @@ main > section.projects-preview > .container {
 
   .intro .service-tag {
     --service-offset: 0px;
-    grid-template-columns: 116px minmax(0, 1fr);
-    min-height: 136px;
+    grid-template-columns: 108px minmax(0, 1fr);
+    min-height: 132px;
     width: 100%;
     transform: translate3d(0, 0, 0);
   }
@@ -2434,30 +2446,35 @@ main > section.projects-preview > .container {
   }
 
   .intro .service-tag:nth-child(even) {
-    grid-template-columns: minmax(0, 1fr) 116px;
+    grid-template-columns: minmax(0, 1fr) 108px;
   }
 
   .intro .service-media img {
-    min-height: 136px;
+    min-height: 132px;
+  }
+
+  .intro .service-ai .service-media img {
+    height: 132px;
+    min-height: 132px;
   }
 
   .intro .service-content {
-    padding: 1.05rem 1.06rem 1.1rem;
-    gap: 0.45rem;
+    padding: 0.9rem 0.92rem 0.95rem;
+    gap: 0.38rem;
   }
 
   .intro .service-number {
-    font-size: 1.2rem;
+    font-size: 1.08rem;
   }
 
   .intro .service-tag h3 {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     letter-spacing: -0.015em;
   }
 
   .intro .service-tag p {
-    font-size: 0.83rem;
-    line-height: 1.62;
+    font-size: 0.8rem;
+    line-height: 1.52;
   }
 
   .tech-stack-note,
