@@ -832,6 +832,18 @@ iframe {
   color: #58a6ff;
 }
 
+.site-footer .footer-grid > div:last-child a {
+  color: #dbe8ff;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.14);
+}
+
+.site-footer .footer-grid > div:last-child a:focus-visible {
+  outline: 2px solid rgba(88, 166, 255, 0.8);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;

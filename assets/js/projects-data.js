@@ -9,7 +9,8 @@ const PROJECTS = [
     title: "Cancer Assessment - Clinical Dashboard",
     category: "ai",
     description: "Clinical dashboard for patient triage, risk indicators, and doctor-facing decision support metrics.",
-    image: "assets/images/PROJECTS/CANCER_ASSESMENT/DASHBOARD.png",
+    techStack: ["Python", "Django", "PostgreSQL", "scikit-learn"],
+    image: "assets/images/PROJECTS/CANCER_ASSESMENT/dashboard.png",
     live: "#",
     code: "#"
   },
@@ -18,6 +19,7 @@ const PROJECTS = [
     title: "Cancer Assessment - Intake Form Workflow",
     category: "ai",
     description: "Structured intake interface for symptom capture and assessment feature entry before model evaluation.",
+    techStack: ["Python", "Django", "PostgreSQL", "scikit-learn"],
     image: "assets/images/PROJECTS/CANCER_ASSESMENT/ASSESMENTS.png",
     live: "#",
     code: "#"
@@ -27,6 +29,7 @@ const PROJECTS = [
     title: "Cancer Assessment - Diagnosis Report View",
     category: "ai",
     description: "Report-style results page presenting diagnostic output, risk context, and interpretation summary.",
+    techStack: ["Python", "Django", "PostgreSQL", "scikit-learn"],
     image: "assets/images/PROJECTS/CANCER_ASSESMENT/REPORTS.png",
     live: "#",
     code: "#"
@@ -45,6 +48,7 @@ const PROJECTS = [
     title: "TharakaHub - Main Dashboard",
     category: "web",
     description: "Primary operations dashboard with project visibility, user flow, and analytics highlights.",
+    techStack: ["Django", "HTML", "CSS", "SQLite3", "Figma"],
     image: "assets/images/PROJECTS/THARAKA HUB/dashboard2.jpg.png",
     live: "#",
     code: "#"
@@ -54,6 +58,7 @@ const PROJECTS = [
     title: "TharakaHub - Assignment Discovery",
     category: "web",
     description: "Assignment listing interface with category browsing and streamlined academic content navigation.",
+    techStack: ["Django", "HTML", "CSS", "SQLite3", "Figma"],
     image: "assets/images/PROJECTS/THARAKA HUB/Screenshot 2025-11-03 184941.png",
     live: "#",
     code: "#"
@@ -63,6 +68,7 @@ const PROJECTS = [
     title: "TharakaHub - Blog Module",
     category: "web",
     description: "Editorial and blog layout for publishing updates, learning resources, and category-based posts.",
+    techStack: ["Django", "HTML", "CSS", "SQLite3", "Figma"],
     image: "assets/images/PROJECTS/THARAKA HUB/Screenshot 2025-11-03 185009.png",
     live: "#",
     code: "#"
@@ -136,6 +142,15 @@ const PROJECTS = [
     category: "web",
     description: "Brand trust section presenting service value, reliability points, and customer assurance blocks.",
     image: "assets/images/PROJECTS/TECH SUPPORT/Whyus.jpeg",
+    live: "#",
+    code: "#"
+  },
+  {
+    id: 16,
+    title: "Cancer Assessment - Login UI/UX Design",
+    category: "web",
+    description: "Role-based authentication interface focused on clean hierarchy, trust visuals, and smooth sign-in flow.",
+    image: "assets/images/PROJECTS/CANCER_ASSESMENT/login.png",
     live: "#",
     code: "#"
   }

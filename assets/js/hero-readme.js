@@ -313,8 +313,8 @@ function initHeroTypewriter() {
     typingElement,
     [
       'Building Intelligent Systems That Scale',
-      'AI-Driven Web Development • Automation',
-      'Cloud & Full-Stack Solutions',
+      'AI Systems Builder | Cloud & Automation',
+      'Secure, Scalable Network Infrastructure',
       'Systems & Network Engineer'
     ],
     80

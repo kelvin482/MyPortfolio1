@@ -622,6 +622,18 @@ main > section {
   transition: color 0.25s ease, padding-left 0.25s ease;
 }
 
+.site-footer .footer-grid > div:last-child a {
+  color: #dbe8ff;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.18);
+}
+
+.site-footer .footer-grid > div:last-child a:focus-visible {
+  outline: 2px solid rgba(56, 189, 248, 0.85);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .socials a::before,
 .site-footer .footer-grid > div:last-child a::before {
   content: "\2192";

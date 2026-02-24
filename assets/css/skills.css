@@ -949,6 +949,35 @@ main,
   border: 1px solid var(--border);
   border-radius: 4px;
   background: rgba(13, 13, 20, 0.92);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.skp-footer-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 82% 50%, rgba(0, 245, 212, 0.16), transparent 52%),
+    url("../images/background water mark.jpg") 88% center / 300px auto no-repeat;
+  filter: blur(1px) grayscale(0.05) contrast(1.12);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skp-footer-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 8, 12, 0.9), rgba(8, 8, 12, 0.72) 56%, rgba(8, 8, 12, 0.46));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skp-footer-grid > * {
+  position: relative;
+  z-index: 1;
 }
 
 .skills-premium-page .site-footer h4 {
@@ -995,6 +1024,15 @@ main,
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  color: #dbe8ff;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.18);
+}
+
+.skills-premium-page .site-footer .skp-footer-grid > div:last-child a:focus-visible {
+  outline: 2px solid rgba(56, 189, 248, 0.85);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .skills-premium-page .socials a::before,
@@ -1177,6 +1215,12 @@ main,
   .skp-footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .skp-footer-grid::before {
+    background-size: 220px auto;
+    background-position: 96% center;
+    opacity: 0.3;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1225,5 +1269,11 @@ main,
 
   .skp-footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skp-footer-grid::before {
+    background-position: right center;
+    background-size: 190px auto;
+    opacity: 0.26;
   }
 }

@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const CATEGORY_IMAGE_FALLBACK = {
-  ai: "assets/images/PROJECTS/CANCER_ASSESMENT/DASHBOARD.png",
+  ai: "assets/images/PROJECTS/CANCER_ASSESMENT/dashboard.png",
   web: "assets/images/PROJECTS/THARAKA HUB/dashboard2.jpg.png",
   network: "assets/images/PROJECTS/NETWORKING/Screenshot (385).png",
   default: "assets/images/web.jpg"
@@ -225,7 +225,12 @@ function normalizeProject(project, index) {
   if (filterKeys.has("ux")) categoryTags.push({ key: "ux", label: "UX" });
 
   const uniqueTags = categoryTags.filter((tag, idx, arr) => arr.findIndex((t) => t.key === tag.key) === idx);
-  const techStack = inferTechStack(baseCategory, filterKeys, mergedText);
+  const customTechStack = Array.isArray(project.techStack)
+    ? project.techStack.map((item) => String(item).trim()).filter(Boolean)
+    : [];
+  const techStack = customTechStack.length
+    ? Array.from(new Set(customTechStack)).slice(0, 5)
+    : inferTechStack(baseCategory, filterKeys, mergedText);
 
   return {
     id: Number(project.id || index + 1),
@@ -253,7 +258,7 @@ function inferTechStack(baseCategory, keys, text) {
   if (baseCategory === "ai") {
     stack.push("Python", "TensorFlow", "Django", "PostgreSQL");
   } else if (baseCategory === "web") {
-    stack.push("React", "Django", "REST API", "PostgreSQL");
+    stack.push("React", "Django", "Figma", "REST API", "PostgreSQL");
   } else if (baseCategory === "network") {
     stack.push("Packet Tracer", "Routing", "Switching", "Topology");
   } else {
