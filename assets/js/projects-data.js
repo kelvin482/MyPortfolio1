@@ -10,7 +10,7 @@ const PROJECTS = [
     category: "ai",
     description: "Clinical dashboard for patient triage, risk indicators, and doctor-facing decision support metrics.",
     techStack: ["Python", "Django", "PostgreSQL", "scikit-learn"],
-    image: "assets/images/PROJECTS/CANCER_ASSESMENT/dashboard.png",
+    image: "assets/images/PROJECTS/CANCER_ASSESMENT/DASHBOARD.png",
     live: "#",
     code: "#"
   },

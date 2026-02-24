@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const CATEGORY_IMAGE_FALLBACK = {
-  ai: "assets/images/PROJECTS/CANCER_ASSESMENT/dashboard.png",
+  ai: "assets/images/PROJECTS/CANCER_ASSESMENT/DASHBOARD.png",
   web: "assets/images/PROJECTS/THARAKA HUB/dashboard2.jpg.png",
   network: "assets/images/PROJECTS/NETWORKING/Screenshot (385).png",
   default: "assets/images/web.jpg"
